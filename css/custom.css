@@ -1,0 +1,24 @@
+body{
+    background: url('../img/background.jpg')no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.center-align{
+    text-align: center;
+}
+
+.center-img{
+    margin: 0 auto;
+}
+.right-align{
+    text-align: right;
+}
+
+.ofwhite{
+    background: #ddd;
+}
+
+.tn h3{
+    background: #ffffff;
+}
