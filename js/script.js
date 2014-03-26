@@ -19,5 +19,5 @@ $(function() {
 });
 
 $('#add_user').click (function(){
-    $('#user_view').load('forms/login-form.php');
+    $('#user_view').load('forms/reg_form.php');
 })

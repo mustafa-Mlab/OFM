@@ -3,7 +3,7 @@
 $host = "localhost";
 $db_user = "root";
 $db_pass = "root";
-$db = "afd";
+$db = "ofm";
 
 
 //$host="localhost";

@@ -13,7 +13,17 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <h2>Here will be sheets link</h2><?php ?>
+                            <div class="list-group-item">
+                                <ul>
+                                    <li><a href="#" id="sheet1">Sheet1</a></li>
+                                    <li><a href="#" id="sheet2">Sheet2</a></li>
+                                    <li><a href="#" id="sheet3">Sheet3</a></li>
+                                    <li><a href="#" id="sheet4">Sheet4</a></li>
+                                    <li><a href="#" id="sheet5">Sheet5</a></li>
+                                    <li><a href="#" id="sheet6">Sheet6</a></li>
+                                    <li><a href="#" id="sheet7">Sheet7</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -27,7 +37,17 @@
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <h2>Here will be sheets links</h2> <?php?>
+                            <div class="list-group-item">
+                                <ul>
+                                    <li><a href="#" id="sheet1">Sheet1</a></li>
+                                    <li><a href="#" id="sheet2">Sheet2</a></li>
+                                    <li><a href="#" id="sheet3">Sheet3</a></li>
+                                    <li><a href="#" id="sheet4">Sheet4</a></li>
+                                    <li><a href="#" id="sheet5">Sheet5</a></li>
+                                    <li><a href="#" id="sheet6">Sheet6</a></li>
+                                    <li><a href="#" id="sheet7">Sheet7</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
