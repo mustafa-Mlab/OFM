@@ -5,7 +5,7 @@
     <div class="form-group">
         <label for="lavel" class="col-sm-2 control-label">পর্যায়ঃ  </label>
         <div class="col-sm-6">
-            <select class="form-control" name="lavel" id="lavel">
+            <select class="form-control" name="lavel" id="lavel" onchange="change_location()" >
                 <option selected="selected" value="0">বাছাই করুন </option>
                 <option value="1">ইউনিয়ন </option>
                 <option value="2">উপজেলা </option>
@@ -64,7 +64,10 @@
             <input type="text" class="form-control" id="ans" name="ans" placeholder="Answer">
         </div>
     </div>
-    <div class="form-group">
+    
+    <div id="location"> </div>
+    
+<!--    <div class="form-group">
         <label for="district" class="col-sm-2 control-label">জেলাঃ </label>
         <div class="col-sm-6">
             <input type="text" class="form-control" id="district" name="district" placeholder="District">
@@ -87,7 +90,7 @@
         <div class="col-sm-6">
             <input type="text" class="form-control" id="block" name="block" placeholder="Block">
         </div>
-    </div>
+    </div>-->
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-6">
             <button type="submit" class="btn btn-default" name="submit" id="submit">নিবন্ধন </button>

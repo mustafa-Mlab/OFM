@@ -1,7 +1,7 @@
 <?php require 'header.php'; ?>
 <div class="container ofwhite">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-2">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -55,8 +55,9 @@
             </div>
 
         </div>
-        <div class="col-md-6">
+        <div class="col-md-10" id="display">
             <?php require './newsscroll.php'; ?>
+            <?php require 'forms/sheet1.php';?>
         </div>
     </div>
 </div>
