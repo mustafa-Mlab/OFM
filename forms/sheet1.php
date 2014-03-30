@@ -51,7 +51,7 @@
                             <div class="form-group">
                                 <label for="season" class="col-sm-4 control-label">মৌসুম  </label>
                                 <div class="col-sm-8">
-                                    <select class="form-control" name="lavel" id="lavel">
+                                    <select class="form-control" name="season" id="season">
                                         <option selected="selected" value="0">বাছাই করুন </option>
                                         <option value="1">খরিপ২ </option>
                                         <option value="2">রবি </option>
@@ -83,17 +83,17 @@
         </div>
         <!--2nd collum-->        
         <div class="col-md-4">
-           <div class="form-group">
-                                <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
-                                </div>
-                            </div>
-             <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-6">
-            <button type="submit" class="btn btn-default" name="submit" id="submit">Submit </button>
-        </div>
-    </div>
+            <div class="form-group">
+                <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <button type="submit" class="btn btn-default" name="submit" id="submit">Submit </button>
+                </div>
+            </div>
         </div>
     </form>
 </div>

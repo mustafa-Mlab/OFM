@@ -19,7 +19,7 @@ require 'header.php';?>
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <div class="list-group">
-                                <ul>
+                                <ul class="links">
                                     <li><a href="#" id="add_user">Add user</a></li>
                                     <li><a href="#" id="delete_user">Delete user</a></li>
                                     <li><a href="#" id="chech_user">Check user informations</a></li>
@@ -39,7 +39,7 @@ require 'header.php';?>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div class="list-group">
-                                <ul>
+                                <ul class="links">
                                     <li><a href="#" id="add_district">Add District</a></li>
                                     <li><a href="#" id="add_subdistrict">Add Subdistrict</a></li>
                                     <li><a href="#" id="add_union">Add Union</a></li>
@@ -66,9 +66,4 @@ require 'header.php';?>
 
 <?php
 require './footer.php';
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 ?>

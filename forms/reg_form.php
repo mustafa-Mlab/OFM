@@ -1,3 +1,6 @@
+<!--এই ফর্ম টা নতুন ইউজার নিবন্ধনের জন্য ,
+যখন ব্যাবহারকারীর পর্যায় নির্দিষ্ট করা হবে তখনই তার নির্দিষ্ট ঠিকানার ফর্ম চলে আসবে-->
+
 ﻿<div class="right-align">
     <h2>নিবন্ধন </h2>
 </div>
@@ -5,7 +8,7 @@
     <div class="form-group">
         <label for="lavel" class="col-sm-2 control-label">পর্যায়ঃ  </label>
         <div class="col-sm-6">
-            <select class="form-control" name="lavel" id="lavel" onchange="change_location()" >
+            <select class="form-control" name="lavel_user" id="lavel_user" " >
                 <option selected="selected" value="0">বাছাই করুন </option>
                 <option value="1">ইউনিয়ন </option>
                 <option value="2">উপজেলা </option>
@@ -67,30 +70,30 @@
     
     <div id="location"> </div>
     
-<!--    <div class="form-group">
+    <div id="district_form" class="form-group hidden">
         <label for="district" class="col-sm-2 control-label">জেলাঃ </label>
         <div class="col-sm-6">
             <input type="text" class="form-control" id="district" name="district" placeholder="District">
         </div>
     </div>
-    <div class="form-group">
+    <div id="subdistrict_form" class="form-group hidden">
         <label for="subdistrict" class="col-sm-2 control-label">উপজেলাঃ </label>
         <div class="col-sm-6">
             <input type="text" class="form-control" id="subdistrict" name="subdistrict" placeholder="Subdistrict">
         </div>
     </div>
-    <div class="form-group">
+    <div id="union_form"class="form-group hidden">
         <label for="union" class="col-sm-2 control-label">ইউনিয়নঃ </label>
         <div class="col-sm-6">
             <input type="text" class="form-control" id="union" name="union" placeholder="Union">
         </div>
     </div>
-    <div class="form-group">
+    <div id="block_form"class="form-group hidden">
         <label for="block" class="col-sm-2 control-label">ব্লকঃ </label>
         <div class="col-sm-6">
             <input type="text" class="form-control" id="block" name="block" placeholder="Block">
         </div>
-    </div>-->
+    </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-6">
             <button type="submit" class="btn btn-default" name="submit" id="submit">নিবন্ধন </button>
