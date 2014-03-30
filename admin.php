@@ -63,10 +63,6 @@ require 'header.php';?>
     </div>
 
 </div>
-<script>
-    $('.links li:nth-child(2) a')
-
-</script>
 <?php
 require './footer.php';
 ?>

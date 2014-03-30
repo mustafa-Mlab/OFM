@@ -21,25 +21,32 @@ $(function() {
 $('#add_user').click(function() {
     $('#user_view').load('forms/reg_form.php');
 });
-$('#display').click(function() {
-    $('#display').load('forms/sheet1.php');
+//to load sheets in ofm.php
+$('#sheet1').click(function() {
+    $('.user_view').load('forms/sheet1.php');
+     $('#news').addClass('hidden');
 });
-
-//to find out user location
-$('#lavel_user').on('change',function(){
-    var x = $('#lavel_user').val();
-    alert(x);
-    switch(x)
-    {
-        case 1:
-            $('#union').removeClass('hidden');
-            break;
-        case 2: break;
-        case 3: break;
-        case 4: break;
-        case 5: break;
-            
-    };
+$('#sheet2').click(function() {
+    $('.user_view').load('forms/sheet2.php');
+     $('#news').addClass('hidden');
 });
-
-//to load link
+$('#sheet3').click(function() {
+    $('.user_view').load('forms/sheet3.php');
+     $('#news').addClass('hidden');
+});
+$('#sheet4').click(function() {
+    $('.user_view').load('forms/sheet4.php');
+     $('#news').addClass('hidden');
+});
+$('#sheet5').click(function() {
+    $('.user_view').load('forms/sheet5.php');
+     $('#news').addClass('hidden');
+});
+$('#sheet6').click(function() {
+    $('.user_view').load('forms/sheet6.php');
+     $('#news').addClass('hidden');
+});
+$('#sheet7').click(function() {
+    $('.user_view').load('forms/sheet7.php');
+     $('#news').addClass('hidden');
+});
