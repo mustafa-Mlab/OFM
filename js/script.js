@@ -26,8 +26,20 @@ $('#display').click(function() {
 });
 
 //to find out user location
-
 $('#lavel_user').on('change',function(){
     var x = $('#lavel_user').val();
-    alart("something");
+    alert(x);
+    switch(x)
+    {
+        case 1:
+            $('#union').removeClass('hidden');
+            break;
+        case 2: break;
+        case 3: break;
+        case 4: break;
+        case 5: break;
+            
+    };
 });
+
+//to load link
