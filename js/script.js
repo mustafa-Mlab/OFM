@@ -18,8 +18,15 @@ $(function() {
         padding: 4});
 });
 
+//to load links form admin.php
 $('#add_user').click(function() {
     $('#user_view').load('forms/reg_form.php');
+});
+$('#add_district').click(function() {
+    $('#user_view').load('forms/add_district.php');
+});
+$('#add_subdistrict').click(function() {
+    $('#user_view').load('forms/add_subdistrict.php');
 });
 //to load sheets in ofm.php
 $('#sheet1').click(function() {

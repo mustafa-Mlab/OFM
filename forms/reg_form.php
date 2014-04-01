@@ -4,7 +4,7 @@
 ﻿<div class="right-align">
     <h2>নিবন্ধন </h2>
 </div>
-<form class="form-horizontal" role="form" action="reg_receive.php" method="post">
+<form class="form-horizontal" role="form" action="process/reg_receive.php" method="post">
     <div class="form-group">
         <label for="lavel_user" class="col-sm-4 control-label">পর্যায়ঃ  </label>
         <div class="col-sm-8">
@@ -70,17 +70,12 @@
     
     <div id="location"> </div>
     
-    <div id="district_form" class="form-group hidden">
-        <label for="district" class="col-sm-4 control-label">জেলাঃ </label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" id="district" name="district" placeholder="District">
-        </div>
+    <div id="district_form" class="hidden">
+
+        <?php require './district_selector.php'; ?>
     </div>
-    <div id="subdistrict_form" class="form-group hidden">
-        <label for="subdistrict" class="col-sm-4 control-label">উপজেলাঃ </label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" id="subdistrict" name="subdistrict" placeholder="Subdistrict">
-        </div>
+    <div id="subdistrict_form" class="hidden">
+    <?php require './subdistrict_selector.php';?>
     </div>
     <div id="union_form"class="form-group hidden">
         <label for="union" class="col-sm-4 control-label">ইউনিয়নঃ </label>
@@ -139,3 +134,27 @@
     };
 });
     </script>
+    
+<script>
+$(document).ready(function()
+{
+$("#district").change(function()
+{
+var id=$(this).val();
+var dataString = 'id='+ id;
+
+$.ajax
+({
+type: "POST",
+url: "../process/ajax_subdistrict.php",
+data: dataString,
+cache: false,
+success: function(html)
+{
+$("#subdistrict").html(html);
+} 
+});
+
+});
+});
+</script>

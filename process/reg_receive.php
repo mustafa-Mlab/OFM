@@ -11,6 +11,7 @@ $found = 0;
 			$errflag++;
 			$_SESSION['err_msg']='select lavel';
 			}
+               
 	if(!empty($_POST['full_name']))
 	{
 		$fname =$_POST['full_name']; }
@@ -67,20 +68,7 @@ $found = 0;
 	else{
 			$errflag++;
 			$_SESSION['err_msg']='Enter ans';
-			}
-        if(!empty($_POST['district'])){
-		$district = $_POST['district'];
-		}
-        if(!empty($_POST['subdistrict'])){
-		$subdistrict = $_POST['subdistrict'];
-		}
-        if(!empty($_POST['union'])){
-		$union = $_POST['union'];
-		}
-        if(!empty($_POST['block'])){
-		$block = $_POST['block'];
-		}
-        
+
 //	if(!$errflag >0)
 //	{
 //		$result = mysql_query("SELECT * FROM login");

@@ -1,7 +1,4 @@
 <?php
-session_start();
-include './config.php';
-
 require 'header.php';?>
 
 <div class="container ofwhite">

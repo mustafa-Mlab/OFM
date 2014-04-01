@@ -56,7 +56,9 @@
 
         </div>
         <div class="col-md-10" id="display">
-            <div id="news"> <?php require './newsscroll.php'; ?> </div>
+            <div id="news"> <?php require './newsscroll.php'; ?>
+             
+            </div>
             <div class="user_view"></div>
         </div>
     </div>
