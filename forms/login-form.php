@@ -1,7 +1,19 @@
 ﻿<div class="right-align">
     <h2>লগ ইন</h2>
 </div>
-<form class="form-horizontal" role="form" action="login_receive.php" method="post">
+<div class="row error">
+    <div class="col-md-12">
+        <?php
+        if (isset($_SESSION['error_msg'])) {
+            Echo"<h3>";
+            echo $_SESSION['error_msg'];
+            Echo"</h3>";
+            $_SESSION['error_msg']='';
+        }
+        ?>
+    </div>
+</div> 
+<form class="form-horizontal" role="form" action="process/login_receive.php" method="post">
     <div class="form-group">
         <label for="lavel" class="col-sm-2 control-label">পর্যায়ঃ  </label>
         <div class="col-sm-6">
@@ -24,16 +36,7 @@
     <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">পাসওয়ার্ডঃ </label>
         <div class="col-sm-6">
-            <input type="password" class="form-control" id="Pass" placeholder="Password">
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-6">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" /> মনে রাখুন
-                </label>
-            </div>
+            <input type="password" class="form-control" id="Pass" name="pass" placeholder="Password">
         </div>
     </div>
     <div class="form-group">

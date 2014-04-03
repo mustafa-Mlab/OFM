@@ -28,6 +28,14 @@ $('#add_district').click(function() {
 $('#add_subdistrict').click(function() {
     $('#user_view').load('forms/add_subdistrict.php');
 });
+$('#add_union').click(function() {
+    $('#user_view').load('forms/add_union.php');
+});
+$('#add_block').click(function() {
+    $('#user_view').load('forms/add_block.php');
+});
+
+
 //to load sheets in ofm.php
 $('#sheet1').click(function() {
     $('.user_view').load('forms/sheet1.php');

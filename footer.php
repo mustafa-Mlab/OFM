@@ -1,6 +1,6 @@
-<div class="footer clearfix ofwhite">
+<div class="footer container clearfix ofwhite">
     <div class="row">
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-4">
             @copyright MasterMind 
         </div>
         <div class="col-md-4">

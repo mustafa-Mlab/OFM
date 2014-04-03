@@ -48,7 +48,7 @@
             <input type="password" class="form-control" id="con_Pass" name="con_pass" placeholder="Confirm Password">
         </div>
     </div>
-    
+
     <div class="form-group">
         <label for="mobile_no" class="col-sm-4 control-label">মোবাইল নাম্বারঃ </label>
         <div class="col-sm-8">
@@ -67,22 +67,19 @@
             <input type="text" class="form-control" id="ans" name="ans" placeholder="Answer">
         </div>
     </div>
-    
+
     <div id="location"> </div>
-    
+
     <div id="district_form" class="hidden">
 
         <?php require './district_selector.php'; ?>
     </div>
     <div id="subdistrict_form" class="hidden">
-    <?php require './subdistrict_selector.php';?>
+        <?php require './subdistrict_selector.php'; ?>
     </div>
-    <div id="union_form"class="form-group hidden">
-        <label for="union" class="col-sm-4 control-label">ইউনিয়নঃ </label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" id="union" name="union" placeholder="Union">
+    <div id="union_form" class="hidden">
+        <?php require './union_selector.php'; ?>
         </div>
-    </div>
     <div id="block_form"class="form-group hidden">
         <label for="block" class="col-sm-4 control-label">ব্লকঃ </label>
         <div class="col-sm-8">
@@ -91,70 +88,49 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-6">
-            <button type="submit" class="btn btn-default" name="submit" id="submit">নিবন্ধন </button>
+            <button type="submit" class="btn btn-default" name="add_user" id="add_user">যোগ করুন</button>
         </div>
     </div>
 </form>
 
 <script>
-    $('#lavel_user').on('change',function(){
-    var x = $('#lavel_user').val();
-    switch(x)
-    {
-        case "1":
-            $('#union_form').removeClass('hidden');
-            $('#block_form').addClass('hidden');
-            $('#subdistrict_form').removeClass('hidden');
-            $('#district_form').removeClass('hidden');
-            break;
-        case "2": 
-            $('#union_form').addClass('hidden');
-            $('#block_form').addClass('hidden');
-            $('#subdistrict_form').removeClass('hidden');
-            $('#district_form').removeClass('hidden');
-            break;
-        case "3":
-            $('#union_form').addClass('hidden');
-            $('#block_form').addClass('hidden');
-            $('#subdistrict_form').addClass('hidden');
-            $('#district_form').removeClass('hidden');
-            break;
-        case "4": 
-            $('#union_form').addClass('hidden');
-            $('#block_form').addClass('hidden');
-            $('#subdistrict_form').addClass('hidden');
-            $('#district_form').removeClass('hidden');
-            break;
-        default :
-            $('#union_form').addClass('hidden');
-            $('#block_form').addClass('hidden');
-            $('#subdistrict_form').addClass('hidden');
-            $('#district_form').addClass('hidden');
-            break;
-    };
-});
-    </script>
-    
-<script>
-$(document).ready(function()
-{
-$("#district").change(function()
-{
-var id=$(this).val();
-var dataString = 'id='+ id;
-
-$.ajax
-({
-type: "POST",
-url: "../process/ajax_subdistrict.php",
-data: dataString,
-cache: false,
-success: function(html)
-{
-$("#subdistrict").html(html);
-} 
-});
-
-});
-});
+    $('#lavel_user').on('change', function() {
+        var x = $('#lavel_user').val();
+        switch (x)
+        {
+            case "1":
+                $('#union_form').removeClass('hidden');
+                $('#block_form').addClass('hidden');
+                $('#subdistrict_form').removeClass('hidden');
+                $('#district_form').removeClass('hidden');
+                break;
+            case "2":
+                $('#union_form').addClass('hidden');
+                $('#block_form').addClass('hidden');
+                $('#subdistrict_form').removeClass('hidden');
+                $('#district_form').removeClass('hidden');
+                break;
+            case "3":
+                $('#union_form').addClass('hidden');
+                $('#block_form').addClass('hidden');
+                $('#subdistrict_form').addClass('hidden');
+                $('#district_form').removeClass('hidden');
+                break;
+            case "4":
+                $('#union_form').addClass('hidden');
+                $('#block_form').addClass('hidden');
+                $('#subdistrict_form').addClass('hidden');
+                $('#district_form').removeClass('hidden');
+                break;
+            default :
+                $('#union_form').addClass('hidden');
+                $('#block_form').addClass('hidden');
+                $('#subdistrict_form').addClass('hidden');
+                $('#district_form').addClass('hidden');
+                break;
+        }
+        ;
+    });
 </script>
+
+

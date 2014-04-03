@@ -2,16 +2,16 @@
 include '../config.php';
 ?>
 <div class="form-group">
-        <label for="subdistrict" class="col-sm-4 control-label">উপজেলাঃ  </label>
+        <label for="union" class="col-sm-4 control-label">ইউনিয়নঃ  </label>
         <div class="col-sm-8">
-            <select class="form-control" name="subdistrict" id="subdistrict" >
+            <select class="form-control" name="union" id="union" >
                 <option selected="selected">বাছাই করুন </option>
             </select>
         </div>
     </div>
 
 <script>
-    $("#district").change(function()
+    $("#subdistrict").change(function()
     {
         var id = $(this).val();
         var dataString = 'id=' + id;
@@ -19,12 +19,12 @@ include '../config.php';
         $.ajax
                 ({
                     type: "POST",
-                    url: "ajax_subdistrict.php",
+                    url: "ajax_union.php",
                     data: dataString,
                     cache: false,
                     success: function(html)
                     {
-                        $("#subdistrict").html(html);
+                        $("#union").html(html);
                     }
                 });
     });

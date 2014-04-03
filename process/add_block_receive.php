@@ -1,13 +1,13 @@
 <?php
 
 session_start();
-include('../config.php');
+include '../config.php';
 $errflag = 0;
 $found = 0;
 
-if (isset($_POST['add_subdistrict'])) {
-    if (isset($_POST['district']) && !empty($_POST['district'])) {
-        $district = $_POST['district'];
+if (isset($_POST['add_block'])) {
+    if (isset($_POST['union']) && !empty($_POST['union'])) {
+        $union = $_POST['union'];
     } else {
         $errflag++;
     }
@@ -19,9 +19,9 @@ if (isset($_POST['add_subdistrict'])) {
 }
 
 if ($errflag == 0) {
-    $result = mysql_query("SELECT * FROM subdistrict");
+    $result = mysql_query("SELECT * FROM `block`");
     while ($row = mysql_fetch_array($result)) {
-        if ((strcmp($name, $row['name']) == 0) && $district == $row['dist_id']) {
+        if ((strcmp($name, $row['name']) == 0 ) && $union == $row['union_id']) {
             $found++;
             break;
         }
@@ -29,7 +29,7 @@ if ($errflag == 0) {
     if ($found)
         echo 'yes';
     else {
-        $sql = "INSERT INTO subdistrict (name , dist_id) VALUES ('$name','$district' )";
+        $sql = "INSERT INTO `ofm`.`block` (`name`, `union_id`) VALUES ('$name','$union' )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
         }
