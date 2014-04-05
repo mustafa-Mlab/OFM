@@ -1,3 +1,6 @@
+<?php
+if(!isset($_SESSION['id']))    header("locaton:../index.php");
+?>
 <div class="row">
     <div class="col-md-12">
         <div class="center-align">

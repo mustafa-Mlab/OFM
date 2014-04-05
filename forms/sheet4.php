@@ -1,3 +1,10 @@
+<?php
+if((!isset($_SESSION['id'])))    header("locaton:../index.php");
+else{
+    require '../right_control.php';
+    if($lavel<2) header("location:../index.php");
+}
+?>
 <div class="row">
     <div class="col-md-12">
         <div class="center-align">

@@ -35,6 +35,14 @@
             </select>
         </div>
     </div>
+    <div class="form-group">
+        <label for="block" class="col-sm-4 control-label">block :  </label>
+        <div class="col-sm-8">
+            <select class="form-control" name="block" id="block" >
+                <option selected="selected">বাছাই করুন </option>
+            </select>
+        </div>
+    </div>
 </div>
 
 
@@ -73,6 +81,26 @@
                     success: function(html)
                     {
                         $("#union").html(html);
+                    }
+                });
+    });
+</script>
+
+<script>
+    $("#union").change(function()
+    {
+        var id = $(this).val();
+        var dataString = 'id=' + id;
+
+        $.ajax
+                ({
+                    type: "POST",
+                    url: "ajax_block.php",
+                    data: dataString,
+                    cache: false,
+                    success: function(html)
+                    {
+                        $("#block").html(html);
                     }
                 });
     });

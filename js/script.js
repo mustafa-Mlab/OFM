@@ -38,7 +38,7 @@ $('#add_block').click(function() {
 
 //to load sheets in ofm.php
 $('#sheet1').click(function() {
-    $('.user_view').load('forms/sheet1.php');
+    $('.user_view').load('forms/sheet1_loc_selector.php');
      $('#news').addClass('hidden');
 });
 $('#sheet2').click(function() {

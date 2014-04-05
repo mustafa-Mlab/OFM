@@ -80,7 +80,7 @@ if($errflag == 0)
         echo "yes";
     }
     else {
-            date_default_timezone_set('Africa/Nairobi');
+            date_default_timezone_set('Asia/Dhaka');
             $date = date('Y-m-d');
 
         $sql = "INSERT INTO `ofm`.`user` (`reg_date`, `mob`, `full_name`, `adress`, `username`, `pass`, `sec_ques`, `ans`, `right_lavel`, `district`, `subdistrict`, `union_loc`) "

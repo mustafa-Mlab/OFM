@@ -1,3 +1,7 @@
+<?php
+if (!isset($_SESSION['id']))
+    header("locaton:../index.php");
+?>
 <div class="row">
     <div class="col-md-12">
         <div class="center-align">
@@ -87,6 +91,16 @@
                 <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="district" class="col-sm-4 control-label">জেলা  </label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="district" id="district">
+                        <?php 
+                            Echo" <option selected='selected' value='" . $dist_id . "'>" . $district . " </option>"; 
+                            ?>
+                    </select>
                 </div>
             </div>
             <div class="form-group">

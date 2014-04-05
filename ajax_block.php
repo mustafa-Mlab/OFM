@@ -1,11 +1,12 @@
 <?php
-require './config.php';
+include './config.php';
 if ($_POST['id']) {
-    $dist_id = $_POST['id'];
-    $sql = mysql_query("select * from subdistrict");
+    $union_id = $_POST['id'];
+//    echo $subdist_id;
+    $sql = mysql_query("SELECT * FROM `block`");
 
     while ($row = mysql_fetch_array($sql)) {
-        if ($dist_id ==$row['dist_id']) {
+        if ($union_id ==$row['union_id']) {
             $id = $row['id'];
             $name = $row['name'];
             echo '<option value="' . $id . '">' . $name . '</option>';

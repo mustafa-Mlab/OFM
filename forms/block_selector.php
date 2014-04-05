@@ -2,29 +2,28 @@
 include '../config.php';
 ?>
 <div class="form-group">
-    <label for="union" class="col-sm-4 control-label">ইউনিয়নঃ  </label>
+    <label for="block" class="col-sm-4 control-label">ব্লকঃ  </label>
     <div class="col-sm-8">
-        <select class="form-control" name="union" id="union" >
+        <select class="form-control" name="block" id="block" >
             <option selected="selected">বাছাই করুন </option>
         </select>
     </div>
 </div>
 
 <script>
-    $("#subdistrict").change(function()
+    $("#union").change(function()
     {
         var id = $(this).val();
         var dataString = 'id=' + id;
-
         $.ajax
                 ({
                     type: "POST",
-                    url: "ajax_union.php",
+                    url: "ajax_block.php",
                     data: dataString,
                     cache: false,
                     success: function(html)
                     {
-                        $("#union").html(html);
+                        $("#block").html(html);
                     }
                 });
     });
