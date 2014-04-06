@@ -3,6 +3,7 @@ include '../config.php';
 echo 'block';
 if ($_POST['id']) {
     $union_id = $_POST['id'];
+     echo '<option value=0 > বাছাই করুন </option>';
     $sql = mysql_query("SELECT * FROM `block`");
     while ($row = mysql_fetch_array($sql)) {
         if ($union_id ==$row['union_id']) {

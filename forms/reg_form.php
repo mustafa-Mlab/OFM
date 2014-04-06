@@ -1,6 +1,9 @@
 <!--এই ফর্ম টা নতুন ইউজার নিবন্ধনের জন্য ,
 যখন ব্যাবহারকারীর পর্যায় নির্দিষ্ট করা হবে তখনই তার নির্দিষ্ট ঠিকানার ফর্ম চলে আসবে-->
-
+<?php
+  $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+  echo "<a class='button' href='$url'>Back</a>"; 
+?>
 ﻿<div class="right-align">
     <h2>নিবন্ধন </h2>
 </div>

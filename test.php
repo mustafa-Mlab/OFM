@@ -1,3 +1,4 @@
+
 <?php require './header.php'; ?>
 <div class="container ofwhite">
     <div class="form-group">
@@ -43,6 +44,17 @@
             </select>
         </div>
     </div>
+</div>
+
+<div class="ofwhite container">
+    <form>
+        <fieldset>
+            <legend align="right">Personalia:</legend>
+            Name: <input type="text" size="30"><br>
+            Email: <input type="text" size="30"><br>
+            Date of birth: <input type="text" size="10">
+        </fieldset>
+    </form> 
 </div>
 
 

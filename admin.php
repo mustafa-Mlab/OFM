@@ -1,65 +1,48 @@
 <?php
-require 'header.php';?>
-
+include './config.php';
+?>
+<?php require './header.php'; ?>
+<?php 
+    if(isset($_SESSION['admin']))
+        header("location:administration.php");
+?>
 <div class="container ofwhite">
     <div class="row">
-        <div class="col-md-4">
-            <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                User
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            <div class="list-group">
-                                <ul class="links">
-                                    <li><a href="#" id="add_user">Add user</a></li>
-                                    <li><a href="#" id="delete_user">Delete user</a></li>
-                                    <li><a href="#" id="chech_user">Check user informations</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                Area
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <div class="list-group">
-                                <ul class="links">
-                                    <li><a href="#" id="add_district">Add District</a></li>
-                                    <li><a href="#" id="add_subdistrict">Add Subdistrict</a></li>
-                                    <li><a href="#" id="add_union">Add Union</a></li>
-                                    <li><a href="#" id="add_block">Add Block</a></li>
-                                    <li><a href="#" id="delete_district">Delete District</a></li>
-                                    <li><a href="#" id="delete_subdistrict">Delete Subdistrict</a></li>
-                                    <li><a href="#" id="delete_union">Delete Union</a></li>
-                                    <li><a href="#" id="delete_block">Delete Block</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="logout.php"> Logout </a>
-            </div>
-
-        </div>
-        <div class="col-md-8">
-            <div class="user_view" id='user_view'></div>
+        <div class="col-md-6 col-md-offset-2">
+            <?php
+                if(isset($_SESSION['error_msg']))
+                {
+                    Echo"<h4>".$_SESSION['error_msg']."</h4>";
+                    $_SESSION['error_msg']='';
+                }
+            ?>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            ﻿<div class="center-align">
+                <h2>লগ ইন করুনঃ</h2>
+            </div>
+            <form class="form-horizontal" role="form" action="process/admin_login_receive.php" method="post">
+                <div class="form-group">
+                    <label for="useername" class="col-sm-4 control-label">ইউজার আইডিঃ </label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pass" class="col-sm-4 control-label">পাসওয়ার্ডঃ </label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group center-align">
+                    <div class="col-sm-offset-4 col-sm-4">
+                        <button type="submit" class="btn btn-default" name="submit" id="submit">Sing in</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
-<?php
-require './footer.php';
-?>
+<?php require './footer.php'; ?>

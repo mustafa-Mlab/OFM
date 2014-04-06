@@ -48,10 +48,10 @@ if ($errflag == 0) {
     }
     if ($found == 1) {
         $_SESSION['id'] = $id;
-        header("location:../ofm.php");
+        header("location:../home.php");
         exit();
     }
 }
 echo 'failed   ' . $_SESSION['error_msg'];
-//header("location:../index.php");
+header("location:../index.php");
 ?>
