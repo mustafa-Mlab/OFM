@@ -22,6 +22,9 @@ $(function() {
 $('#add_user').click(function() {
     $('#user_view').load('forms/reg_form.php');
 });
+$('#check_user').click(function() {
+    $('#user_view').load('process/check_user.php');
+});
 $('#add_district').click(function() {
     $('#user_view').load('forms/add_district.php');
 });
@@ -33,6 +36,12 @@ $('#add_union').click(function() {
 });
 $('#add_block').click(function() {
     $('#user_view').load('forms/add_block.php');
+});
+$('#add_ecoyear').click(function() {
+    $('#user_view').load('forms/add_ecoyear.php');
+});
+$('#add_notice').click(function() {
+    $('#user_view').load('forms/add_notice.php');
 });
 
 

@@ -1,11 +1,20 @@
 <!--এই ফর্ম টা নতুন ইউজার নিবন্ধনের জন্য ,
 যখন ব্যাবহারকারীর পর্যায় নির্দিষ্ট করা হবে তখনই তার নির্দিষ্ট ঠিকানার ফর্ম চলে আসবে-->
-<?php
+    <?php
   $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
   echo "<a class='button' href='$url'>Back</a>"; 
 ?>
 ﻿<div class="right-align">
     <h2>নিবন্ধন </h2>
+</div>
+<div>
+    <?php 
+        if(isset($_SESSION['error_msg']))
+        {
+            echo $_SESSION['error_msg'];
+            $_SESSION['error_msg'] ='';
+        }
+    ?>
 </div>
 <form class="form-horizontal" role="form" action="process/reg_receive.php" method="post">
     <div class="form-group">
@@ -16,8 +25,7 @@
                 <option value="1">ইউনিয়ন </option>
                 <option value="2">উপজেলা </option>
                 <option value="3">জেলা</option>
-                <option value="4">ডিসি </option>
-                <option value="5">মন্ত্রণালয় </option>
+                <option value="4">মন্ত্রণালয় </option>
             </select>
         </div>
     </div>
@@ -114,12 +122,6 @@
                 $('#district_form').removeClass('hidden');
                 break;
             case "3":
-                $('#union_form').addClass('hidden');
-                $('#block_form').addClass('hidden');
-                $('#subdistrict_form').addClass('hidden');
-                $('#district_form').removeClass('hidden');
-                break;
-            case "4":
                 $('#union_form').addClass('hidden');
                 $('#block_form').addClass('hidden');
                 $('#subdistrict_form').addClass('hidden');

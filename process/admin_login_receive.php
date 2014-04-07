@@ -40,6 +40,7 @@ if ($errflag == 0) {
         $_SESSION['error_msg'] = $_SESSION['error_msg'] . "Incorrect Id Password Combination";
     }
     if ($found == 1) {
+        echo $_SESSION['admin'];
         header("location:../administration.php");
     }
     else {

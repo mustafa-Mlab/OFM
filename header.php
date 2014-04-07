@@ -9,7 +9,7 @@ include './config.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>OFM System </title>
         <link rel="shortcut icon" href="favicon.ico">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>-->
         <link href="css/bootstrap.css" rel="stylesheet" media="screen">
         <link href="css/custom.css" rel="stylesheet" media="screen">
     </head>

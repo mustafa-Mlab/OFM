@@ -2,7 +2,8 @@
 include '../config.php';
 if ($_POST['id']) {
     $dist_id = $_POST['id'];
-    echo '<option value=0 > বাছাই করুন </option>';
+    $note = "বাছাই করুন";
+    echo '<option selected="selected" >'.$note.'  </option>';
     $sql = mysql_query("select * from subdistrict");
 
     while ($row = mysql_fetch_array($sql)) {

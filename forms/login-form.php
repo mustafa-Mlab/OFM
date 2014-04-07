@@ -46,11 +46,6 @@
                     <button type="submit" class="btn btn-default" name="login" id="login">লগ ইন করুন</button>
                 </div>
             </div>
-            <div class="form-group">
-                <div class=" col-sm-4">
-                    <button type="reset" class="btn btn-default" name="reset" id="reset">রিসেট</button>
-                </div>
-            </div>
         </div>
     </form>
     </div>
