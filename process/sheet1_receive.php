@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Enter gurdian name ";
     }
     if (!empty($_POST['ammount'])) {
-        $ammount = $_POST['ammount'];
+        $land_ammount = $_POST['ammount'];
     } else {
         $errflag++;
         $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Enter ammount of land ";
@@ -59,10 +59,36 @@ if (isset($_POST['submit'])) {
         $amm3 = $_POST['amm3'];
     } else {
         $errflag++;
-        $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Enter ammount of khorip cultivating land  ";
+        $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Enter ammount of khorip cutivating land ";
     }
+    if (!empty($_POST['aez'])) {
+        $aez = $_POST['aez'];
+    } else {
+        $errflag++;
+        $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Enter AEZ Numbers  ";
+    }
+    $dist_id = $_POST['district'];
+    $subdist_id = $_POST['subdistrict'];
+    $union_id = $_POST['union'];
+    $block_id = $_POST['block'];
+    $ecoyear_id = $_POST['ecoyear'];
 } else {
     $errflag++;
     $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Techinical problem";
 }
+?>
+
+<?php
+
+if ($errflag == 0) {
+    date_default_timezone_set('Asia/Dhaka');
+    $date = date('Y-m-d');
+    $sql = "INSERT INTO `ofm`.`sheet1` (`ecoyear`, `submitting_time`, `district`, `subdistrict`, `union_id`, `block`, `aez`, `name`, `g_name`, `land_ammount`, `crop1`, `ammount1`, `crop2`, `ammount2`, `crop3`, `ammount3`) "
+            . "                       VALUES ('$ecoyear_id' , '$date' ,       '$dist_id' , '$subdist_id' , '$union_id' , '$block_id' , '$aez' , '$name' , '$g_name ', '$land_ammount' , '$crop1' , '$amm1', '$crop2' , '$amm2', '$crop3' , '$amm3')";
+    if (!mysql_query($sql, $Link)) {
+        die('Error: ' . mysql_error());
+    }
+    echo "1 record added \n";
+}
+header("location:../sheet1.php");
 ?>

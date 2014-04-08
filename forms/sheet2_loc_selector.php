@@ -36,7 +36,7 @@ if (isset($_SESSION['id'])) {
 }
 ?>
 <div class="row">
-    <form class="form-horizontal" role="form" action="process/sheet1_loc_receive.php" method="post">
+    <form class="form-horizontal" role="form" action="process/sheet2_loc_receive.php" method="post">
         <!--1st collum--> 
         <div class="col-md-8">
             <div class="row">

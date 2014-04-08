@@ -43,15 +43,18 @@ $('#add_ecoyear').click(function() {
 $('#add_notice').click(function() {
     $('#user_view').load('forms/add_notice.php');
 });
+$('#add_crop').click(function() {
+    $('#user_view').load('forms/add_crop.php');
+});
 
 
-//to load sheets in ofm.php
+//to load sheets in =home.php
 $('#sheet1').click(function() {
     $('.user_view').load('forms/sheet1_loc_selector.php');
      $('#news').addClass('hidden');
 });
 $('#sheet2').click(function() {
-    $('.user_view').load('forms/sheet2.php');
+    $('.user_view').load('forms/sheet2_loc_selector.php');
      $('#news').addClass('hidden');
 });
 $('#sheet3').click(function() {

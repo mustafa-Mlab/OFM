@@ -33,8 +33,8 @@ if (isset($_POST['submit'])) {
 
 if ($errflag == 0) {
     echo 'hello';
-    header("location:../sheet1.php");
+    header("location:../sheet2.php");
     exit();
 }
-header("location:../home.php#sheet1");
+header("location:../home.php#sheet2");
 ?>

@@ -1,19 +1,18 @@
 <!--এই ফর্ম টা নতুন ইউজার নিবন্ধনের জন্য ,
 যখন ব্যাবহারকারীর পর্যায় নির্দিষ্ট করা হবে তখনই তার নির্দিষ্ট ঠিকানার ফর্ম চলে আসবে-->
-    <?php
-  $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-  echo "<a class='button' href='$url'>Back</a>"; 
+<?php
+$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+echo "<a class='button' href='$url'>Back</a>";
 ?>
 ﻿<div class="right-align">
     <h2>নিবন্ধন </h2>
 </div>
 <div>
-    <?php 
-        if(isset($_SESSION['error_msg']))
-        {
-            echo $_SESSION['error_msg'];
-            $_SESSION['error_msg'] ='';
-        }
+    <?php
+    if (isset($_SESSION['error_msg'])) {
+        echo $_SESSION['error_msg'];
+        $_SESSION['error_msg'] = '';
+    }
     ?>
 </div>
 <form class="form-horizontal" role="form" action="process/reg_receive.php" method="post">
@@ -90,7 +89,7 @@
     </div>
     <div id="union_form" class="hidden">
         <?php require './union_selector.php'; ?>
-        </div>
+    </div>
     <div id="block_form"class="form-group hidden">
         <label for="block" class="col-sm-4 control-label">ব্লকঃ </label>
         <div class="col-sm-8">

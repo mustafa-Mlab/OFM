@@ -50,7 +50,7 @@ if (isset($_SESSION['id'])) {
 
 
 <div class="row">
-    <form class="form-horizontal" role="form" action="sheet1_receive.php" method="post">
+    <form class="form-horizontal" role="form" action="process/sheet1_receive.php" method="post">
         <!--1st collum--> 
         <div class="col-md-8">
             <div class="row">
@@ -58,21 +58,21 @@ if (isset($_SESSION['id'])) {
                     <div class="form-group">
                         <label for="name" class="col-sm-4 control-label">কৃষক/ কৃষাণীর নামঃ  </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="কৃষক/ কৃষাণীর নাম">
+                            <input type="text" required class="form-control" id="name" name="name" placeholder="কৃষক/ কৃষাণীর নাম">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="g_name" class="col-sm-4 control-label">পিতা / স্বামীর নামঃ  </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="g_name" name="g_name" placeholder="পিতা / স্বামীর নাম">
+                            <input type="text" required class="form-control" id="g_name" name="g_name" placeholder="পিতা / স্বামীর নাম">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="ammount" class="col-sm-4 control-label">নীট আবাদি জমির পরিমানঃ  </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="ammount" name="ammount" placeholder="নীট আবাদি জমির পরিমান">
+                            <input type="text"required class="form-control" id="ammount" name="ammount" placeholder="নীট আবাদি জমির পরিমান">
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,16 @@ if (isset($_SESSION['id'])) {
                             <div class="form-group">
                                 <label for="crop1" class="col-sm-4 control-label">ফসলঃ  </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="crop1" name="crop1" placeholder="ফসল">
+                                    <select class="form-control" name="crop1" id="crop1" >
+
+                                        <?php
+                                        Echo"<option selected='selected' '>বাছাই করুন </option>";
+                                        $result = mysql_query("SELECT * FROM crop");
+                                        while ($row = mysql_fetch_array($result)) {
+                                            echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +112,7 @@ if (isset($_SESSION['id'])) {
                             <div class="form-group">
                                 <label for="amm1" class="col-sm-4 control-label">পরিমানঃ  </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="amm1" name="amm1" placeholder="পরিমান">
+                                    <input type="text" required class="form-control" id="amm1" name="amm1" placeholder="পরিমান">
                                 </div>
                             </div>
                         </div>
@@ -117,7 +126,16 @@ if (isset($_SESSION['id'])) {
                             <div class="form-group">
                                 <label for="crop2" class="col-sm-4 control-label">ফসলঃ  </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="crop2" name="crop2" placeholder="ফসল">
+                                    <select class="form-control" name="crop2" id="crop2" >
+
+                                        <?php
+                                        Echo"<option selected='selected' '>বাছাই করুন </option>";
+                                        $result = mysql_query("SELECT * FROM crop");
+                                        while ($row = mysql_fetch_array($result)) {
+                                            echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +143,7 @@ if (isset($_SESSION['id'])) {
                             <div class="form-group">
                                 <label for="amm2" class="col-sm-4 control-label">পরিমানঃ  </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="amm2" name="amm2" placeholder="পরিমান">
+                                    <input type="text" required class="form-control" id="amm2" name="amm2" placeholder="পরিমান">
                                 </div>
                             </div>
                         </div>
@@ -139,7 +157,16 @@ if (isset($_SESSION['id'])) {
                             <div class="form-group">
                                 <label for="crop3" class="col-sm-4 control-label">ফসলঃ  </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="crop3" name="crop3" placeholder="ফসল">
+                                    <select class="form-control" name="crop3" id="crop3" >
+
+                                        <?php
+                                        Echo"<option selected='selected' '>বাছাই করুন </option>";
+                                        $result = mysql_query("SELECT * FROM crop");
+                                        while ($row = mysql_fetch_array($result)) {
+                                            echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +174,7 @@ if (isset($_SESSION['id'])) {
                             <div class="form-group">
                                 <label for="amm3" class="col-sm-4 control-label">পরিমানঃ  </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="amm3" name="amm3" placeholder="পরিমান">
+                                    <input type="text" required class="form-control" id="amm3" name="amm3" placeholder="পরিমান">
                                 </div>
                             </div>
                         </div>
@@ -161,7 +188,7 @@ if (isset($_SESSION['id'])) {
             <div class="form-group">
                 <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
+                    <input type="text" required class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
                 </div>
             </div>
             <div class="form-group">
@@ -176,9 +203,50 @@ if (isset($_SESSION['id'])) {
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-6">
-                    <button type="submit" class="btn btn-default" name="submit" id="submit">Submit </button>
+                <label for="district" class="col-sm-4 control-label">উপজেলাঃ  </label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="subdistrict" id="subdistrict" >
+
+                        <?php
+                        Echo"<option selected='selected' value='" . $subdist_id . "'>" . $subdistrict . " </option>";
+                        ?>
+                    </select>
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="union" class="col-sm-4 control-label">ইউনিয়নঃ  </label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="union" id="union" >
+                        <?php
+                        Echo"<option selected='selected' value='" . $union_id . "'>" . $union . " </option>";
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="block" class="col-sm-4 control-label">ব্লকঃ  </label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="block" id="block" >
+                        <?php
+                        Echo"<option selected='selected' value='" . $_SESSION['block_id'] . "'>" . $_SESSION['block'] . " </option>";
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ecoyear" class="col-sm-4 control-label">অর্থবছরঃ  </label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="ecoyear" id="ecoyear" >
+                        <?php
+                        Echo"<option selected='selected' value='" . $_SESSION['ecoyear_id'] . "'>" . $_SESSION['ecoyear'] . " </option>";
+                        ?>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12 right-align ">
+                <button type="submit" class="button btn btn-default" name="submit" id="submit">Submit </button>
             </div>
         </div>
     </form>

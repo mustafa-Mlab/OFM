@@ -2,8 +2,6 @@
 
 session_start();
 include '../config.php';
-$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-
 $errflag = 0;
 $found = 0;
 $district = -1;
@@ -95,5 +93,5 @@ if ($errflag == 0) {
     echo "errflag  " . $errflag;
     
 }
-header("location:" . $url);
+header("location:../administrator.php#add_user" );
 ?>

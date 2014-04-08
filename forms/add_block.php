@@ -1,5 +1,5 @@
 ﻿<div class="right-align">
-    <h2>ইউনিয়ন  নিবন্ধন করুনঃ</h2>
+    <h2>ব্লক  নিবন্ধন করুনঃ</h2>
 </div>
 <form class="form-horizontal" role="form" action="process/add_block_receive.php" method="post">
     <?php require './district_selector.php';?>
@@ -12,8 +12,8 @@
         </div>
     </div>
     <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-6">
-            <button type="submit" class="btn btn-default" name="add_block" id="add_block">যোগ করুন</button>
+        <div class="col-sm-12 right-align ">
+            <button type="submit" class="btn btn-defaul" name="add_block" id="add_block">যোগ করুন</button>
         </div>
     </div>
 </form>

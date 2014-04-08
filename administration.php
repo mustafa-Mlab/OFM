@@ -72,12 +72,14 @@ if (isset($_SESSION['admin'])) {
                                 <ul class="links">
                                     <li><a href="#add_ecoyear" id="add_ecoyear">Add Economical year</a></li>
                                     <li><a href="#add_notice" id="add_notice">Add Notice</a></li>
+                                    <li><a href="#add_crop" id="add_crop">Add Crop</a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a href="logout.php"> Logout </a>
+                <a class="button" href="logout.php"> Logout </a>
             </div>
 
         </div>

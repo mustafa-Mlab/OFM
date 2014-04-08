@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="logout.php"> Logout </a>
+                <a class="button" href="logout.php"> Logout </a>
             </div>
 
         </div>
