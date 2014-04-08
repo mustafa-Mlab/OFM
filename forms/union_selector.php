@@ -19,7 +19,7 @@ include '../config.php';
         $.ajax
                 ({
                     type: "POST",
-                    url: "ajax_union.php",
+                    url: "forms/ajax_union.php",
                     data: dataString,
                     cache: false,
                     success: function(html)

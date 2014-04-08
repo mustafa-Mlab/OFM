@@ -19,7 +19,7 @@ include '../config.php';
         $.ajax
                 ({
                     type: "POST",
-                    url: "ajax_subdistrict.php",
+                    url: "forms/ajax_subdistrict.php",
                     data: dataString,
                     cache: false,
                     success: function(html)

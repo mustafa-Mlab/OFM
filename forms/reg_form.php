@@ -32,7 +32,7 @@
     <div class="form-group">
         <label for="full_name" class="col-sm-4 control-label">পূর্ণ নাম </label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="full_name" name="full_name" placeholder="full_name">
+            <input type="text" required class="form-control" id="full_name" name="full_name" placeholder="full_name">
         </div>
     </div>
     <div class="form-group">

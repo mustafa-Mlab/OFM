@@ -42,5 +42,5 @@ if ($errflag == 0) {
     header("location:../sheet1.php");
     exit();
 }
-header("location:../home.php");
+header("location:../home.php#sheet1");
 ?>

@@ -18,7 +18,7 @@ include '../config.php';
         $.ajax
                 ({
                     type: "POST",
-                    url: "ajax_block.php",
+                    url: "forms/ajax_block.php",
                     data: dataString,
                     cache: false,
                     success: function(html)

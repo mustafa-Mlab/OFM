@@ -74,3 +74,11 @@ $('#sheet7').click(function() {
     $('.user_view').load('forms/sheet7.php');
      $('#news').addClass('hidden');
 });
+
+
+window.onload = function() {
+    if(window.location.hash) {
+        var path = window.location.hash;
+        $(path).trigger('click');
+    }
+};

@@ -3,15 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/UwAmp/www/OFM/home.php</file>
             <file>file:/C:/UwAmp/www/OFM/forms/reg_form.php</file>
+            <file>file:/C:/UwAmp/www/OFM/css/custom.css</file>
             <file>file:/C:/UwAmp/www/OFM/js/script.js</file>
-            <file>file:/C:/UwAmp/www/OFM/process/login_receive.php</file>
-            <file>file:/C:/UwAmp/www/OFM/process/check_user.php</file>
-            <file>file:/C:/UwAmp/www/OFM/process/reg_receive.php</file>
+            <file>file:/C:/UwAmp/www/OFM/process/sheet1_loc_receive.php</file>
             <file>file:/C:/UwAmp/www/OFM/administration.php</file>
-            <file>file:/C:/UwAmp/www/OFM/process/add_ecoyear_receive.php</file>
-            <file>file:/C:/UwAmp/www/OFM/report/index.php</file>
-            <file>file:/C:/UwAmp/www/OFM/forms/add_ecoyear.php</file>
         </group>
     </open-files>
 </project-private>
