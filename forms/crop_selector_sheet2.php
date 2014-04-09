@@ -19,7 +19,7 @@ include 'config.php';
         $.ajax
                 ({
                     type: "POST",
-                    url: "forms/ajax_crop.php",
+                    url: "forms/ajax_crop_sheet2.php",
                     data: dataString,
                     cache: false,
                     success: function(html)

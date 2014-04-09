@@ -12,24 +12,14 @@ if(!isset($_SESSION['id']))    header("locaton:../index.php");
 
 
 <div class="row">
-    <form class="form-horizontal" role="form" action="sheet1_receive.php" method="post">
+    <form class="form-horizontal" role="form" action="process/sheet3_receive.php" method="post">
         <!--1st collum--> 
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="season" class="col-sm-4 control-label">মৌসুমের নামঃ  </label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="season" name="season" placeholder="মৌসুমের নাম">
-                        </div>
-                    </div>
+                    <?php require 'forms/season_selector.php'; ?>
 
-                    <div class="form-group">
-                        <label for="crop" class="col-sm-4 control-label">ফসলের নামঃ  </label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="crop" name="crop" placeholder="ফসলের নাম">
-                        </div>
-                    </div>
+                     <?php require 'forms/crop_selector_sheet2.php'; ?>
 
                     <div class="form-group">
                         <label for="numbers" class="col-sm-4 control-label">মোট কৃষকের সংখ্যাঃ </label>
@@ -131,14 +121,103 @@ if(!isset($_SESSION['id']))    header("locaton:../index.php");
             <div class="form-group">
                 <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
+                    <input type="text" required class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-6">
-                    <button type="submit" class="btn btn-default" name="submit" id="submit">Submit </button>
+                <label for="district" class="col-sm-4 control-label">জেলা  </label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="district" id="district">
+                        <?php
+                        echo $dist_id;
+                        Echo" <option selected='selected' value='" . $dist_id . "'>" . $district . " </option>";
+                        ?>
+                    </select>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="district" class="col-sm-4 control-label">উপজেলাঃ  </label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="subdistrict" id="subdistrict" >
+
+                        <?php
+                        Echo"<option selected='selected' value='" . $subdist_id . "'>" . $subdistrict . " </option>";
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="union" class="col-sm-4 control-label">ইউনিয়নঃ  </label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="union" id="union" >
+                        <?php
+                        Echo"<option selected='selected' value='" . $union_id . "'>" . $union . " </option>";
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ecoyear" class="col-sm-4 control-label">অর্থবছরঃ  </label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="ecoyear" id="ecoyear" >
+                        <?php
+                        Echo"<option selected='selected' value='" . $_SESSION['ecoyear_id'] . "'>" . $_SESSION['ecoyear'] . " </option>";
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+            <div class="col-md-12 right-align ">
+                <button type="submit" class="button btn btn-default" name="submit" id="submit">Submit </button>
+            </div>
+        </div>
         </div>
     </form>
 </div>
+
+<script>
+    $("#crop").change(function()
+    {
+        var id = $(this).val();
+        var season = document.getElementById("season");
+        var season_id = season.options[season.selectedIndex].value;
+        var dataString = 'id=' + id +'&season='+ season_id;
+        $.ajax
+                ({
+                    type: "POST",
+                    url: "forms/ajax_sheet3.php",
+                    data: dataString,
+                    cache: false,
+                    success: function(html)
+                    {
+//                        alert(html);
+                        var res = html.split(",");
+//                        res[0] is farmers number ,res[1] is land ammount and so on;
+                        var farmers = document.getElementById("numbers");
+                        farmers.value = res[0];
+                        var land = document.getElementById("land");
+                        land.value = res[1];
+                        var uria = document.getElementById("uria");
+                        uria.value = res[2];
+                        var tsp = document.getElementById("tsp");
+                        tsp.value = res[3];
+                        var dmp = document.getElementById("dmp");
+                        dmp.value = res[4];
+                        var mop = document.getElementById("mop");
+                        mop.value = res[5];
+                        var mpks = document.getElementById("mpks");
+                        mpks.value = res[6];
+                        var jipsam = document.getElementById("jipsam");
+                        jipsam.value = res[7];
+                        var zinc = document.getElementById("zinc_salfet");
+                        zinc.value = res[8];
+                        var mg = document.getElementById("magnesium_salfet");
+                        mg.value = res[9];
+                        var al = document.getElementById("aluminum_salfet");
+                        al.value = res[10];
+                        var boron = document.getElementById("boron");
+                        boron.value = res[11];
+                    }
+                });
+    });
+</script>

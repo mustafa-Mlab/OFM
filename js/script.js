@@ -47,8 +47,24 @@ $('#add_crop').click(function() {
     $('#user_view').load('forms/add_crop.php');
 });
 
-
-//to load sheets in =home.php
+//to load sheets in =home.php View part
+$('#sheet1_view').click(function() {
+    $('.user_view').load('report/sheet1_view_loc_selector.php');
+     $('#news').addClass('hidden');
+});
+$('#sheet2_view').click(function() {
+    $('.user_view').load('report/sheet2_view_loc_selector.php');
+     $('#news').addClass('hidden');
+});
+$('#sheet3_view').click(function() {
+    $('.user_view').load('report/sheet3_view_loc_selector.php');
+     $('#news').addClass('hidden');
+});
+$('#sheet4_view').click(function() {
+    $('.user_view').load('report/sheet4_view_loc_selector.php');
+     $('#news').addClass('hidden');
+});
+//to load sheets in =home.php Insert part
 $('#sheet1').click(function() {
     $('.user_view').load('forms/sheet1_loc_selector.php');
      $('#news').addClass('hidden');
@@ -58,11 +74,11 @@ $('#sheet2').click(function() {
      $('#news').addClass('hidden');
 });
 $('#sheet3').click(function() {
-    $('.user_view').load('forms/sheet3.php');
+    $('.user_view').load('forms/sheet3_loc_selector.php');
      $('#news').addClass('hidden');
 });
 $('#sheet4').click(function() {
-    $('.user_view').load('forms/sheet4.php');
+    $('.user_view').load('forms/sheet4_loc_selector.php');
      $('#news').addClass('hidden');
 });
 $('#sheet5').click(function() {

@@ -13,7 +13,7 @@ if (!isset($_SESSION['id']))
 
 
 <div class="row">
-    <form class="form-horizontal" role="form" action="sheet1_receive.php" method="post">
+    <form class="form-horizontal" role="form" action="process/sheet2_receive.php" method="post">
         <!--1st collum--> 
         <div class="col-md-8">
             <div class="row">
@@ -24,13 +24,13 @@ if (!isset($_SESSION['id']))
                     <div class="form-group">
                         <label for="numbers" class="col-sm-4 control-label">মোট কৃষকের সংখ্যাঃ </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="numbers" name="numbers" placeholder="মোট কৃষকের সংখ্যা">
+                            <input type="text" readonly="readonly" class="form-control" id="numbers" name="numbers" placeholder="মোট কৃষকের সংখ্যা">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="land" class="col-sm-4 control-label">ফসলের আউতায় আবাদি জমির পরিমান হেক্টরেঃ </label>
+                        <label for="land" class="col-sm-4 control-label">ফসলের আওতায় আবাদি জমির পরিমান হেক্টরেঃ </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="land" name="land" placeholder="ফসলের আউতায় আবাদি জমির পরিমান হেক্টরে">
+                            <input type="text" readonly="readonly" class="form-control" id="land" name="land" placeholder="ফসলের আউতায় আবাদি জমির পরিমান হেক্টরে">
                         </div>
                     </div>
                 </div>
@@ -50,31 +50,31 @@ if (!isset($_SESSION['id']))
                             <div class="form-group">
                                 <label for="uria" class="col-sm-4 control-label">ইউরিয়া </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="uria" name="uria" placeholder="ইউরিয়া">
+                                    <input type="text" required="" class="form-control" id="uria" name="uria" placeholder="ইউরিয়া">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="tsp" class="col-sm-4 control-label">টি এস পি </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="tsp" name="tsp" placeholder="টি এস পি">
+                                    <input type="text" required="" class="form-control" id="tsp" name="tsp" placeholder="টি এস পি">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="dmp" class="col-sm-4 control-label">ডি এম পি </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="dmp" name="dmp" placeholder="ডি এম পি">
+                                    <input type="text"required="" class="form-control" id="dmp" name="dmp" placeholder="ডি এম পি">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="mop" class="col-sm-4 control-label">এম ও পি </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="mop" name="mop" placeholder="এম ও পি ">
+                                    <input type="text" required="" class="form-control" id="mop" name="mop" placeholder="এম ও পি ">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="mpks" class="col-sm-4 control-label">এম পি কে এস </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="mpks" name="mpks" placeholder="এম পি কে এস">
+                                    <input type="text" required="" class="form-control" id="mpks" name="mpks" placeholder="এম পি কে এস">
                                 </div>
                             </div>
                         </div>
@@ -82,31 +82,31 @@ if (!isset($_SESSION['id']))
                             <div class="form-group">
                                 <label for="jipsam" class="col-sm-4 control-label">জিপসাম </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="jipsam" name="jipsam" placeholder="জিপসাম">
+                                    <input type="text" required="" class="form-control" id="jipsam" name="jipsam" placeholder="জিপসাম">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="zinc_salfet" class="col-sm-4 control-label">জিংক সালফেট </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="zinc_salfet" name="zinc_salfet" placeholder="জিংক সালফেট">
+                                    <input type="text" required="" class="form-control" id="zinc_salfet" name="zinc_salfet" placeholder="জিংক সালফেট">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="magnesium_salfet" class="col-sm-4 control-label">ম্যাগনেসিয়াম সালফেট </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="magnesium_salfet" name="magnesium_salfet" placeholder="ম্যাগনেসিয়াম সালফেট">
+                                    <input type="text"required="" class="form-control" id="magnesium_salfet" name="magnesium_salfet" placeholder="ম্যাগনেসিয়াম সালফেট">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="aluminum_salfet" class="col-sm-4 control-label">অ্যালুমিনিয়াম সালফেট </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="aluminum_salfet" name="aluminum_salfet" placeholder="অ্যালুমিনিয়াম সালফেট">
+                                    <input type="text" required="" class="form-control" id="aluminum_salfet" name="aluminum_salfet" placeholder="অ্যালুমিনিয়াম সালফেট">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="boron" class="col-sm-4 control-label">বোরন </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="boron" name="boron" placeholder="বোরন">
+                                    <input type="text" required="" class="form-control" id="boron" name="boron" placeholder="বোরন">
                                 </div>
                             </div>
                         </div>
@@ -176,6 +176,11 @@ if (!isset($_SESSION['id']))
                     </select>
                 </div>
             </div>
+            <div class="form-group">
+            <div class="col-md-12 right-align ">
+                <button type="submit" class="button btn btn-default" name="submit" id="submit">Submit </button>
+            </div>
+        </div>
         </div>
     </form>
 </div>
@@ -185,17 +190,21 @@ if (!isset($_SESSION['id']))
         var id = $(this).val();
         var season = document.getElementById("season");
         var season_id = season.options[season.selectedIndex].value;
-        var dataString = 'id=' + id +'season='+ season_id;
+        var dataString = 'id=' + id +'&season='+ season_id;
         $.ajax
                 ({
                     type: "POST",
                     url: "forms/ajax_farmers.php",
                     data: dataString,
                     cache: false,
-                    success: function(response)
+                    success: function(html)
                     {
-                        alert(response);
-//                        $("#crop").html(html);
+                        var res = html.split(",");
+//                        res[0] is farmers number and res[1] is land ammount;
+                        var farmers = document.getElementById("numbers");
+                        farmers.value = res[0];
+                        var land = document.getElementById("land");
+                        land.value = res[1];
                     }
                 });
     });

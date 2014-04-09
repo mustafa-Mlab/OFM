@@ -17,14 +17,14 @@ include './config.php';
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="tn"> <h3>It's a Trail version</h3> </div>
+                    <div class="tn"> <h3>It is an Under Development Project</h3> </div>
                     <img src="img/pic 01.jpg" alt="" class="img-responsive hidden-xs"/>
                 </div>
                 <div class="col-md-4">
                     <img src="img/logo.png" alt="" class="img-responsive center-img" width="100" />
                 </div>
                 <div class="col-md-4">
-                    <div class="tn"> <h3>It's a Trail version</h3> </div>
+                    <div class="tn"> <h3>It is an Under Development Project</h3> </div>
                     <img src="img/pic 03.jpg" alt="" class="img-responsive hidden-xs"/>
                 </div>
             </div>

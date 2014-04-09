@@ -52,13 +52,15 @@
                         <div class="panel-body">
                             <div class="list-group-item">
                                 <ul>
-                                    <li><a href="#sheet1" id="sheet1">Sheet1</a></li>
-                                    <li><a href="#sheet2" id="sheet2">Sheet2</a></li>
-                                    <li><a href="#sheet3" id="sheet3">Sheet3</a></li>
                                     <?php
-                                    if ($lavel > 1) {
+                                    if($lavel == 1){
+                                    Echo'<li><a href="#sheet1" id="sheet1">Sheet1</a></li>
+                                    <li><a href="#sheet2" id="sheet2">Sheet2</a></li>
+                                    <li><a href="#sheet3" id="sheet3">Sheet3</a></li>';
+                                    }
+                                    if ($lavel ==2) {
                                         Echo"<li><a href='#sheet4' id='sheet4'>Sheet4</a></li>   <li><a href='#sheet5' id='sheet5'>Sheet5</a></li>";
-                                        if ($lavel > 2) {
+                                        if ($lavel ==3) {
                                             Echo"<li><a href='#sheet6' id='sheet6'>Sheet6</a></li><li><a href='#sheet7' id='sheet7'>Sheet7</a></li>";
                                         }
                                     }
