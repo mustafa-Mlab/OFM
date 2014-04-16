@@ -27,7 +27,7 @@
                     else if($row['right_lavel'] == 3) Echo "<td>জেলা</td>";
                     else Echo "<td>মন্ত্রণালয়</td>";
                     Echo "<td>" . $row['reg_date'] . "</td>";
-                    if($row['status'] == 1) Echo "<td>Enabled</td>";
+                    if($row['enabled'] == 1) Echo "<td>Enabled</td>";
                     else Echo "<td>Disabled</td>";
                     Echo"</tr>";
                     $rc++;

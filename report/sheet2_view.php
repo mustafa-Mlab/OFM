@@ -38,13 +38,13 @@ if ($query) {
         <?php echo '<h3>ব্লকের নামঃ ' . $_SESSION['block'] . "</h3>"; ?>
     </div>
     <div class="col-md-3">
-        <?php echo '<h3> ইউনিয়নঃ ' . $union . "</h3>"; ?>
+        <?php echo '<h3> ইউনিয়নঃ ' .$_SESSION['union'] . "</h3>"; ?>
     </div>
     <div class="col-md-3">
-        <?php echo '<h3> উপজেলাঃ ' . $subdistrict . "</h3>"; ?> 
+        <?php echo '<h3> উপজেলাঃ ' .$_SESSION['subdistrict'] . "</h3>"; ?> 
     </div>
     <div class="col-md-3">
-        <?php echo '<h3> জেলা;' . $district . "</h3>"; ?>
+        <?php echo '<h3> জেলা;' . $_SESSION['district']. "</h3>"; ?>
     </div>
 
 </div>
@@ -90,7 +90,7 @@ if ($query) {
                 $sql = mysql_query("SELECT * FROM `crop`WHERE id ='" . $crop . "'");
                 $data = mysql_fetch_array($sql);
                 Echo "<td>" . $data['name'] . "</td>";
-                Echo "<td>" . $row['numbers'] . "</td>";
+                Echo "<td>" . $row['farmers'] . "</td>";
                 Echo "<td>" . $row['land'] . "</td>";
                 Echo "<td>" . $row['uria'] . "</td>";
                 Echo "<td>" . $row['tsp'] . "</td>";
@@ -103,7 +103,7 @@ if ($query) {
                 Echo "<td>" . $row['alluminium_salfet'] . "</td>";
                 Echo "<td>" . $row['boron'] . "</td>";
                 Echo"</tr>";
-                $farmers +=$row['numbers'];
+                $farmers +=$row['farmers'];
                 $land += $row['land'];
                 $uria += $row['uria'];
                 $tsp += $row['tsp'];

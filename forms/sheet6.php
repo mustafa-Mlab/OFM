@@ -1,11 +1,8 @@
-<?php
-if (!isset($_SESSION['id']))
-    header("locaton:../index.php");
-?>
+<?php if (!isset($_SESSION['id'])) header("locaton:../index.php"); ?>
 <div class="row">
     <div class="col-md-12">
         <div class="center-align">
-            <h2>ব্লক পর্যায় </h2>
+            <h2>জেলা পর্যায় </h2>
             <h3>কৃষক / কৃষাণীর মৌসুমভিত্তিক আবাদি জমির পরিমান (হেক্টরে) নিরূপণ</h3>
         </div>
     </div>
@@ -13,7 +10,7 @@ if (!isset($_SESSION['id']))
 
 
 <div class="row">
-    <form class="form-horizontal" role="form" action="process/sheet2_receive.php" method="post">
+    <form class="form-horizontal" role="form" action="process/sheet6_receive.php" method="post">
         <!--1st collum--> 
         <div class="col-md-8">
             <div class="row">
@@ -24,7 +21,7 @@ if (!isset($_SESSION['id']))
                             <select class="form-control" name="crop" id="crop" >
                                 <option selected="selected">বাছাই করুন </option>
                                 <?php
-                                $sql = mysql_query("SELECT * FROM `sheet2`WHERE ecoyear ='" . $_SESSION['ecoyear_id'] . "'and block ='" . $_SESSION['block_id'] . "' and updated = 0 ORDER BY crop");
+                                $sql = mysql_query("SELECT * FROM `sheet6`WHERE ecoyear ='" . $_SESSION['ecoyear_id'] . "'and district ='" . $dist_id . "' and updated = 0 ORDER BY crop");
                                 If (mysql_num_rows($sql) > 0) {
                                     while ($row = mysql_fetch_array($sql)) {
                                         $crop_id = $row['crop'];
@@ -48,13 +45,13 @@ if (!isset($_SESSION['id']))
                     <div class="form-group">
                         <label for="numbers" class="col-sm-4 control-label">মোট কৃষকের সংখ্যাঃ </label>
                         <div class="col-sm-8">
-                            <input type="text" readonly="readonly" class="form-control" id="numbers" name="numbers" placeholder="মোট কৃষকের সংখ্যা">
+                            <input type="text" class="form-control" id="numbers" name="numbers" placeholder="মোট কৃষকের সংখ্যা">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="land" class="col-sm-4 control-label">ফসলের আওতায় আবাদি জমির পরিমান হেক্টরেঃ </label>
+                        <label for="land" class="col-sm-4 control-label">ফসলের আউতায় আবাদি জমির পরিমান হেক্টরেঃ </label>
                         <div class="col-sm-8">
-                            <input type="text" readonly="readonly" class="form-control" id="land" name="land" placeholder="ফসলের আউতায় আবাদি জমির পরিমান হেক্টরে">
+                            <input type="text" class="form-control" id="land" name="land" placeholder="ফসলের আউতায় আবাদি জমির পরিমান হেক্টরে">
                         </div>
                     </div>
                 </div>
@@ -74,13 +71,13 @@ if (!isset($_SESSION['id']))
                             <div class="form-group">
                                 <label for="uria" class="col-sm-4 control-label">ইউরিয়া </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="uria" name="uria" placeholder="ইউরিয়া">
+                                    <input type="text" class="form-control" id="uria" name="uria" placeholder="ইউরিয়া">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="tsp" class="col-sm-4 control-label">টি এস পি </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="tsp" name="tsp" placeholder="টি এস পি">
+                                    <input type="text" class="form-control" id="tsp" name="tsp" placeholder="টি এস পি">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -92,13 +89,13 @@ if (!isset($_SESSION['id']))
                             <div class="form-group">
                                 <label for="mop" class="col-sm-4 control-label">এম ও পি </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="mop" name="mop" placeholder="এম ও পি ">
+                                    <input type="text" class="form-control" id="mop" name="mop" placeholder="এম ও পি ">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="mpks" class="col-sm-4 control-label">এম পি কে এস </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="mpks" name="mpks" placeholder="এম পি কে এস">
+                                    <input type="text" class="form-control" id="mpks" name="mpks" placeholder="এম পি কে এস">
                                 </div>
                             </div>
                         </div>
@@ -106,13 +103,13 @@ if (!isset($_SESSION['id']))
                             <div class="form-group">
                                 <label for="jipsam" class="col-sm-4 control-label">জিপসাম </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="jipsam" name="jipsam" placeholder="জিপসাম">
+                                    <input type="text" class="form-control" id="jipsam" name="jipsam" placeholder="জিপসাম">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="zinc_salfet" class="col-sm-4 control-label">জিংক সালফেট </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="zinc_salfet" name="zinc_salfet" placeholder="জিংক সালফেট">
+                                    <input type="text" class="form-control" id="zinc_salfet" name="zinc_salfet" placeholder="জিংক সালফেট">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -124,7 +121,7 @@ if (!isset($_SESSION['id']))
                             <div class="form-group">
                                 <label for="aluminum_salfet" class="col-sm-4 control-label">অ্যালুমিনিয়াম সালফেট </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="aluminum_salfet" name="aluminum_salfet" placeholder="অ্যালুমিনিয়াম সালফেট">
+                                    <input type="text" class="form-control" id="aluminum_salfet" name="aluminum_salfet" placeholder="অ্যালুমিনিয়াম সালফেট">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -145,7 +142,7 @@ if (!isset($_SESSION['id']))
             <div class="form-group">
                 <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
                 <div class="col-sm-8">
-                    <input type="text" readonly="" class="form-control" id="aez" name="aez" <?php if(isset($aez))echo"value=".$aez?>>
+                    <input type="text" required class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
                 </div>
             </div>
             <div class="form-group">
@@ -159,37 +156,7 @@ if (!isset($_SESSION['id']))
                     </select>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="district" class="col-sm-4 control-label">উপজেলাঃ  </label>
-                <div class="col-sm-8">
-                    <select class="form-control" name="subdistrict" id="subdistrict" >
 
-                        <?php
-                        Echo"<option selected='selected' value='" . $subdist_id . "'>" . $subdistrict . " </option>";
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="union" class="col-sm-4 control-label">ইউনিয়নঃ  </label>
-                <div class="col-sm-8">
-                    <select class="form-control" name="union" id="union" >
-                        <?php
-                        Echo"<option selected='selected' value='" . $union_id . "'>" . $union . " </option>";
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="block" class="col-sm-4 control-label">ব্লকঃ  </label>
-                <div class="col-sm-8">
-                    <select class="form-control" name="block" id="block" >
-                        <?php
-                        Echo"<option selected='selected' value='" . $_SESSION['block_id'] . "'>" . $_SESSION['block'] . " </option>";
-                        ?>
-                    </select>
-                </div>
-            </div>
             <div class="form-group">
                 <label for="ecoyear" class="col-sm-4 control-label">অর্থবছরঃ  </label>
                 <div class="col-sm-8">
@@ -208,27 +175,50 @@ if (!isset($_SESSION['id']))
         </div>
     </form>
 </div>
+
 <script>
     $("#crop").change(function()
     {
         var id = $(this).val();
-        var dataString = 'id=' + id ;
+
+        var dataString = 'id=' + id;
         $.ajax
                 ({
                     type: "POST",
-                    url: "forms/ajax_farmers.php",
+                    url: "forms/ajax_sheet6.php",
                     data: dataString,
                     cache: false,
                     success: function(html)
                     {
+//                        alert(html);
                         var res = html.split(",");
-//                        res[0] is farmers number and res[1] is land ammount;
+//                        res[0] is farmers number ,res[1] is land ammount and so on;
                         var farmers = document.getElementById("numbers");
                         farmers.value = res[0];
                         var land = document.getElementById("land");
                         land.value = res[1];
-                         var crop = document.getElementById("id");
-                        crop.value = res[2];
+                        var uria = document.getElementById("uria");
+                        uria.value = res[2];
+                        var tsp = document.getElementById("tsp");
+                        tsp.value = res[3];
+                        var dmp = document.getElementById("dmp");
+                        dmp.value = res[4];
+                        var mop = document.getElementById("mop");
+                        mop.value = res[5];
+                        var mpks = document.getElementById("mpks");
+                        mpks.value = res[6];
+                        var jipsam = document.getElementById("jipsam");
+                        jipsam.value = res[7];
+                        var zinc = document.getElementById("zinc_salfet");
+                        zinc.value = res[8];
+                        var mg = document.getElementById("magnesium_salfet");
+                        mg.value = res[9];
+                        var al = document.getElementById("aluminum_salfet");
+                        al.value = res[10];
+                        var boron = document.getElementById("boron");
+                        boron.value = res[11];
+                        var crop = document.getElementById("id");
+                        crop.value = res[12];
                     }
                 });
     });

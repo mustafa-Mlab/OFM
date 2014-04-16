@@ -27,7 +27,7 @@ if ($query) {
 <div class="row">
     <div class="col-md-12">
         <div class="center-align">
-            <?php echo"<h2>" . $_SESSION['ecoyear'] . " অর্থবছরের উপজেলা পর্যায়ে </h2>" ?>
+            <?php echo"<h2>" . $_SESSION['ecoyear'] . " অর্থবছরের জেলা পর্যায়ে </h2>" ?>
             <h3>কৃষক / কৃষাণীর মৌসুমভিত্তিক আবাদি জমির পরিমান (হেক্টরে) নিরূপণ</h3>
         </div>
     </div>
@@ -36,7 +36,7 @@ if ($query) {
     <div class="col-md-3">
     </div>
     <div class="col-md-3">
-        <?php echo '<h3> উপজেলাঃ ' . $_SESSION['subdistrict'] . "</h3>"; ?> 
+        
     </div>
     <div class="col-md-3">
         <?php echo '<h3> জেলাঃ' . $_SESSION['district'] . "</h3>"; ?>
@@ -76,7 +76,7 @@ if ($query) {
             $magnesium_salfet = 0;
             $aluminum_salfet = 0;
             $boron = 0;
-            $query = mysql_query("SELECT * FROM `sheet4`WHERE subdistrict ='" . $_SESSION['subdist_id'] . "' and ecoyear ='" .$_SESSION['ecoyear_id'] ."'ORDER BY id");
+            $query = mysql_query("SELECT * FROM `sheet6`WHERE district ='" . $_SESSION['district_id'] . "' and ecoyear ='" .$_SESSION['ecoyear_id'] ."'ORDER BY id");
             while ($row = mysql_fetch_array($query)) {
                 if (($rc == 0) || ($rc % 2 == 0))
                     Echo"<tr class='active'>";

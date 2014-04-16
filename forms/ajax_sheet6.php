@@ -4,7 +4,7 @@ include '../config.php';
 session_start();
 if ($_POST['id']) {
     $row_id = $_POST['id'];
-    $sql = mysql_query("SELECT * FROM `sheet4` WHERE `id` ='" . $row_id . "'");
+    $sql = mysql_query("SELECT * FROM `sheet6` WHERE `id` ='" . $row_id . "'");
     $row = mysql_fetch_array($sql);
     $crop = $row['crop'];
     $land = $row['land'];

@@ -8,6 +8,7 @@ $district = -1;
 $subdistrict = -1;
 $union = -1;
 $block = -1;
+$area = -1;
 echo 'Start Process    -->  ';
 if (isset($_POST['add_user'])) {
     if (!empty($_POST['lavel_user'])) {
@@ -36,8 +37,8 @@ if (isset($_POST['add_user'])) {
         $errflag++;
         $_SESSION['error_msg'] = 'Enter Username';
     }
-    if (!empty($_POST['pass'])) {
-        $pass = $_POST['pass'];
+    if (!empty($_POST['pass1'])) {
+        $pass = md5($_POST['pass1']);
     } else {
         $errflag++;
         $_SESSION['error_msg'] = 'Enter Password';
@@ -67,31 +68,32 @@ if (isset($_POST['add_user'])) {
         $subdistrict = $_POST['subdistrict'];
     if ((!empty($_POST['union'])) && isset($_POST['union']))
         $union = $_POST['union'];
+//    if ((!empty($_POST['block'])) && isset($_POST['block']))
+//        $block = $_POST['block'];
+//    if ((!empty($_POST['area'])) && isset($_POST['area']))
+//        $area = $_POST['area'];
 }
 if ($errflag == 0) {
-    $result = mysql_query("SELECT * FROM `user`");
-    while ($row = mysql_fetch_array($result)) {
-        if (strcmp($mob, $row['mob']) == 0) {
-            $found++;
-            break;
-        }
+    $result = mysql_query("SELECT * FROM `user` WHERE mob ='" . $mob . "");
+    if ($result) {
+        $found++;
     }
     if ($found != 0) {
-        echo "yes";
+        $_SESSION['error_flag'] = "Mobile number already exist";
     } else {
         date_default_timezone_set('Asia/Dhaka');
         $date = date('Y-m-d');
 
         $sql = "INSERT INTO `ofm`.`user` (`reg_date`, `mob`, `full_name`, `adress`, `username`, `pass`, `sec_ques`, `ans`, `right_lavel`, `district`, `subdistrict`, `union_loc`) "
-                . "                      VALUES ('$date' , '$mob' ,  '$fname' ,'$address' , '$uname' , '$pass' , '$sq' , '$ans' , '$lavel ', '$district' , '$subdistrict' , '$union')";
+                . "                      VALUES ('$date' , '$mob' ,  '$fname' ,'$address' , '$uname' , '$pass' , '$sq' , '$ans' , '$lavel ', '$district' , '$subdistrict' , '$union' )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
         }
         echo "1 record added \n";
     }
-} else {
-    echo "errflag  " . $errflag;
-    
 }
-header("location:../administrator.php#add_user" );
+else{
+    echo "ERROR ". $_SESSION['error_msg'];
+}
+header("location:../administration.php#add_user");
 ?>

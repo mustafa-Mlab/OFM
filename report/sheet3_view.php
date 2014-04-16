@@ -36,13 +36,13 @@ if ($query) {
     <div class="col-md-3">
     </div>
     <div class="col-md-3">
-        <?php echo '<h3> ইউনিয়নঃ ' . $union . "</h3>"; ?>
+        <?php echo '<h3> ইউনিয়নঃ ' . $_SESSION['union'] . "</h3>"; ?>
     </div>
     <div class="col-md-3">
-        <?php echo '<h3> উপজেলাঃ ' . $subdistrict . "</h3>"; ?> 
+        <?php echo '<h3> উপজেলাঃ ' . $_SESSION['subdistrict'] . "</h3>"; ?> 
     </div>
     <div class="col-md-3">
-        <?php echo '<h3> জেলাঃ' . $district . "</h3>"; ?>
+        <?php echo '<h3> জেলাঃ' . $_SESSION['district'] . "</h3>"; ?>
     </div>
 
 </div>
@@ -78,7 +78,7 @@ if ($query) {
             $magnesium_salfet = 0;
             $aluminum_salfet = 0;
             $boron = 0;
-            $query = mysql_query("SELECT * FROM `sheet3`WHERE union_id ='" . $union_id . "'ORDER BY id");
+            $query = mysql_query("SELECT * FROM `sheet3`WHERE union_id ='" . $_SESSION['union_id'] . "'ORDER BY id");
             while ($row = mysql_fetch_array($query)) {
                 if (($rc == 0) || ($rc % 2 == 0))
                     Echo"<tr class='active'>";

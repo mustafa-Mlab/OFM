@@ -48,7 +48,7 @@ if (isset($_SESSION['id'])) {
 }
 ?>
 <div class="row">
-    <form class="form-horizontal" role="form" action="process/sheet1_view_loc_receive.php" method="post">
+    <form class="form-horizontal" role="form" action="process/sheet6_view_loc_receive.php" method="post">
         <!--1st collum--> 
         <div class="col-md-8">
             <div class="row">
@@ -60,19 +60,6 @@ if (isset($_SESSION['id'])) {
                     else
                         require '../forms/district_selector.php';
                     ?>
-                    <?php
-                    if ($lavel < 3)
-                        require '../forms/subdistrict_view_selector.php';
-                    else
-                        require '../forms/subdistrict_selector.php'
-                        ?>
-<?php
-if ($lavel < 2)
-    require '../forms/union_view_selector.php';
-else
-    require '../forms/union_selector.php';
-?>
-<?php require '../forms/block_selector.php'; ?>
                     <div class="form-group">
                         <div class="col-md-12 right-align">
                             <button type="submit" class="btn btn-default button" name="submit" id="submit">Submit </button>

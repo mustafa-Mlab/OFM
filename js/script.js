@@ -64,6 +64,18 @@ $('#sheet4_view').click(function() {
     $('.user_view').load('report/sheet4_view_loc_selector.php');
      $('#news').addClass('hidden');
 });
+$('#sheet5_view').click(function() {
+    $('.user_view').load('report/sheet5_view_loc_selector.php');
+     $('#news').addClass('hidden');
+});
+$('#sheet6_view').click(function() {
+    $('.user_view').load('report/sheet6_view_loc_selector.php');
+     $('#news').addClass('hidden');
+});
+$('#sheet7_view').click(function() {
+    $('.user_view').load('report/sheet7_view_loc_selector.php');
+     $('#news').addClass('hidden');
+});
 //to load sheets in =home.php Insert part
 $('#sheet1').click(function() {
     $('.user_view').load('forms/sheet1_loc_selector.php');
@@ -82,15 +94,15 @@ $('#sheet4').click(function() {
      $('#news').addClass('hidden');
 });
 $('#sheet5').click(function() {
-    $('.user_view').load('forms/sheet5.php');
+    $('.user_view').load('forms/sheet5_loc_selector.php');
      $('#news').addClass('hidden');
 });
 $('#sheet6').click(function() {
-    $('.user_view').load('forms/sheet6.php');
+    $('.user_view').load('forms/sheet6_loc_selector.php');
      $('#news').addClass('hidden');
 });
 $('#sheet7').click(function() {
-    $('.user_view').load('forms/sheet7.php');
+    $('.user_view').load('forms/sheet7_loc_selector.php');
      $('#news').addClass('hidden');
 });
 

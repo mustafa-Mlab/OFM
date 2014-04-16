@@ -1,4 +1,4 @@
-<?php if(!isset($_SESSION['id']))    header("locaton:../index.php");  ?>
+<?php if (!isset($_SESSION['id'])) header("locaton:../index.php"); ?>
 <div class="row">
     <div class="col-md-12">
         <div class="center-align">
@@ -15,9 +15,33 @@
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-12">
-                    <?php require 'forms/season_selector.php'; ?>
-                    <?php require 'forms/crop_selector_sheet3.php'; ?>
-
+                    <div class="form-group">
+                        <label for="crop" class="col-sm-4 control-label">ফসলঃ  </label>
+                        <div class="col-sm-8">
+                            <select class="form-control" name="crop" id="crop" >
+                                <option selected="selected">বাছাই করুন </option>
+                                <?php
+                                $sql = mysql_query("SELECT * FROM `sheet4`WHERE ecoyear ='" . $_SESSION['ecoyear_id'] . "'and subdistrict ='" . $subdist_id . "' and updated = 0 ORDER BY crop");
+                                If (mysql_num_rows($sql) > 0) {
+                                    while ($row = mysql_fetch_array($sql)) {
+                                        $crop_id = $row['crop'];
+                                        $row_id = $row['id'];
+                                        $aez = $row['aez'];
+                                        $query = mysql_query("SELECT * FROM `crop`WHERE id ='" . $crop_id . "'");
+                                        $crop_details = mysql_fetch_array($query);
+                                        $name = $crop_details['name'];
+                                        echo '<option value="' . $row_id . '">' . $name . '</option>';
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group hidden">
+                        <div class="col-sm-8">
+                            <input type="text" readonly="readonly" class="form-control" id="id" name="id">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="numbers" class="col-sm-4 control-label">মোট কৃষকের সংখ্যাঃ </label>
                         <div class="col-sm-8">
@@ -143,7 +167,7 @@
                     </select>
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <label for="ecoyear" class="col-sm-4 control-label">অর্থবছরঃ  </label>
                 <div class="col-sm-8">
@@ -155,10 +179,10 @@
                 </div>
             </div>
             <div class="form-group">
-            <div class="col-md-12 right-align ">
-                <button type="submit" class="button btn btn-default" name="submit" id="submit">Submit </button>
+                <div class="col-md-12 right-align ">
+                    <button type="submit" class="button btn btn-default" name="submit" id="submit">Submit </button>
+                </div>
             </div>
-        </div>
         </div>
     </form>
 </div>
@@ -167,9 +191,8 @@
     $("#crop").change(function()
     {
         var id = $(this).val();
-        var season = document.getElementById("season");
-        var season_id = season.options[season.selectedIndex].value;
-        var dataString = 'id=' + id +'&season='+ season_id;
+
+        var dataString = 'id=' + id;
         $.ajax
                 ({
                     type: "POST",
@@ -205,6 +228,8 @@
                         al.value = res[10];
                         var boron = document.getElementById("boron");
                         boron.value = res[11];
+                        var crop = document.getElementById("id");
+                        crop.value = res[12];
                     }
                 });
     });

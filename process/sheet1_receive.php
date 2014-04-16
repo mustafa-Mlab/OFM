@@ -89,6 +89,69 @@ if ($errflag == 0) {
         die('Error: ' . mysql_error());
     }
     echo "1 record added \n";
+    $farmers = 1;
+    $updated = 0;
+    $sql = "SELECT * FROM `sheet2`WHERE block ='" . $block_id . "' and ecoyear = '" . $ecoyear_id . "' and crop ='" . $crop1 . "'";
+    $result = mysql_query($sql);
+    If (mysql_num_rows($result) > 0) {
+        while ($row = mysql_fetch_array($result)) {
+            $id = $row['id'];
+            $farmers = $row['farmers'] + 1;
+            $land = $row['land'] + $amm1;
+        }
+        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '".$updated."' WHERE `sheet2`.`id` ='" . $id . "'";
+        if (!mysql_query($update, $Link)) {
+            die('Error: ' . mysql_error());
+        }
+        echo "1 record updated \n";
+    } else {
+        $sql = "INSERT INTO `ofm`.`sheet2` ( `crop`, `farmers`, `land`, `aez`, `district`, `subdistrict`, `union_id`, `block`, `ecoyear`, `updated`) "
+                . "                       VALUES ( '$crop1' , '$farmers' , '$amm1' , '$aez' , '$dist_id' , '$subdist_id' , '$union_id' , '$block_id' ,'$ecoyear_id','$updated'  )";
+        if (!mysql_query($sql, $Link)) {
+            die('Error: ' . mysql_error());
+        }
+        echo "1 record added \n";
+    }
+    $sql = "SELECT * FROM `sheet2` WHERE block ='" . $block_id . "' and ecoyear = '" . $ecoyear_id . "' and crop ='" . $crop2 . "'";
+    $result = mysql_query($sql);
+    If (mysql_num_rows($result) > 0) {
+        $row = mysql_fetch_array($result);
+        $id = $row['id'];
+        $farmers = $row['farmers'] + 1;
+        $land = $row['land'] + $amm2;
+        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '".$updated."' WHERE `sheet2`.`id` ='" . $id . "'";
+        if (!mysql_query($update, $Link)) {
+            die('Error: ' . mysql_error());
+        }
+        echo "1 record updated \n";
+    } else {
+        $sql = "INSERT INTO `ofm`.`sheet2` ( `crop`, `farmers`, `land`, `aez`, `district`, `subdistrict`, `union_id`, `block`, `ecoyear` , `updated`) "
+                . "                       VALUES ( '$crop2' , '$farmers' , '$amm2' , '$aez' , '$dist_id' , '$subdist_id' , '$union_id' , '$block_id'  ,'$ecoyear_id' ,'$updated'  )";
+        if (!mysql_query($sql, $Link)) {
+            die('Error: ' . mysql_error());
+        }
+        echo "1 record added \n";
+    }
+    $sql = "SELECT * FROM `sheet2`WHERE block ='" . $block_id . "' and ecoyear = '" . $ecoyear_id . "' and crop ='" . $crop3 . "'";
+    $result = mysql_query($sql);
+    If (mysql_num_rows($result) > 0) {
+        $row = mysql_fetch_array($result);
+        $id = $row['id'];
+        $farmers = $row['farmers'] + 1;
+        $land = $row['land'] + $amm3;
+        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '".$updated."' WHERE `sheet2`.`id` ='" . $id . "'";
+        if (!mysql_query($update, $Link)) {
+            die('Error: ' . mysql_error());
+        }
+        echo "1 record updated \n";
+    } else {
+        $sql = "INSERT INTO `ofm`.`sheet2` ( `crop`, `farmers`, `land`, `aez`, `district`, `subdistrict`, `union_id`, `block`, `ecoyear`, `updated`) "
+                . "                       VALUES ( '$crop3' , '$farmers' , '$amm3' , '$aez' , '$dist_id' , '$subdist_id' , '$union_id' , '$block_id'  ,'$ecoyear_id' ,'$updated'  )";
+        if (!mysql_query($sql, $Link)) {
+            die('Error: ' . mysql_error());
+        }
+        echo "1 record added \n";
+    }
 }
 header("location:../sheet1.php");
 ?>

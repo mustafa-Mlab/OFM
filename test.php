@@ -1,35 +1,46 @@
-<?php
-
-include './config.php';
-session_start();
-$_SESSION['ecoyear'] = 4;
-    $crop = 1;
-    $season = 2;
-    $farmer = 0;
-    $land = 0;
-    if ($season == 1) {
-        $sql = mysql_query("SELECT * FROM `sheet1` WHERE `ecoyear` ='" . $_SESSION['ecoyear'] . "'");
-        if ($sql) {
-            while ($row = mysql_fetch_array($sql)) {
-                if ($row['crop1'] == $crop) {
-                    $land += $row['ammount1'];
-                    $farmer++;
-                }
-            }
-        }else            echo 'ho';
-    } elseif ($season == 2) {
-        $sql = mysql_query("SELECT * FROM `sheet1` WHERE `ecoyear` ='" . $_SESSION['ecoyear'] . "' and `crop2`='" . $crop . "'");
-        while ($row = mysql_fetch_array($sql)) {
-            $land += $row['ammount2'];
-            $farmer++;
-        }
-    } else {
-        $sql = mysql_query("SELECT * FROM `sheet1` WHERE `ecoyear` ='" . $_SESSION['ecoyear'] . "' and `crop3`='" . $crop . "'");
-        while ($row = mysql_fetch_array($sql)) {
-            $land += $row['ammount3'];
-            $farmer++;
-        }
+<link rel="stylesheet" type="text/css" href="/code_examples/tutorial.css">
+<script type="text/javascript" src="/code_examples/passtest.js"></script>
+<div class="tutorialWrapper">
+    <form>
+        <div class="fieldWrapper">
+            <label for="pass1">Password:</label>
+            <input name="pass1" id="pass1" type="password">
+        </div>
+        <div class="fieldWrapper">
+            <label for="pass2">Confirm Password:</label>
+            <input name="pass2" id="pass2" onchange="checkPass(); return false;" type="password">
+            <span id="confirmMessage" class="confirmMessage"></span>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+function checkPass()
+{
+    //Store the password field objects into variables ...
+    var pass1 = document.getElementById('pass1');
+    var pass2 = document.getElementById('pass2');
+    //Store the Confimation Message Object ...
+    var message = document.getElementById('confirmMessage');
+    //Set the colors we will be using ...
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+    //Compare the values in the password field
+    //and the confirmation field
+    if(pass1.value == pass2.value){
+        //The passwords match.
+        //Set the color to the good color and inform
+        //the user that they have entered the correct password
+        pass2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Passwords Match!"
+    }else{
+        //The passwords do not match.
+        //Set the color to the bad color and
+        //notify the user.
+        pass2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "Passwords Do Not Match!"
     }
-    $data = $farmer . "," . $land;
-    echo $data;
-?>
+}  }  
+</script>
+\

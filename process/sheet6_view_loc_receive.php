@@ -25,20 +25,13 @@ if (isset($_POST['submit'])) {
         $_SESSION['district'] = $row['name'];
     } else
         $errflag++;
-    if (!empty($_POST['subdistrict'])) {
-        $_SESSION['subdist_id'] = $_POST['subdistrict'];
-        $result = mysql_query("SELECT * FROM subdistrict WHERE id='" . $_SESSION['subdist_id'] . "'");
-        $row = mysql_fetch_array($result);
-        $_SESSION['subdistrict'] = $row['name'];
-    } else
-        $errflag++;
 } else
     $errflag++;
 
 if ($errflag == 0) {
     echo 'hello';
-    header("location:../sheet4_view.php");
+    header("location:../sheet6_view.php");
     exit();
 }
-header("location:../home.php#sheet4_view");
+header("location:../home.php#sheet6_view");
 ?>
