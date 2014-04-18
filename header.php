@@ -15,22 +15,25 @@ include './config.php';
     </head>
     <body>
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="tn"> <h3>This Project is Under Development</h3> </div>
-                    <img src="img/pic 01.jpg" alt="" class="img-responsive hidden-xs"/>
+            <div class="header">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!--<div class="tn"> <h3>This Project is Under Development</h3> </div>-->
+                        <img src="img/pic 01.jpg" alt="" class="img-responsive hidden-xs"/>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="img/logo.png" alt="" class="img-responsive center-img" width="160" />
+                        <!---->
+                    </div>
+                    <div class="col-md-4">
+                        <!--<div class="tn"> <h3>It is an Academic Project</h3> </div>-->
+                        <img src="img/pic 03.jpg" alt="" class="img-responsive hidden-xs"/>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <!--<img src="img/logo.png" alt="" class="img-responsive center-img" width="100" />-->
-                </div>
-                <div class="col-md-4">
-                    <div class="tn"> <h3>It is an Academic Project</h3> </div>
-                    <img src="img/pic 03.jpg" alt="" class="img-responsive hidden-xs"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4 center-align">
-                    <h2>ও এফ এম সিস্টেমে স্বাগতম  </h2>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4 center-align">
+                        <h2>ও এফ এম সিস্টেমে স্বাগতম  </h2>
+                    </div>
                 </div>
             </div>
         </div>

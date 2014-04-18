@@ -1,3 +1,9 @@
+.header{
+    position: relative;
+    top: 40px;
+    /*margin: auto;*/
+}
+
 body{
     background: url('../img/background.jpg')no-repeat;
     background-attachment: fixed;
@@ -16,6 +22,8 @@ body{
 }
 
 .ofwhite{
+    position: relative;
+    top:40px;
     background: #ddd;
 }
 
