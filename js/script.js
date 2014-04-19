@@ -76,6 +76,10 @@ $('#sheet7_view').click(function() {
     $('.user_view').load('report/sheet7_view_loc_selector.php');
      $('#news').addClass('hidden');
 });
+$('#overview').click(function() {
+    $('.user_view').load('report/overview_loc_selector.php');
+     $('#news').addClass('hidden');
+});
 //to load sheets in =home.php Insert part
 $('#sheet1').click(function() {
     $('.user_view').load('forms/sheet1_loc_selector.php');

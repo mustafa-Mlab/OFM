@@ -23,8 +23,7 @@
                     <option value="1">ইউনিয়ন </option>
                     <option value="2">উপজেলা </option>
                     <option value="3">জেলা</option>
-                    <option value="4">ডিসি </option>
-                    <option value="5">মন্ত্রণালয় </option>
+                    <option value="4">মন্ত্রণালয় </option>
                 </select>
             </div>
         </div>

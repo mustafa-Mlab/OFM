@@ -3,25 +3,11 @@ $query = mysql_query("SELECT * FROM user WHERE id= $id");
 while ($row = mysql_fetch_array($query)) {
     $lavel = $row['right_lavel'];
     $dist_id = $row['district'];
-    $subdist_id = $row['subdistrict'];
-    $union_id = $row['union_loc'];
 }
 $query = mysql_query("SELECT name FROM district WHERE id='" . $dist_id . "'");
 if ($query) {
     $row = mysql_fetch_array($query);
     $district = $row['name'];
-}
-
-$query = mysql_query("SELECT name FROM subdistrict WHERE id='" . $subdist_id . "'");
-if ($query) {
-    $row = mysql_fetch_array($query);
-    $subdistrict = $row['name'];
-}
-
-$query = mysql_query("SELECT name FROM `union` WHERE `id` ='" . $union_id . "'");
-if ($query) {
-    $row = mysql_fetch_array($query);
-    $union = $row['name'];
 }
 ?>
 <div class="row">
@@ -127,6 +113,7 @@ if ($query) {
             Echo "<td>" . $magnesium_salfet . "</td> ";
             Echo "<td>" . $aluminum_salfet . "</td> ";
             Echo "<td>" . $boron . "</td> ";
+            Echo"</tr>";
             ?>
 
         </table>
