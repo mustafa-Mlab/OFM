@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -64,8 +64,11 @@
                                         . " <li><a href='#sheet5' id='sheet5'>উপজেলা পর্যায়ে মাসওয়ারী সারের চাহিদা নিরূপণ</a></li>";
                                     }
                                     if ($lavel == 3) {
-                                        Echo"<li><a href='#sheet6' id='sheet6'>জেলা পর্যায়ে কৃষক/কৃষাণীর ফসলভিত্তিক সারের চাহিদা নিরূপণ</a></li>"
+                                        Echo"<li><a href='#sheet6' id='sheet6'>জেলা পর্যায়ে ফসলভিত্তিক সারের চাহিদা নিরূপণ</a></li>"
                                         . "<li><a href='#sheet7' id='sheet7'>জেলা পর্যায়ে মাসওয়ারী সারের চাহিদা নিরূপণ</a></li>";
+                                    }
+                                    if ($lavel == 4) {
+                                        Echo"<li><a href='#dis_alloted' id='dis_alloted'>জেলাভিত্তিক সারের পরিমাণ অনুমোদন </a></li>";
                                     }
                                     ?>
                                 </ul>
@@ -77,7 +80,7 @@
             </div>
 
         </div>
-        <div class="col-md-6" id="display">
+        <div class="col-md-8" id="display">
             <div id="news"> <?php require './newsscroll.php'; ?>
 
             </div>

@@ -36,6 +36,18 @@ $('#add_union').click(function() {
 });
 $('#add_block').click(function() {
     $('#user_view').load('forms/add_block.php');
+    });
+$('#update_district').click(function() {
+    $('#user_view').load('forms/update_district.php');
+});
+$('#update_subdistrict').click(function() {
+    $('#user_view').load('forms/update_subdistrict.php');
+});
+$('#update_union').click(function() {
+    $('#user_view').load('forms/update_union.php');
+});
+$('#update_block').click(function() {
+    $('#user_view').load('forms/update_block.php');
 });
 $('#add_ecoyear').click(function() {
     $('#user_view').load('forms/add_ecoyear.php');
@@ -107,6 +119,10 @@ $('#sheet6').click(function() {
 });
 $('#sheet7').click(function() {
     $('.user_view').load('forms/sheet7_loc_selector.php');
+     $('#news').addClass('hidden');
+});
+$('#dis_alloted').click(function() {
+    $('.user_view').load('forms/dis_alloted.php');
      $('#news').addClass('hidden');
 });
 

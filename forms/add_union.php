@@ -11,8 +11,14 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="aez" class="col-sm-4 control-label">এ ই জেড নং  </label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="aez" name="aez" placeholder="এ ই জেড নং ">
+        </div>
+    </div>
+    <div class="form-group">
         <div class="col-sm-offset-2 col-sm-6">
-            <button type="submit" class="btn btn-default" name="add_union" id="add_union">যোগ করুন</button>
+            <button type="submit" class="button btn btn-default" name="add_union" id="add_union">যোগ করুন</button>
         </div>
     </div>
 </form>

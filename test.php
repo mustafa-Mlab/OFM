@@ -11,7 +11,7 @@ require './header.php';
         </form>
     </div>
 </div>
-<!--<div class="offwhite ">
+<div class="offwhite ">
     <div class="container">
 <?php
 if (isset($_POST['submit'])) {
@@ -24,6 +24,7 @@ if (isset($_POST['submit'])) {
     echo "1 record added \n";
 }
 ?>
-    </div>
-</div>-->
+<!--SELECT * FROM `sheet6` group by district order by district-->   
+</div>
+</div>
 <?php require './footer.php'; ?>

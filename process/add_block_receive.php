@@ -1,40 +1,18 @@
 <?php
-
 session_start();
 include '../config.php';
-$errflag = 0;
-$found = 0;
-
 if (isset($_POST['add_block'])) {
-    if (isset($_POST['union']) && !empty($_POST['union'])) {
         $union = $_POST['union'];
-    } else {
-        $errflag++;
-    }
-    if (isset($_POST['name']) && !empty($_POST['name'])) {
         $name = $_POST['name'];
-    } else {
-        $errflag++;
-    }
-}
-
-if ($errflag == 0) {
-    $result = mysql_query("SELECT * FROM `block`");
-    while ($row = mysql_fetch_array($result)) {
-        if ((strcmp($name, $row['name']) == 0 ) && $union == $row['union_id']) {
-            $found++;
-            break;
-        }
-    }
-    if ($found)
-        echo 'yes';
-    else {
-        $sql = "INSERT INTO `ofm`.`block` (`name`, `union_id`) VALUES ('$name','$union' )";
+        $aez = $_POST['aez'];
+    $result = mysql_query("SELECT * FROM `block`WHERE name ='".$name ."' and union_id = '".$union."'");
+   If (mysql_num_rows($result) == 0) {
+        $sql = "INSERT INTO `ofm`.`block` (`name`, `union_id`, `aez`) VALUES ('$name' , '$union' , '$aez')";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
         }
         echo "1 record added \n";
     }
 }
-header("location:../admin.php");
+header("location:../administration.php#add_block");
 ?>

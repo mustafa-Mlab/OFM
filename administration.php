@@ -53,6 +53,10 @@ if (isset($_SESSION['admin'])) {
                                     <li><a href="#add_subdistrict" id="add_subdistrict">Add Subdistrict</a></li>
                                     <li><a href="#add_union" id="add_union">Add Union</a></li>
                                     <li><a href="#add_block" id="add_block">Add Block</a></li>
+                                    <li><a href="#update_district" id="update_district">Update District Information</a></li>
+                                    <li><a href="#update_subdistrict" id="update_subdistrict">update Subdistrict Information</a></li>
+                                    <li><a href="#update_union" id="update_union">Update Union Information</a></li>
+                                    <li><a href="#update_block" id="update_block">update Block Information</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -84,6 +88,13 @@ if (isset($_SESSION['admin'])) {
 
         </div>
         <div class="col-md-8">
+            <div class="error_show">
+                <?php if(isset($_SESSION['error_msg'])){
+                    echo $_SESSION['error_msg'];
+                    unset($_SESSION['error_msg']);
+                }
+                    ?>
+            </div>
             <div class="user_view" id='user_view'></div>
         </div>
     </div>
