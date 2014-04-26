@@ -7,12 +7,12 @@
         </div>
     </div>
     <?php require './right_control.php'; ?>
-    <?php if(isset($_SESSION['error_msg']))
-    {
-            echo $_SESSION['error_msg'];
-          unset($_SESSION['error_msg']);
+    <?php
+    if (isset($_SESSION['error_msg'])) {
+        echo $_SESSION['error_msg'];
+        unset($_SESSION['error_msg']);
     }
-        ?>
+    ?>
     <?php require './forms/sheet1.php'; ?>
     <?php ?>
 </div>

@@ -243,9 +243,9 @@
 </div>
 
 <script>
-function uChange()
-{
-    var val1 = $(this).val;
-    alert(val1);
-}
+    function uChange()
+    {
+        var val1 = $(this).val;
+        alert(val1);
+    }
 </script>

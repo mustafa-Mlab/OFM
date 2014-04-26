@@ -8,17 +8,17 @@ if ($_POST['id']) {
     $row = mysql_fetch_array($sql);
     $crop = $row['crop'];
     $land = $row['land'];
-    $farmer=$row['farmers'];
+    $farmer = $row['farmers'];
     $uria = $row['uria'];
-    $tsp =$row['tsp'];
+    $tsp = $row['tsp'];
     $dmp = $row['dmp'];
-    $mop =$row['mop'];
+    $mop = $row['mop'];
     $mpks = $row['mpks'];
-    $jipsam =$row['jipsam'];
-    $zinc_salfet  = $row['zinc_salfet'];
-    $magnesium_salfet =$row['magnesium_salfet'];
-    $aluminum_salfet =$row['alluminium_salfet'];
-    $boron  = $row['boron'];
+    $jipsam = $row['jipsam'];
+    $zinc_salfet = $row['zinc_salfet'];
+    $magnesium_salfet = $row['magnesium_salfet'];
+    $aluminum_salfet = $row['alluminium_salfet'];
+    $boron = $row['boron'];
 
     $data = $farmer . "," . $land . "," . $uria . "," . $tsp . "," . $dmp . "," . $mop . "," . $mpks . "," . $jipsam . "," . $zinc_salfet . "," . $magnesium_salfet . "," . $aluminum_salfet . "," . $boron . "," . $crop;
     echo $data;

@@ -6,14 +6,14 @@ if (isset($_SESSION['id'])) {
     date_default_timezone_set('Asia/Dhaka');
     $date = date('Y-m-d');
     $query = mysql_query("SELECT * FROM user WHERE id= $id");
-   $row = mysql_fetch_array($query);
-        $lavel = $row['right_lavel'];
-        if ($lavel < 4) {
-            $dist_id = $row['district'];
-            if ($lavel < 3) {
-                $subdist_id = $row['subdistrict'];
-            }
+    $row = mysql_fetch_array($query);
+    $lavel = $row['right_lavel'];
+    if ($lavel < 4) {
+        $dist_id = $row['district'];
+        if ($lavel < 3) {
+            $subdist_id = $row['subdistrict'];
         }
+    }
     if ($lavel < 4) {
         $query = mysql_query("SELECT name FROM district WHERE id='" . $dist_id . "'");
         if ($query) {

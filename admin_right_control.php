@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_SESSION['admin'])) {
     $id = $_SESSION['admin'];
     echo $id;

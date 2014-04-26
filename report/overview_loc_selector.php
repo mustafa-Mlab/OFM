@@ -21,7 +21,7 @@ if (isset($_SESSION['id'])) {
             <div class="row">
                 <div class="col-md-12">
                     <?php require '../forms/ecoyear_selector.php'; ?>
-                    
+
                     <div class="form-group">
                         <div class="col-md-12 right-align">
                             <button type="submit" class="btn btn-default button" name="submit" id="submit">Submit </button>

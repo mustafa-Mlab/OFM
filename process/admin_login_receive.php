@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 <?php
 
 if ($errflag == 0) {
-   $query = mysql_query("SELECT * FROM admin WHERE username='" . $uname . "'");
+    $query = mysql_query("SELECT * FROM admin WHERE username='" . $uname . "'");
     if ($query) {
         while ($row = mysql_fetch_array($query)) {
             if (strcmp($row['pass'], $pass) == 0) {
@@ -42,10 +42,9 @@ if ($errflag == 0) {
     if ($found == 1) {
         echo $_SESSION['admin'];
         header("location:../administration.php");
+    } else {
+        header("location:../admin.php");
     }
-    else {
-    header("location:../admin.php");
-}
 } else {
     header("location:../admin.php");
 }

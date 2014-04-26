@@ -33,7 +33,7 @@ if ($_POST['id']) {
         $disboron += $row['boron'];
     }
 
-    $data = $disuria . "," . $distsp . "," . $disdmp. "," . $dismop . "," . $dismpks. "," . $disjipsam . "," . $diszinc_salfet. "," . $dismagnesium_salfet . "," . $disaluminum_salfet. "," . $disboron ;
+    $data = $disuria . "," . $distsp . "," . $disdmp . "," . $dismop . "," . $dismpks . "," . $disjipsam . "," . $diszinc_salfet . "," . $dismagnesium_salfet . "," . $disaluminum_salfet . "," . $disboron;
     echo $data;
 }
 ?>

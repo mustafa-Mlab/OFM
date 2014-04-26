@@ -151,7 +151,7 @@
                     <select class="form-control" name="district" id="district">
                         <?php
                         echo $dist_id;
-                         Echo" <option selected='selected' value='" . $_SESSION['dist_id'] . "'>" . $_SESSION['district'] . " </option>";
+                        Echo" <option selected='selected' value='" . $_SESSION['dist_id'] . "'>" . $_SESSION['district'] . " </option>";
                         ?>
                     </select>
                 </div>

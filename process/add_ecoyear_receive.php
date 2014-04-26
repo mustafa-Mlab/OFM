@@ -44,10 +44,10 @@ if ($errflag == 0) {
             die('Error: ' . mysql_error());
         }
         echo "1 record added \n";
-        
-        $news = "নতুন অর্থবছর ".$year."  যুক্ত করা হয়েছে, তথ্য জমাদানের সময় ".$start."  তারিখ থেকে ".$end." তারিখ পর্যন্ত";
+
+        $news = "নতুন অর্থবছর " . $year . "  যুক্ত করা হয়েছে, তথ্য জমাদানের সময় " . $start . "  তারিখ থেকে " . $end . " তারিখ পর্যন্ত";
         $status = 1;
-         $sql = "INSERT INTO `ofm`.`news` (`news`, `status`) "
+        $sql = "INSERT INTO `ofm`.`news` (`news`, `status`) "
                 . "                      VALUES ('$news' ,'$status )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
@@ -55,6 +55,6 @@ if ($errflag == 0) {
         echo "1 record added \n";
         header("location:../administration.php");
     }
-    }
-     header("location:../administration.php");
+}
+header("location:../administration.php");
 ?>

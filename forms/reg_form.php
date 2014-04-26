@@ -25,8 +25,8 @@ echo "<a class='button' href='$url'>Back</a>";
                 <option value="1">ইউনিয়ন </option>
                 <option value="2">উপজেলা </option>
                 <option value="3">জেলা</option>
-<!--                <option value="5">আঞ্চলিক অফিস</option>
-                <option value="6">সদর দপ্তর</option>-->
+                <!--                <option value="5">আঞ্চলিক অফিস</option>
+                                <option value="6">সদর দপ্তর</option>-->
                 <option value="4">মন্ত্রণালয় </option>
             </select>
         </div>
@@ -67,9 +67,9 @@ echo "<a class='button' href='$url'>Back</a>";
     <div id="union_form" class="hidden">
         <?php require './union_selector.php'; ?>
     </div>
-<!--    <div id="block_form" class="hidden">
-        <?php require './block_selector.php'; ?>
-    </div>-->
+    <!--    <div id="block_form" class="hidden">
+    <?php require './block_selector.php'; ?>
+        </div>-->
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-6">
             <button type="submit" class="button btn btn-default" name="add_user" id="add_user">যোগ করুন</button>

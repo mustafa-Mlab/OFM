@@ -24,12 +24,11 @@ if ($errflag == 0) {
             break;
         }
     }
-    if($found)
-    {echo 'yes';
-    $_SESSION['error_msg']="Crop already added";
-    header("location:../administration.php#add_crop");
-    }
-    else {
+    if ($found) {
+        echo 'yes';
+        $_SESSION['error_msg'] = "Crop already added";
+        header("location:../administration.php#add_crop");
+    } else {
         $sql = "INSERT INTO crop (name) VALUES ('$name')";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());

@@ -96,7 +96,7 @@ while ($row = mysql_fetch_array($query)) {
                     $jipsam += $disjipsam;
                     $zinc_salfet += $diszinc_salfet;
                     $magnesium_salfet += $dismagnesium_salfet;
-                    $aluminum_salfet +=  $disaluminum_salfet;
+                    $aluminum_salfet += $disaluminum_salfet;
                     $boron += $disboron;
                     $rc++;
                 }

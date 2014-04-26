@@ -85,7 +85,7 @@ if (isset($_SESSION['id'])) {
                                     while ($row = mysql_fetch_array($result)) {
                                         Echo"<option value='" . $row['id'] . "'>" . $row['name'] . " </option>";
                                     }
-                                } 
+                                }
                                 ?>
                             </select>
                         </div>

@@ -36,13 +36,13 @@ while ($row = mysql_fetch_array($query)) {
         <?php echo '<h4>ব্লকের নামঃ ' . $_SESSION['block'] . "</h4>"; ?>
     </div>
     <div class="col-md-2">
-        <?php echo '<h4> ইউনিয়নঃ ' . $union . "</h4>"; ?>
+        <?php echo '<h4> ইউনিয়নঃ ' . $_SESSION['union'] . "</h4>"; ?>
     </div>
     <div class="col-md-2">
-        <?php echo '<h4> উপজেলাঃ ' . $subdistrict . "</h4>"; ?> 
+        <?php echo '<h4> উপজেলাঃ ' . $_SESSION['subdistrict'] . "</h4>"; ?> 
     </div>
     <div class="col-md-2">
-        <?php echo '<h4> জেলা;' . $district . "</h4>"; ?>
+        <?php echo '<h4> জেলা;' . $_SESSION['district'] . "</h4>"; ?>
     </div>
     <div class="col-md-4">
         <?php echo '<h4> এ ই জেডঃ' . $_SESSION['aez'] . "</h4>"; ?>
@@ -69,7 +69,7 @@ while ($row = mysql_fetch_array($query)) {
             $amm1 = 0;
             $amm2 = 0;
             $amm3 = 0;
-            $query = mysql_query("SELECT * FROM `sheet1`WHERE block ='" . $_SESSION['block_id'] . "' and ecoyear = '" .$_SESSION['ecoyear_id'] ."'ORDER BY id");
+            $query = mysql_query("SELECT * FROM `sheet1`WHERE block ='" . $_SESSION['block_id'] . "' and ecoyear = '" . $_SESSION['ecoyear_id'] . "'ORDER BY id");
             while ($row = mysql_fetch_array($query)) {
                 if (($rc == 0) || ($rc % 2 == 0))
                     Echo"<tr class='active'>";
@@ -78,17 +78,17 @@ while ($row = mysql_fetch_array($query)) {
                 Echo "<td>" . $row['name'] . "</td>";
                 Echo "<td>" . $row['g_name'] . "</td>";
                 Echo "<td>" . $row['land_ammount'] . "</td>";
-                $sql = mysql_query("SELECT * FROM `crop` WHERE `id` = '" .$row['crop1']."'");
+                $sql = mysql_query("SELECT * FROM `crop` WHERE `id` = '" . $row['crop1'] . "'");
                 $data = mysql_fetch_array($sql);
                 $crop1 = $data['name'];
                 Echo "<td>" . $crop1 . "</td>";
                 Echo "<td>" . $row['ammount1'] . "</td>";
-                $sql = mysql_query("SELECT * FROM `crop` WHERE `id` = '" .$row['crop2']."'");
+                $sql = mysql_query("SELECT * FROM `crop` WHERE `id` = '" . $row['crop2'] . "'");
                 $data = mysql_fetch_array($sql);
                 $crop2 = $data['name'];
-                Echo "<td>" . $crop2. "</td>";
+                Echo "<td>" . $crop2 . "</td>";
                 Echo "<td>" . $row['ammount2'] . "</td>";
-                $sql = mysql_query("SELECT * FROM `crop` WHERE `id` = '" .$row['crop3']."'");
+                $sql = mysql_query("SELECT * FROM `crop` WHERE `id` = '" . $row['crop3'] . "'");
                 $data = mysql_fetch_array($sql);
                 $crop3 = $data['name'];
                 Echo "<td>" . $crop3 . "</td>";

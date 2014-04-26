@@ -143,7 +143,7 @@ if (!isset($_SESSION['id']))
             <div class="form-group">
                 <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
                 <div class="col-sm-8">
-                    <input type="text"  class="form-control" id="aez" name="aez"<?php echo "value = '".$_SESSION['aez'] ."'" ?>>
+                    <input type="text"  class="form-control" id="aez" name="aez"<?php echo "value = '" . $_SESSION['aez'] . "'" ?>>
                 </div>
             </div>
             <div class="form-group">
@@ -214,7 +214,7 @@ if (!isset($_SESSION['id']))
 //                        res[0] is farmers number ,res[1] is land ammount and so on;
                         var farmers = document.getElementById("numbers");
                         farmers.value = res[0];
-                        
+
                         var land = document.getElementById("land");
                         land.value = res[1];
                         var uria = document.getElementById("uria");

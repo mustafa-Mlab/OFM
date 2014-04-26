@@ -1,7 +1,7 @@
 <?php require 'header.php'; ?>
 <?php
 if (isset($_SESSION['admin'])) {
-    $id =  $_SESSION['admin'];
+    $id = $_SESSION['admin'];
     echo $id;
 } else
     header("location:admin.php");
@@ -79,7 +79,7 @@ if (isset($_SESSION['admin'])) {
                                     <li><a href="#add_notice" id="add_notice">Add Notice</a></li>
                                     <li><a href="#add_crop" id="add_crop">Add Crop</a></li>
                                     <li><a href="#update_crop" id="update_crop">Update Crop</a></li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -91,11 +91,12 @@ if (isset($_SESSION['admin'])) {
         </div>
         <div class="col-md-8">
             <div class="error_show">
-                <?php if(isset($_SESSION['error_msg'])){
+                <?php
+                if (isset($_SESSION['error_msg'])) {
                     echo $_SESSION['error_msg'];
                     unset($_SESSION['error_msg']);
                 }
-                    ?>
+                ?>
             </div>
             <div class="user_view" id='user_view'></div>
         </div>

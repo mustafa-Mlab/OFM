@@ -16,24 +16,32 @@
             $rc = 0;
             $query = mysql_query("SELECT * FROM `user`ORDER BY id");
             while ($row = mysql_fetch_array($query)) {
-                if (($rc == 0) || ($rc % 2 == 0)) Echo"<tr class='active'>";
-                    else Echo"<tr class='sucess'>";
-                    Echo "<td>" . $row['id'] . "</td>";
-                    Echo "<td>" . $row['full_name'] . "</td>";
-                    Echo "<td>" . $row['mob'] . "</td>";
-                    Echo "<td>" . $row['username'] . "</td>";
-                    if($row['right_lavel'] == 1) Echo "<td>ইউনিয়ন</td>";
-                    else if($row['right_lavel'] == 2) Echo "<td>উপজেলা</td>";
-                    else if($row['right_lavel'] == 3) Echo "<td>জেলা</td>";
-                    else Echo "<td>মন্ত্রণালয়</td>";
-                    Echo "<td>" . $row['reg_date'] . "</td>";
-                    if($row['enabled'] == 1) Echo "<td>Enabled</td>";
-                    else Echo "<td>Disabled</td>";
-                    Echo"</tr>";
-                    $rc++;
+                if (($rc == 0) || ($rc % 2 == 0))
+                    Echo"<tr class='active'>";
+                else
+                    Echo"<tr class='sucess'>";
+                Echo "<td>" . $row['id'] . "</td>";
+                Echo "<td>" . $row['full_name'] . "</td>";
+                Echo "<td>" . $row['mob'] . "</td>";
+                Echo "<td>" . $row['username'] . "</td>";
+                if ($row['right_lavel'] == 1)
+                    Echo "<td>ইউনিয়ন</td>";
+                else if ($row['right_lavel'] == 2)
+                    Echo "<td>উপজেলা</td>";
+                else if ($row['right_lavel'] == 3)
+                    Echo "<td>জেলা</td>";
+                else
+                    Echo "<td>মন্ত্রণালয়</td>";
+                Echo "<td>" . $row['reg_date'] . "</td>";
+                if ($row['enabled'] == 1)
+                    Echo "<td>Enabled</td>";
+                else
+                    Echo "<td>Disabled</td>";
+                Echo"</tr>";
+                $rc++;
             }
             ?>
-           
+
         </table>
 
     </div>

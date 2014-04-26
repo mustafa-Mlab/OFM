@@ -27,7 +27,7 @@ $_SESSION['ecoyear'] = $row['ecoyear'];
                             If (mysql_num_rows($check) == 0) {
                                 $sql = mysql_query("SELECT * FROM `district` WHERE `id` ='" . $dist_id . "'");
                                 $data = mysql_fetch_array($sql);
-                                Echo"<option value=\"". $row['district'] . "\">" . $data['name'] . "</option>";
+                                Echo"<option value=\"" . $row['district'] . "\">" . $data['name'] . "</option>";
                             }
                         }
                         ?>

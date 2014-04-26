@@ -2,19 +2,18 @@
 include './config.php';
 ?>
 <?php require './header.php'; ?>
-<?php 
-    if(isset($_SESSION['admin']))
-        header("location:administration.php");
+<?php
+if (isset($_SESSION['admin']))
+    header("location:administration.php");
 ?>
 <div class="container ofwhite">
     <div class="row">
         <div class="col-md-6 col-md-offset-2">
             <?php
-                if(isset($_SESSION['error_msg']))
-                {
-                    Echo"<h4>".$_SESSION['error_msg']."</h4>";
-                    $_SESSION['error_msg']='';
-                }
+            if (isset($_SESSION['error_msg'])) {
+                Echo"<h4>" . $_SESSION['error_msg'] . "</h4>";
+                $_SESSION['error_msg'] = '';
+            }
             ?>
         </div>
     </div>

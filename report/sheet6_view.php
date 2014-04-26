@@ -14,15 +14,18 @@ if ($query) {
     <div class="col-md-12">
         <div class="center-align">
             <?php echo"<h2>" . $_SESSION['ecoyear'] . " অর্থবছরের জেলা পর্যায়ে </h2>" ?>
-            <h3>ফসলভিত্তিক সারের পরিমাণ <?php if ($_SESSION['table'] == "sheet6") echo " (চাহিদা)";
-            else echo "(অনুমোদিত)"; ?></h3>
+            <h3>ফসলভিত্তিক সারের পরিমাণ <?php if ($_SESSION['table'] == "sheet6")
+                echo " (চাহিদা)";
+            else
+                echo "(অনুমোদিত)";
+            ?></h3>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-3">
-<?php echo '<h3> জেলাঃ' . $_SESSION['district'] . "</h3>"; ?>
+        <?php echo '<h3> জেলাঃ' . $_SESSION['district'] . "</h3>"; ?>
     </div>
     <div class="col-md-6">
 <?php echo '<h3> এ ই জেডঃ' . $_SESSION['aez'] . "</h3>"; ?>

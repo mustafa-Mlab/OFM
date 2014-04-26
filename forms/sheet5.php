@@ -28,7 +28,7 @@
                         $id = $row['id'];
                         $name = $row['name'];
 
-                        $query = mysql_query("SELECT * FROM `sheet5` WHERE `fertilizar`='".$id. "' and`subdistrict` = '".$subdist_id. "' and `ecoyear` = '".$_SESSION['ecoyear_id']. "' ORDER BY fertilizar");
+                        $query = mysql_query("SELECT * FROM `sheet5` WHERE `fertilizar`='" . $id . "' and`subdistrict` = '" . $subdist_id . "' and `ecoyear` = '" . $_SESSION['ecoyear_id'] . "' ORDER BY fertilizar");
                         If (mysql_num_rows($query) == 0)
                             echo '<option value="' . $id . '">' . $name . '</option>';
                     }

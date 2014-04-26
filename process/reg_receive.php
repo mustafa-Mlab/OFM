@@ -91,9 +91,8 @@ if ($errflag == 0) {
         }
         echo "1 record added \n";
     }
-}
-else{
-    echo "ERROR ". $_SESSION['error_msg'];
+} else {
+    echo "ERROR " . $_SESSION['error_msg'];
 }
 header("location:../administration.php#add_user");
 ?>

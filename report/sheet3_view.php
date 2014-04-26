@@ -28,22 +28,23 @@ if ($query) {
     <div class="col-md-12">
         <div class="center-align">
             <?php echo"<h2>" . $_SESSION['ecoyear'] . " অর্থবছরের ইউনিয়ন পর্যায়ে </h2>" ?>
-            <h3>ফসলভিত্তিক সারের পরিমাণ <?php if($_SESSION['table'] == "sheet3") echo " নিরূপণ"; else echo "অনুমোদিত";?></h3>
+            <h3>ফসলভিত্তিক সারের পরিমাণ <?php if ($_SESSION['table'] == "sheet3") echo " নিরূপণ";
+            else echo "অনুমোদিত"; ?></h3>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-3">
-        <?php echo'<h4> ইউনিয়নঃ ' . $_SESSION['union'] . "</h4>"; ?>
+<?php echo'<h4> ইউনিয়নঃ ' . $_SESSION['union'] . "</h4>"; ?>
     </div>
     <div class="col-md-3">
-        <?php echo '<h4> উপজেলাঃ ' . $_SESSION['subdistrict'] . "</h4>"; ?> 
+<?php echo '<h4> উপজেলাঃ ' . $_SESSION['subdistrict'] . "</h4>"; ?> 
     </div>
     <div class="col-md-3">
-        <?php echo '<h4> জেলাঃ' . $_SESSION['district'] . "</h4>"; ?>
+<?php echo '<h4> জেলাঃ' . $_SESSION['district'] . "</h4>"; ?>
     </div>
     <div class="col-md-3">
-        <?php echo '<h4> এ ই জেডঃ' . $_SESSION['aez'] . "</h4>"; ?>
+<?php echo '<h4> এ ই জেডঃ' . $_SESSION['aez'] . "</h4>"; ?>
     </div>
 </div>
 <div class="row">

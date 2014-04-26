@@ -1,4 +1,4 @@
-<?php 
+<?php
 include './config.php';
 ?>
 <fieldset>
@@ -8,11 +8,9 @@ include './config.php';
             <ul>
                 <?php
                 $query = mysql_query("SELECT news FROM news WHERE status = 1");
-                if($query)
-                {
-                    while($row = mysql_fetch_array($query))
-                    {
-                        Echo "<li><a href='#'><b>".$row['news']."</b></a></li>";
+                if ($query) {
+                    while ($row = mysql_fetch_array($query)) {
+                        Echo "<li><a href='#'><b>" . $row['news'] . "</b></a></li>";
                     }
                 }
                 ?>

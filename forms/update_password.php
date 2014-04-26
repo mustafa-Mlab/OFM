@@ -43,8 +43,8 @@
             pass2.style.backgroundColor = goodColor;
             message.style.color = goodColor;
             message.innerHTML = "Passwords Match!";
-             var type = document.getElementById("type");
-                        type.value = 1;
+            var type = document.getElementById("type");
+            type.value = 1;
         } else {
             //The passwords do not match.
             //Set the color to the bad color and
@@ -53,7 +53,7 @@
             message.style.color = badColor;
             message.innerHTML = "Passwords Do Not Match!";
             var type = document.getElementById("type");
-                        type.value = 0;
+            type.value = 0;
         }
     }
 </script>

@@ -8,17 +8,17 @@ if ($_POST['id']) {
     $row = mysql_fetch_array($sql);
     $july = $row['july'];
     $august = $row['august'];
-    $september=$row['september'];
+    $september = $row['september'];
     $october = $row['october'];
-    $november =$row['november'];
+    $november = $row['november'];
     $december = $row['december'];
-    $january =$row['january'];
+    $january = $row['january'];
     $february = $row['february'];
-    $march =$row['march'];
-    $april  = $row['april'];
-    $may =$row['may'];
-    $june =$row['june'];
-    $fertilizer  = $row['fertilizer'];
+    $march = $row['march'];
+    $april = $row['april'];
+    $may = $row['may'];
+    $june = $row['june'];
+    $fertilizer = $row['fertilizer'];
 
     $data = $fertilizer . "," . $july . "," . $august . "," . $september . "," . $october . "," . $november . "," . $december . "," . $january . "," . $february . "," . $march . "," . $april . "," . $may . "," . $june;
     echo $data;

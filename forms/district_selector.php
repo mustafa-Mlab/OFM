@@ -10,7 +10,7 @@ include '../config.php';
             Echo"<option selected='selected' value='0'>বাছাই করুন </option>";
             $result = mysql_query("SELECT * FROM district");
             while ($row = mysql_fetch_array($result)) {
-                Echo"<option value=\"".$row['id']."\">".$row['name']."</option>";
+                Echo"<option value=\"" . $row['id'] . "\">" . $row['name'] . "</option>";
             }
             ?>
         </select>

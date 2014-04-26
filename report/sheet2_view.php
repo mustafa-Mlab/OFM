@@ -29,25 +29,26 @@ if ($query) {
         <div class="center-align">
             <?php echo"<h2>" . $_SESSION['ecoyear'] . " অর্থবছরের ব্লক পর্যায় </h2>" ?>
 
-            <h3>ফসলভিত্তিক সারের পরিমাণ <?php if($_SESSION['table'] == "sheet2") echo " নিরূপণ"; else echo "অনুমোদিত";?></h3>
+            <h3>ফসলভিত্তিক সারের পরিমাণ <?php if ($_SESSION['table'] == "sheet2") echo " নিরূপণ";
+            else echo "অনুমোদিত"; ?></h3>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-2">
-        <?php echo '<h4>ব্লকের নামঃ ' . $_SESSION['block'] . "</h4>"; ?>
+<?php echo '<h4>ব্লকের নামঃ ' . $_SESSION['block'] . "</h4>"; ?>
     </div>
     <div class="col-md-2">
-        <?php echo '<h4> ইউনিয়নঃ ' .$_SESSION['union'] . "</h4>"; ?>
+<?php echo '<h4> ইউনিয়নঃ ' . $_SESSION['union'] . "</h4>"; ?>
     </div>
     <div class="col-md-2">
-        <?php echo '<h4> উপজেলাঃ ' .$_SESSION['subdistrict'] . "</h4>"; ?> 
+<?php echo '<h4> উপজেলাঃ ' . $_SESSION['subdistrict'] . "</h4>"; ?> 
     </div>
     <div class="col-md-2">
-        <?php echo '<h4> জেলাঃ' . $_SESSION['district']. "</h4>"; ?>
+<?php echo '<h4> জেলাঃ' . $_SESSION['district'] . "</h4>"; ?>
     </div>
     <div class="col-md-4">
-        <?php echo '<h4> এ ই জেডঃ ' . $_SESSION['aez']. "</h4>"; ?>
+<?php echo '<h4> এ ই জেডঃ ' . $_SESSION['aez'] . "</h4>"; ?>
     </div>
 
 </div>
@@ -83,7 +84,7 @@ if ($query) {
             $magnesium_salfet = 0;
             $aluminum_salfet = 0;
             $boron = 0;
-            $query = mysql_query("SELECT * FROM `".$_SESSION['table']."`WHERE block ='" . $_SESSION['block_id'] . "'ORDER BY id");
+            $query = mysql_query("SELECT * FROM `" . $_SESSION['table'] . "`WHERE block ='" . $_SESSION['block_id'] . "'ORDER BY id");
             while ($row = mysql_fetch_array($query)) {
                 if (($rc == 0) || ($rc % 2 == 0))
                     Echo"<tr class='active'>";
@@ -95,16 +96,16 @@ if ($query) {
                 Echo "<td>" . $data['name'] . "</td>";
                 Echo "<td>" . $row['farmers'] . "</td>";
                 Echo "<td>" . $row['land'] . "</td>";
-                Echo "<td>" . round($row['uria'], 2). "</td>";
-                Echo "<td>" . round($row['tsp'], 2). "</td>";
-                Echo "<td>" . round($row['dmp'], 2). "</td>";
-                Echo "<td>" . round($row['mop'], 2). "</td>";
-                Echo "<td>" . round($row['mpks'], 2). "</td>";
-                Echo "<td>" . round($row['jipsam'], 2). "</td>";
-                Echo "<td>" . round($row['zinc_salfet'], 2). "</td>";
-                Echo "<td>" . round($row['magnesium_salfet'], 2). "</td>";
-                Echo "<td>" . round($row['alluminium_salfet'], 2). "</td>";
-                Echo "<td>" . round($row['boron'], 2). "</td>";
+                Echo "<td>" . round($row['uria'], 2) . "</td>";
+                Echo "<td>" . round($row['tsp'], 2) . "</td>";
+                Echo "<td>" . round($row['dmp'], 2) . "</td>";
+                Echo "<td>" . round($row['mop'], 2) . "</td>";
+                Echo "<td>" . round($row['mpks'], 2) . "</td>";
+                Echo "<td>" . round($row['jipsam'], 2) . "</td>";
+                Echo "<td>" . round($row['zinc_salfet'], 2) . "</td>";
+                Echo "<td>" . round($row['magnesium_salfet'], 2) . "</td>";
+                Echo "<td>" . round($row['alluminium_salfet'], 2) . "</td>";
+                Echo "<td>" . round($row['boron'], 2) . "</td>";
                 Echo"</tr>";
                 $farmers +=$row['farmers'];
                 $land += $row['land'];

@@ -11,7 +11,7 @@ if ($_POST['id']) {
     $land = $row['land'];
     $crop = $row['crop'];
     $farmers = $row['farmers'];
-    $data = $farmers . "," . $land  . "," .$crop;
+    $data = $farmers . "," . $land . "," . $crop;
     echo $data;
 }
 ?>

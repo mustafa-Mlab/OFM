@@ -2,8 +2,8 @@
     <h2>ইউনিয়ন  নিবন্ধন করুনঃ</h2>
 </div>
 <form class="form-horizontal" role="form" action="process/add_union_receive.php" method="post">
-    <?php require './district_selector.php';?>
-    <?php require './subdistrict_selector.php';?>
+    <?php require './district_selector.php'; ?>
+    <?php require './subdistrict_selector.php'; ?>
     <div class="form-group">
         <label for="name" class="col-sm-4 control-label">ইউনিয়নের নামঃ </label>
         <div class="col-sm-8">

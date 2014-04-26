@@ -24,14 +24,14 @@
                     Echo" <option selected='selected' >বাছাই করুন</option>";
                     $updated = 0;
                     $query = mysql_query("SELECT * FROM `sheet7` WHERE `district` = '" . $_SESSION['district'] . "' and `ecoyear` = '" . $_SESSION['ecoyear_id'] . "' and updated = '" . $updated . "'");
-                    If (mysql_num_rows($query) > 0){
+                    If (mysql_num_rows($query) > 0) {
                         while ($row = mysql_fetch_array($query)) {
                             $fertilizer_id = $row['fertilizer'];
                             $id = $row['id'];
-                            $sql = mysql_query("SELECT * FROM `fertilizer`WHERE id = '" .$fertilizer_id ."'");
+                            $sql = mysql_query("SELECT * FROM `fertilizer`WHERE id = '" . $fertilizer_id . "'");
                             $fertilizer_info = mysql_fetch_array($sql);
                             $name = $fertilizer_info['name'];
-                             echo '<option value="' .$id . '">' . $name . '</option>';
+                            echo '<option value="' . $id . '">' . $name . '</option>';
                         }
                     }
                     ?>

@@ -13,13 +13,12 @@ require './header.php';
             <input type="text" id="name" name="name">
             <button type="submit" class="button btn btn-default" name="submit" id="submit">Submit </button>
         </form>
-   
+
         <?php
         $sql = mysql_query("SELECT * FROM fertilizer order by id");
         echo "<h3>";
-        while ($row = mysql_fetch_array($sql)){
-            echo $row['id'] ."   ". $row['name'] . '</br>';
-            
+        while ($row = mysql_fetch_array($sql)) {
+            echo $row['id'] . "   " . $row['name'] . '</br>';
         }
         echo"</h3>;"
         ?>
