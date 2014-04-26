@@ -14,14 +14,6 @@ if (isset($_POST['submit'])) {
         $errflag++;
         $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Select Crop ";
     }
-
-    if (!empty($_POST['aez'])) {
-        $aez = $_POST['aez'];
-    } else {
-        $errflag++;
-        $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Enter AEZ code ";
-    }
-
     $boron = $_POST['boron'];
     $aluminum_salfet = $_POST['aluminum_salfet'];
     $magnesium_salfet = $_POST['magnesium_salfet'];

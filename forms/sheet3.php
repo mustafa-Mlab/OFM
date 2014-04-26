@@ -143,7 +143,7 @@ if (!isset($_SESSION['id']))
             <div class="form-group">
                 <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
                 <div class="col-sm-8">
-                    <input type="text"  class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
+                    <input type="text"  class="form-control" id="aez" name="aez"<?php echo "value = '".$_SESSION['aez'] ."'" ?>>
                 </div>
             </div>
             <div class="form-group">
@@ -151,8 +151,7 @@ if (!isset($_SESSION['id']))
                 <div class="col-sm-8">
                     <select class="form-control" name="district" id="district">
                         <?php
-                        echo $dist_id;
-                        Echo" <option selected='selected' value='" . $dist_id . "'>" . $district . " </option>";
+                        Echo" <option selected='selected' value='" . $_SESSION['dist_id'] . "'>" . $_SESSION['district'] . " </option>";
                         ?>
                     </select>
                 </div>
@@ -163,7 +162,7 @@ if (!isset($_SESSION['id']))
                     <select class="form-control" name="subdistrict" id="subdistrict" >
 
                         <?php
-                        Echo"<option selected='selected' value='" . $subdist_id . "'>" . $subdistrict . " </option>";
+                        Echo"<option selected='selected' value='" . $_SESSION['ssubdist_id'] . "'>" . $_SESSION['ssubdistrict'] . " </option>";
                         ?>
                     </select>
                 </div>
@@ -173,7 +172,7 @@ if (!isset($_SESSION['id']))
                 <div class="col-sm-8">
                     <select class="form-control" name="union" id="union" >
                         <?php
-                        Echo"<option selected='selected' value='" . $union_id . "'>" . $union . " </option>";
+                        Echo"<option selected='selected' value='" . $union_id . "'>" . $union . " </option>"
                         ?>
                     </select>
                 </div>

@@ -14,13 +14,6 @@ if (isset($_POST['submit'])) {
         $errflag++;
         $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Select Crop ";
     }
-
-    if (!empty($_POST['aez'])) {
-        $aez = $_POST['aez'];
-    } else {
-        $aez = "7,17,16,19";
-    }
-
     $boron = $_POST['boron'];
     $aluminum_salfet = $_POST['aluminum_salfet'];
     $magnesium_salfet = $_POST['magnesium_salfet'];
@@ -54,8 +47,8 @@ if ($errflag == 0) {
         die('Error: ' . mysql_error());
     }
     echo "1 record updated \n";
-    
-    
+
+
 //    ******** This part is to update sheet 3 database *********
     $updated = 0;
     $sql = "SELECT * FROM `sheet4` WHERE subdistrict ='" . $subdistrict . "' and ecoyear = '" . $ecoyear_id . "' and crop ='" . $crop_id . "'";

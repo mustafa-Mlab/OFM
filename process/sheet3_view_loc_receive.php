@@ -38,10 +38,14 @@ if (isset($_POST['submit'])) {
         $result = mysql_query("SELECT * FROM `union` WHERE id='" . $_SESSION['union_id'] . "' ");
         $row = mysql_fetch_array($result);
         $_SESSION['union'] = $row['name'];
-        echo " Union  name  " . $_SESSION['union'];
+        $_SESSION['aez'] = $row['aez'];
     } else
         $errflag++;
-   
+    $status = $_POST['status'];
+    if ($status == '1')
+        $_SESSION['table'] = "sheet3";
+    else
+        $_SESSION['table'] = "sheet3_alloted";
 } else
     $errflag++;
 

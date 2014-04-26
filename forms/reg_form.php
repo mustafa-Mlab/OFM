@@ -21,13 +21,13 @@ echo "<a class='button' href='$url'>Back</a>";
         <div class="col-sm-8">
             <select class="form-control" name="lavel_user" id="lavel_user" >
                 <option selected="selected" value="0">বাছাই করুন </option>
-                <option value="1">ব্লক </option>
-                <option value="2">ইউনিয়ন </option>
-                <option value="3">উপজেলা </option>
-                <option value="4">জেলা</option>
-                <option value="5">আঞ্চলিক অফিস</option>
-                <option value="6">সদর দপ্তর</option>
-                <option value="7">মন্ত্রণালয় </option>
+                <!--<option value="1">ব্লক </option>-->
+                <option value="1">ইউনিয়ন </option>
+                <option value="2">উপজেলা </option>
+                <option value="3">জেলা</option>
+<!--                <option value="5">আঞ্চলিক অফিস</option>
+                <option value="6">সদর দপ্তর</option>-->
+                <option value="4">মন্ত্রণালয় </option>
             </select>
         </div>
     </div>
@@ -50,39 +50,11 @@ echo "<a class='button' href='$url'>Back</a>";
         </div>
     </div>
     <div class="form-group">
-        <label for="pass1" class="col-sm-4 control-label">পাসওয়ার্ডঃ </label>
-        <div class="col-sm-8">
-            <input type="password" required class="form-control" id="pass1" name="pass1" placeholder="Password">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="pass2" class="col-sm-4 control-label">নিশ্চিত করুনঃ </label>
-        <div class="col-sm-8">
-            <input type="password" required class="form-control" id="pass2" name="pass2" onkeyup="checkPass();
-                    return false;" placeholder="Confirm Password">
-            <span id="confirmMessage" class="confirmMessage"></span>
-        </div>
-    </div>
-
-    <div class="form-group">
         <label for="mobile_no" class="col-sm-4 control-label">মোবাইল নাম্বারঃ </label>
         <div class="col-sm-8">
             <input type="text" required class="form-control" id="mobile_no" name="mobile_no" placeholder="Mobile number">
         </div>
     </div>
-    <div class="form-group">
-        <label for="sec_ques" class="col-sm-4 control-label">গোপন প্রস্নঃ </label>
-        <div class="col-sm-8">
-            <input type="text" required class="form-control" id="sec_ques" name="sec_ques" placeholder="Sectete Question">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="ans" class="col-sm-4 control-label">উত্তরঃ </label>
-        <div class="col-sm-8">
-            <input type="text" required class="form-control" id="ans" name="ans" placeholder="Answer">
-        </div>
-    </div>
-
     <div id="location"> </div>
 
     <div id="district_form" class="hidden">
@@ -100,7 +72,7 @@ echo "<a class='button' href='$url'>Back</a>";
     </div>-->
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-6">
-            <button type="submit" class="btn btn-default" name="add_user" id="add_user">যোগ করুন</button>
+            <button type="submit" class="button btn btn-default" name="add_user" id="add_user">যোগ করুন</button>
         </div>
     </div>
 </form>
@@ -112,46 +84,46 @@ echo "<a class='button' href='$url'>Back</a>";
         {
             case "1":
                 $('#union_form').removeClass('hidden');
-                $('#block_form').removeClass('hidden');
+//                $('#block_form').removeClass('hidden');
                 $('#subdistrict_form').removeClass('hidden');
                 $('#district_form').removeClass('hidden');
-                $('#area_form').addClass('hidden');
+//                $('#area_form').addClass('hidden');
 
                 break;
             case "2":
-                $('#union_form').removeClass('hidden');
-                $('#block_form').addClass('hidden');
+                $('#union_form').addClass('hidden');
+//                $('#block_form').addClass('hidden');
                 $('#subdistrict_form').removeClass('hidden');
                 $('#district_form').removeClass('hidden');
-                $('#area_form').addClass('hidden');
+//                $('#area_form').addClass('hidden');
 
                 break;
             case "3":
                 $('#union_form').addClass('hidden');
-                $('#block_form').addClass('hidden');
-                $('#subdistrict_form').removeClass('hidden');
+//                $('#block_form').addClass('hidden');
+                $('#subdistrict_form').addClass('hidden');
                 $('#district_form').removeClass('hidden');
-                $('#area_form').addClass('hidden');
+//                $('#area_form').addClass('hidden');
 
                 break;
             case "4":
                 $('#union_form').addClass('hidden');
-                $('#block_form').addClass('hidden');
+//                $('#block_form').addClass('hidden');
                 $('#subdistrict_form').addClass('hidden');
-                $('#district_form').removeClass('hidden');
-                $('#area_form').addClass('hidden');
+                $('#district_form').addeClass('hidden');
+//                $('#area_form').addClass('hidden');
 
                 break;
-            case "5":
-                $('#union_form').addClass('hidden');
-                $('#block_form').addClass('hidden');
-                $('#subdistrict_form').addClass('hidden');
-                $('#district_form').addClass('hidden');
-                $('#area_form').removeClass('hidden');
-                break;
+//            case "5":
+//                $('#union_form').addClass('hidden');
+////                $('#block_form').addClass('hidden');
+//                $('#subdistrict_form').addClass('hidden');
+//                $('#district_form').addClass('hidden');
+//                $('#area_form').removeClass('hidden');
+//                break;
             default :
                 $('#union_form').addClass('hidden');
-                $('#block_form').addClass('hidden');
+//                $('#block_form').addClass('hidden');
                 $('#subdistrict_form').addClass('hidden');
                 $('#district_form').addClass('hidden');
                 $('#area_form').addClass('hidden');
@@ -160,35 +132,4 @@ echo "<a class='button' href='$url'>Back</a>";
         }
         ;
     });
-</script>
-
-<script>
-    function checkPass()
-    {
-        //Store the password field objects into variables ...
-        var pass1 = document.getElementById('pass1');
-        var pass2 = document.getElementById('pass2');
-        //Store the Confimation Message Object ...
-        var message = document.getElementById('confirmMessage');
-        //Set the colors we will be using ...
-        var goodColor = "#66cc66";
-        var badColor = "#ff6666";
-        //Compare the values in the password field
-        //and the confirmation field
-        if (pass1.value === pass2.value) {
-            //The passwords match.
-            //Set the color to the good color and inform
-            //the user that they have entered the correct password
-            pass2.style.backgroundColor = goodColor;
-            message.style.color = goodColor;
-            message.innerHTML = "Passwords Match!";
-        } else {
-            //The passwords do not match.
-            //Set the color to the bad color and
-            //notify the user.
-            pass2.style.backgroundColor = badColor;
-            message.style.color = badColor;
-            message.innerHTML = "Passwords Do Not Match!";
-        }
-    }
 </script>

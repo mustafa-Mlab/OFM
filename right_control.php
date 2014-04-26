@@ -6,29 +6,28 @@ if (isset($_SESSION['id'])) {
     $date = date('Y-m-d');
     $query = mysql_query("SELECT * FROM user WHERE id= $id");
     while ($row = mysql_fetch_array($query)) {
-        $lavel = $row['right_lavel'];
-        $dist_id = $row['district'];
-        $subdist_id = $row['subdistrict'];
-        $union_id = $row['union_loc'];
+        $_SESSION['slavel'] = $row['right_lavel'];
+        if ($_SESSION['slavel'] < 4) {
+            $_SESSION['sdist_id'] = $row['district'];
+            $sql = mysql_query("SELECT name FROM district WHERE id='" . $_SESSION['sdist_id'] . "'");
+            if ($sql) {
+                $data = mysql_fetch_array($query);
+                $_SESSION['sdistrict'] = $data['name'];
+            }
+            if ($_SESSION['slavel'] < 3) {
+                $_SESSION['ssubdist_id'] = $row['subdistrict'];
+                $sql = mysql_query("SELECT name FROM subdistrict WHERE id='" . $_SESSION['ssubdist_id'] . "'");
+                $data = mysql_fetch_array($sql);
+                $_SESSION['ssubdistrict'] = $data['name'];
+            }
+            if ($_SESSION['slavel'] < 2) {
+                $_SESSION['sunion_id'] = $row['union_loc'];
+                $sql = mysql_query("SELECT name FROM `union` WHERE `id` ='" . $_SESSION['sunion_id'] . "'");
+                $data = mysql_fetch_array($sql);
+                $union = $data['name'];
+            }
+        }
     }
-    $query = mysql_query("SELECT name FROM district WHERE id='" . $dist_id . "'");
-    if ($query) {
-        $row = mysql_fetch_array($query);
-        $district = $row['name'];
-    }
-
-    $query = mysql_query("SELECT name FROM subdistrict WHERE id='" . $subdist_id . "'");
-    if ($query) {
-        $row = mysql_fetch_array($query);
-        $subdistrict = $row['name'];
-    }
-
-    $query = mysql_query("SELECT name FROM `union` WHERE `id` ='" . $union_id . "'");
-    if ($query) {
-        $row = mysql_fetch_array($query);
-        $union = $row['name'];
-    }
-//    echo $id . "  " . $lavel . " " . $district . " " . $subdistrict . " " . $union . " " . $date;
 } else {
     $_SESSION['error_msg'] = "You Need to login first to use this application ";
     header("location:index.php");

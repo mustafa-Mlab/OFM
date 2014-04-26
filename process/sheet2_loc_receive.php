@@ -12,20 +12,22 @@ if (isset($_POST['submit'])) {
         $year = $_POST['ecoyear'];
         $query = mysql_query("SELECT * FROM ecoyear WHERE id= $year");
         while ($row = mysql_fetch_array($query)) {
-            $_SESSION['ecoyear']=  $row['ecoyear'];
+            $_SESSION['ecoyear'] = $row['ecoyear'];
             $start = $row['submission_start'];
             $end = $row['submission_end'];
         }
     } else
         $errflag++;
+    $_SESSION['dist_id'] = $_POST['district'];
+    $sql = mysql_query("SELECT * FROM `district` WHERE id ='" . $_SESSION['dist_id'] . "'");
+    $row = mysql_fetch_array($sql);
+    $_SESSION['district'] = $row['name'];
     if (!empty($_POST['block'])) {
         $_SESSION['block_id'] = $_POST['block'];
         $result = mysql_query("SELECT * FROM block WHERE id='" . $_POST['block'] . "'");
-        if ($result) {
-            while ($row = mysql_fetch_array($result)) {
-                $_SESSION['block'] = $row['name'];
-            }
-        }
+        $row = mysql_fetch_array($result);
+        $_SESSION['block'] = $row['name'];
+        $_SESSION['aez'] = $row['aez'];
     } else
         $errflag++;
 } else

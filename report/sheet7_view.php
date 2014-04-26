@@ -15,20 +15,24 @@ if ($query) {
     <div class="col-md-12">
         <div class="center-align">
             <?php echo"<h2>" . $_SESSION['ecoyear'] . " অর্থবছরের জেলা পর্যায়ে </h2>" ?>
-            <h3>মাসভিত্তিক সারের চাহিদা নিরূপণ</h3>
+            <h3>মাসভিত্তিক সারের পরিমাণ <?php if ($_SESSION['table'] == "sheet7")
+                echo " (চাহিদা)";
+            else
+                echo "(অনুমোদিত)";
+            ?></h3>
         </div>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
     </div>
     <div class="col-md-3">
         <?php echo '<h3> জেলাঃ' . $_SESSION['district'] . "</h3>"; ?>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6">
+<?php echo '<h3> এ ই জেডঃ' . $_SESSION['aez'] . "</h3>"; ?>
     </div>
+
 </div>
 <div class="row">
     <div class="col-md-12">
@@ -52,7 +56,7 @@ if ($query) {
             <?php
             $rc = 0;
 //            echo  $_SESSION['subdist_id']  ."  " .$_SESSION['ecoyear_id'] . "  " ;
-            $queary = mysql_query("SELECT * FROM `sheet7` WHERE `district` = '".$_SESSION['district_id']."' and `ecoyear` = '" . $_SESSION['ecoyear_id'] . "'");
+            $queary = mysql_query("SELECT * FROM `" . $_SESSION['table'] . "` WHERE `district` = '" . $_SESSION['district_id'] . "' and `ecoyear` = '" . $_SESSION['ecoyear_id'] . "'");
 //            echo mysql_num_rows($queary);
             If (mysql_num_rows($queary) > 0) {
                 while ($row = mysql_fetch_array($queary)) {
@@ -76,7 +80,7 @@ if ($query) {
                     Echo "<td>" . $row['april'] . "</td>";
                     Echo "<td>" . $row['may'] . "</td>";
                     Echo "<td>" . $row['june'] . "</td>";
-                    
+
                     $total = $row['july'] + $row['august'] + $row['september'] + $row['october'] + $row['november'] + $row['december'] + $row['january'] + $row['february'] + $row['march'] + $row['april'] + $row['may'] + $row['june'];
                     Echo "<td class='warning'>" . $total . "</td>";
                     $rc++;

@@ -42,7 +42,7 @@
         <div class="row">
             <div class="form-group">
                 <div class="col-sm-4">
-                    <button type="submit" class="btn btn-default" name="login" id="login">লগ ইন করুন</button>
+                    <button type="submit" class="button btn btn-default" name="login" id="login">লগ ইন করুন</button>
                 </div>
             </div>
         </div>

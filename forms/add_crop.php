@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-6">
-            <button type="submit" class="btn btn-default" name="add_crop" id="add_crop">যোগ করুন</button>
+            <button type="submit" class="button btn btn-default" name="add_crop" id="add_crop">যোগ করুন</button>
         </div>
     </div>
 </form>

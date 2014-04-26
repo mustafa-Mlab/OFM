@@ -6,7 +6,7 @@ if (!isset($_SESSION['id']))
     <div class="col-md-12">
         <div class="center-align">
             <h2>ব্লক পর্যায়ে </h2>
-            <h3>ফসলভিত্তিক সারের চাহিদা নিরূপণ</h3>
+            <h3>ফসলভিত্তিক সারের চাহিদা নিরূপণ (হেক্টরে)"</h3>
         </div>
     </div>
 </div>
@@ -145,7 +145,7 @@ if (!isset($_SESSION['id']))
             <div class="form-group">
                 <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
                 <div class="col-sm-8">
-                    <input type="text" readonly="" class="form-control" id="aez" name="aez" <?php if(isset($aez))echo"value=".$aez?>>
+                    <input type="text" readonly="" class="form-control" id="aez" name="aez" <?php echo"value=".$_SESSION['aez']?>>
                 </div>
             </div>
             <div class="form-group">
@@ -154,7 +154,7 @@ if (!isset($_SESSION['id']))
                     <select class="form-control" name="district" id="district">
                         <?php
                         echo $dist_id;
-                        Echo" <option selected='selected' value='" . $dist_id . "'>" . $district . " </option>";
+                        Echo" <option selected='selected' value='" . $_SESSION['dist_id'] . "'>" . $_SESSION['district'] . " </option>";
                         ?>
                     </select>
                 </div>
@@ -165,7 +165,7 @@ if (!isset($_SESSION['id']))
                     <select class="form-control" name="subdistrict" id="subdistrict" >
 
                         <?php
-                        Echo"<option selected='selected' value='" . $subdist_id . "'>" . $subdistrict . " </option>";
+                        Echo"<option selected='selected' value='" . $_SESSION['ssubdist_id'] . "'>" . $_SESSION['ssubdistrict'] . " </option>";
                         ?>
                     </select>
                 </div>

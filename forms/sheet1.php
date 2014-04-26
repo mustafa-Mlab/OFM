@@ -188,7 +188,7 @@ if (isset($_SESSION['id'])) {
             <div class="form-group">
                 <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
                 <div class="col-sm-8">
-                    <input type="text" required class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
+                    <input type="text" readonly class="form-control" id="aez" name="aez" <?php echo"value ='" . $_SESSION['aez'] . "'" ?>>
                 </div>
             </div>
             <div class="form-group">

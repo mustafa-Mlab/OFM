@@ -29,7 +29,6 @@ if (isset($_SESSION['id'])) {
         $row = mysql_fetch_array($query);
         $union = $row['name'];
     }
-//    echo $id . "  " . $lavel . " " . $district . " " . $subdistrict . " " . $union . " " . $date;
 } else {
     $_SESSION['error_msg'] = "You Need to login first to use this application ";
     header("location:index.php");
@@ -85,7 +84,7 @@ if (isset($_SESSION['id'])) {
                                     while ($row = mysql_fetch_array($result)) {
                                         Echo"<option value='" . $row['id'] . "'>" . $row['name'] . " </option>";
                                     }
-                                } 
+                                }
                                 ?>
                             </select>
                         </div>

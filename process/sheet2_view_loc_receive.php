@@ -34,11 +34,11 @@ if (isset($_POST['submit'])) {
         $errflag++;
     if (!empty($_POST['union'])) {
         $_SESSION['union_id'] = $_POST['union'];
-        echo " Union id   ". $_SESSION['union_id'];
-        $result = mysql_query("SELECT * FROM `union` WHERE id='" . $_SESSION['union_id'] ."' ");
+        echo " Union id   " . $_SESSION['union_id'];
+        $result = mysql_query("SELECT * FROM `union` WHERE id='" . $_SESSION['union_id'] . "' ");
         $row = mysql_fetch_array($result);
         $_SESSION['union'] = $row['name'];
-        echo " Union  name  ".$_SESSION['union'];
+        echo " Union  name  " . $_SESSION['union'];
     } else
         $errflag++;
     if (!empty($_POST['block'])) {
@@ -46,8 +46,14 @@ if (isset($_POST['submit'])) {
         $result = mysql_query("SELECT * FROM block WHERE id='" . $_POST['block'] . "'");
         $row = mysql_fetch_array($result);
         $_SESSION['block'] = $row['name'];
+        $_SESSION['aez'] = $row['aez'];
     } else
         $errflag++;
+    $status = $_POST['status'];
+    if ($status == '1')
+        $_SESSION['table'] = "sheet2";
+    else
+        $_SESSION['table'] = "sheet2_alloted";
 } else
     $errflag++;
 

@@ -21,7 +21,7 @@
                             <select class="form-control" name="crop" id="crop" >
                                 <option selected="selected">বাছাই করুন </option>
                                 <?php
-                                $sql = mysql_query("SELECT * FROM `sheet6`WHERE ecoyear ='" . $_SESSION['ecoyear_id'] . "'and district ='" . $dist_id . "' and updated = 0 ORDER BY crop");
+                                $sql = mysql_query("SELECT * FROM `sheet6`WHERE ecoyear ='" . $_SESSION['ecoyear_id'] . "'and district ='" . $_SESSION['dist_id'] . "' and updated = 0 ORDER BY crop");
                                 If (mysql_num_rows($sql) > 0) {
                                     while ($row = mysql_fetch_array($sql)) {
                                         $crop_id = $row['crop'];
@@ -142,7 +142,7 @@
             <div class="form-group">
                 <label for="aez" class="col-sm-4 control-label">এইজেড নং  </label>
                 <div class="col-sm-8">
-                    <input type="text" required class="form-control" id="aez" name="aez" placeholder="এইজেড নং">
+                    <input type="text"  class="form-control" id="aez" name="aez"<?php echo "value = '" . $_SESSION['aez'] . "'" ?>>
                 </div>
             </div>
             <div class="form-group">
@@ -151,7 +151,7 @@
                     <select class="form-control" name="district" id="district">
                         <?php
                         echo $dist_id;
-                        Echo" <option selected='selected' value='" . $dist_id . "'>" . $district . " </option>";
+                         Echo" <option selected='selected' value='" . $_SESSION['dist_id'] . "'>" . $_SESSION['district'] . " </option>";
                         ?>
                     </select>
                 </div>

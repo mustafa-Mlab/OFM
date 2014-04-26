@@ -11,7 +11,7 @@ $_SESSION['ecoyear'] = $row['ecoyear'];
         <?php
         echo' <div align="center"><h3>' . $_SESSION['ecoyear'] . ' </h3> অর্থবছরের জেলাভিত্তিক সারের পরিমাণ অনুমোদন </div>';
         ?>
-        <form class="form-horizontal" action="process/disallocation.php" method="post">
+        <form class="form-horizontal" action="process/disalloted_receive.php" method="post">
             <div class="form-group">
                 <label for="district" class="col-sm-4 control-label">জেলার নামঃ  </label>
                 <div class="col-sm-8">

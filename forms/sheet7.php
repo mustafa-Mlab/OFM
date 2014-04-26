@@ -11,8 +11,9 @@
 <div class="sheet5"> 
     <form class="form-horizontal" action="process/sheet7_receive.php" method="POST">
         <div class="row">
-            <div class="col-sm-4"> <?php Echo"জেলাঃ  " . $district; ?> </div>
+            <div class="col-sm-4"> <?php Echo"জেলাঃ  " . $_SESSION['district']; ?> </div>
             <div class="col-sm-4"> <?php Echo"অর্থবছরঃ   " . $_SESSION['ecoyear']; ?> </div>
+            <div class="col-sm-4"> <?php Echo"এ ই জেডঃ   " . $_SESSION['aez']; ?> </div>
         </div>
 
         <div class="form-group">
@@ -22,7 +23,7 @@
                     <?php
                     Echo" <option selected='selected' >বাছাই করুন</option>";
                     $updated = 0;
-                    $query = mysql_query("SELECT * FROM `sheet7` WHERE `district` = '" . $dist_id . "' and `ecoyear` = '" . $_SESSION['ecoyear_id'] . "' and updated = '" . $updated . "'");
+                    $query = mysql_query("SELECT * FROM `sheet7` WHERE `district` = '" . $_SESSION['district'] . "' and `ecoyear` = '" . $_SESSION['ecoyear_id'] . "' and updated = '" . $updated . "'");
                     If (mysql_num_rows($query) > 0){
                         while ($row = mysql_fetch_array($query)) {
                             $fertilizer_id = $row['fertilizer'];

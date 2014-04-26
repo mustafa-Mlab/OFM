@@ -27,13 +27,13 @@ include './config.php';
                 <div class="form-group">
                     <label for="useername" class="col-sm-4 control-label">ইউজার আইডিঃ </label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                        <input type="text" required class="form-control" id="username" name="username" placeholder="Username">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="pass" class="col-sm-4 control-label">পাসওয়ার্ডঃ </label>
                     <div class="col-sm-8">
-                        <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+                        <input type="password" required  class="form-control" id="pass" name="pass" placeholder="Password">
                     </div>
                 </div>
                 <div class="form-group center-align">

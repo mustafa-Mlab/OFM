@@ -7,8 +7,7 @@ include '../config.php';
         <select class="form-control" name="ecoyear" id="ecoyear" >
 
             <?php
-            Echo"<option selected='selected' value='0'>বাছাই করুন </option>";
-            $result = mysql_query("SELECT * FROM ecoyear");
+            $result = mysql_query("SELECT * FROM ecoyear WHERE `enabled` = 1");
             while ($row = mysql_fetch_array($result)) {
                 Echo"<option value=\"";
                 echo $row['id'];

@@ -53,7 +53,7 @@ if (isset($_SESSION['id'])) {
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-12">
-                    <?php require '../forms/ecoyear_selector.php'; ?>
+                    <?php require '../forms/ecoyear_selector_view.php'; ?>
                     <?php
                     if ($lavel < 4)
                         require '../forms/district_view_selector.php';
@@ -72,6 +72,15 @@ if (isset($_SESSION['id'])) {
                     else
                         require '../forms/union_selector.php';
                     ?>
+                    <div class="form-group">
+                        <label for="status" class="col-sm-4 control-label">  </label>
+                        <div class="col-sm-8">
+                            <select class="form-control" name="status" id="status" >
+                                <option selected="selected" value ="1">চাহিদা </option>
+                                <option value ="2">অনুমোদিত </option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="col-md-12 right-align">
                             <button type="submit" class="btn btn-default button" name="submit" id="submit">Submit </button>

@@ -3,9 +3,15 @@
     top: 40px;
     /*margin: auto;*/
 }
-.sheet5{
+.tb{
+    height: 40px;
     position: relative;
+    /*top: 20px;*/
+    border-color: black;
+    bottom: 12px;
+    cursor: pointer;
 }
+
 .input_table{
     position:relative;
 }

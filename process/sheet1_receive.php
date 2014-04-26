@@ -61,12 +61,6 @@ if (isset($_POST['submit'])) {
         $errflag++;
         $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Enter ammount of khorip cutivating land ";
     }
-    if (!empty($_POST['aez'])) {
-        $aez = $_POST['aez'];
-    } else {
-        $errflag++;
-        $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> " . " Enter AEZ Numbers  ";
-    }
     $dist_id = $_POST['district'];
     $subdist_id = $_POST['subdistrict'];
     $union_id = $_POST['union'];
@@ -83,8 +77,8 @@ if (isset($_POST['submit'])) {
 if ($errflag == 0) {
     date_default_timezone_set('Asia/Dhaka');
     $date = date('Y-m-d');
-    $sql = "INSERT INTO `ofm`.`sheet1` (`ecoyear`, `submitting_time`, `district`, `subdistrict`, `union_id`, `block`, `aez`, `name`, `g_name`, `land_ammount`, `crop1`, `ammount1`, `crop2`, `ammount2`, `crop3`, `ammount3`) "
-            . "                       VALUES ('$ecoyear_id' , '$date' ,       '$dist_id' , '$subdist_id' , '$union_id' , '$block_id' , '$aez' , '$name' , '$g_name ', '$land_ammount' , '$crop1' , '$amm1', '$crop2' , '$amm2', '$crop3' , '$amm3')";
+    $sql = "INSERT INTO `ofm`.`sheet1` (`ecoyear`, `submitting_time`, `district`, `subdistrict`, `union_id`, `block`, `name`, `g_name`, `land_ammount`, `crop1`, `ammount1`, `crop2`, `ammount2`, `crop3`, `ammount3`) "
+            . "                       VALUES ('$ecoyear_id' , '$date' ,       '$dist_id' , '$subdist_id' , '$union_id' , '$block_id' , '$name' , '$g_name ', '$land_ammount' , '$crop1' , '$amm1', '$crop2' , '$amm2', '$crop3' , '$amm3')";
     if (!mysql_query($sql, $Link)) {
         die('Error: ' . mysql_error());
     }
@@ -99,7 +93,7 @@ if ($errflag == 0) {
             $farmers = $row['farmers'] + 1;
             $land = $row['land'] + $amm1;
         }
-        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '".$updated."' WHERE `sheet2`.`id` ='" . $id . "'";
+        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '" . $updated . "' WHERE `sheet2`.`id` ='" . $id . "'";
         if (!mysql_query($update, $Link)) {
             die('Error: ' . mysql_error());
         }
@@ -119,7 +113,7 @@ if ($errflag == 0) {
         $id = $row['id'];
         $farmers = $row['farmers'] + 1;
         $land = $row['land'] + $amm2;
-        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '".$updated."' WHERE `sheet2`.`id` ='" . $id . "'";
+        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '" . $updated . "' WHERE `sheet2`.`id` ='" . $id . "'";
         if (!mysql_query($update, $Link)) {
             die('Error: ' . mysql_error());
         }
@@ -139,7 +133,7 @@ if ($errflag == 0) {
         $id = $row['id'];
         $farmers = $row['farmers'] + 1;
         $land = $row['land'] + $amm3;
-        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '".$updated."' WHERE `sheet2`.`id` ='" . $id . "'";
+        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '" . $updated . "' WHERE `sheet2`.`id` ='" . $id . "'";
         if (!mysql_query($update, $Link)) {
             die('Error: ' . mysql_error());
         }

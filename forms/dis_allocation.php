@@ -2,6 +2,11 @@
 
 include '../config.php';
 session_start();
+
+$sql = mysql_query("SELECT * FROM ecoyear WHERE enabled = '1'");
+$row = mysql_fetch_array($sql);
+$_SESSION['ecoyear_id'] = $row['id'];
+$_SESSION['ecoyear'] = $row['ecoyear'];
 if ($_POST['id']) {
     $dist_id = $_POST['id'];
     $queary = mysql_query("SELECT * FROM `sheet6` WHERE `ecoyear` = '" . $_SESSION['ecoyear_id'] . "' and `district` = '" . $dist_id . "'");

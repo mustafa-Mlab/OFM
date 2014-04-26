@@ -2,26 +2,24 @@
 $query = mysql_query("SELECT * FROM user WHERE id= $id");
 while ($row = mysql_fetch_array($query)) {
     $lavel = $row['right_lavel'];
-    $dist_id = $row['district'];
-    $subdist_id = $row['subdistrict'];
-    $union_id = $row['union_loc'];
-}
-$query = mysql_query("SELECT name FROM district WHERE id='" . $dist_id . "'");
-if ($query) {
-    $row = mysql_fetch_array($query);
-    $district = $row['name'];
-}
-
-$query = mysql_query("SELECT name FROM subdistrict WHERE id='" . $subdist_id . "'");
-if ($query) {
-    $row = mysql_fetch_array($query);
-    $subdistrict = $row['name'];
-}
-
-$query = mysql_query("SELECT name FROM `union` WHERE `id` ='" . $union_id . "'");
-if ($query) {
-    $row = mysql_fetch_array($query);
-    $union = $row['name'];
+    if ($lavel < 4) {
+        $dist_id = $row['district'];
+        $sql = mysql_query("SELECT name FROM district WHERE id='" . $dist_id . "'");
+        $data = mysql_fetch_array($sql);
+        $district = $data['name'];
+        if ($lavel < 3) {
+            $subdist_id = $row['subdistrict'];
+            $sql = mysql_query("SELECT name FROM subdistrict WHERE id='" . $subdist_id . "'");
+            $data = mysql_fetch_array($sql);
+            $subdistrict = $data['name'];
+            if ($lavel < 2) {
+                $union_id = $row['union_loc'];
+                $sql = mysql_query("SELECT name FROM `union` WHERE `id` ='" . $union_id . "'");
+                $data = mysql_fetch_array($sql);
+                $union = $data['name'];
+            }
+        }
+    }
 }
 ?>
 <div class="row">
@@ -34,17 +32,20 @@ if ($query) {
     </div>
 </div>
 <div class="row">
-    <div class="col-md-3">
-        <?php echo '<h3>ব্লকের নামঃ ' . $_SESSION['block'] . "</h3>"; ?>
+    <div class="col-md-2">
+        <?php echo '<h4>ব্লকের নামঃ ' . $_SESSION['block'] . "</h4>"; ?>
     </div>
-    <div class="col-md-3">
-        <?php echo '<h3> ইউনিয়নঃ ' . $union . "</h3>"; ?>
+    <div class="col-md-2">
+        <?php echo '<h4> ইউনিয়নঃ ' . $union . "</h4>"; ?>
     </div>
-    <div class="col-md-3">
-        <?php echo '<h3> উপজেলাঃ ' . $subdistrict . "</h3>"; ?> 
+    <div class="col-md-2">
+        <?php echo '<h4> উপজেলাঃ ' . $subdistrict . "</h4>"; ?> 
     </div>
-    <div class="col-md-3">
-        <?php echo '<h3> জেলা;' . $district . "</h3>"; ?>
+    <div class="col-md-2">
+        <?php echo '<h4> জেলা;' . $district . "</h4>"; ?>
+    </div>
+    <div class="col-md-4">
+        <?php echo '<h4> এ ই জেডঃ' . $_SESSION['aez'] . "</h4>"; ?>
     </div>
 
 </div>
@@ -68,7 +69,7 @@ if ($query) {
             $amm1 = 0;
             $amm2 = 0;
             $amm3 = 0;
-            $query = mysql_query("SELECT * FROM `sheet1`WHERE block ='" . $_SESSION['block_id'] . "'ORDER BY id");
+            $query = mysql_query("SELECT * FROM `sheet1`WHERE block ='" . $_SESSION['block_id'] . "' and ecoyear = '" .$_SESSION['ecoyear_id'] ."'ORDER BY id");
             while ($row = mysql_fetch_array($query)) {
                 if (($rc == 0) || ($rc % 2 == 0))
                     Echo"<tr class='active'>";
@@ -77,11 +78,20 @@ if ($query) {
                 Echo "<td>" . $row['name'] . "</td>";
                 Echo "<td>" . $row['g_name'] . "</td>";
                 Echo "<td>" . $row['land_ammount'] . "</td>";
-                Echo "<td>" . $row['crop1'] . "</td>";
+                $sql = mysql_query("SELECT * FROM `crop` WHERE `id` = '" .$row['crop1']."'");
+                $data = mysql_fetch_array($sql);
+                $crop1 = $data['name'];
+                Echo "<td>" . $crop1 . "</td>";
                 Echo "<td>" . $row['ammount1'] . "</td>";
-                Echo "<td>" . $row['crop2'] . "</td>";
+                $sql = mysql_query("SELECT * FROM `crop` WHERE `id` = '" .$row['crop2']."'");
+                $data = mysql_fetch_array($sql);
+                $crop2 = $data['name'];
+                Echo "<td>" . $crop2. "</td>";
                 Echo "<td>" . $row['ammount2'] . "</td>";
-                Echo "<td>" . $row['crop3'] . "</td>";
+                $sql = mysql_query("SELECT * FROM `crop` WHERE `id` = '" .$row['crop3']."'");
+                $data = mysql_fetch_array($sql);
+                $crop3 = $data['name'];
+                Echo "<td>" . $crop3 . "</td>";
                 Echo "<td>" . $row['ammount3'] . "</td>";
                 Echo"</tr>";
                 $land +=$row['land_ammount'];

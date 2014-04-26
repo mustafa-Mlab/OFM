@@ -53,7 +53,7 @@ if (isset($_SESSION['id'])) {
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-12">
-                    <?php require '../forms/ecoyear_selector.php'; ?>
+                    <?php require '../forms/ecoyear_selector_view.php'; ?>
                     <?php
                     if ($lavel < 4)
                         require '../forms/district_view_selector.php';

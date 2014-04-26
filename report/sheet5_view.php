@@ -5,7 +5,6 @@ while ($row = mysql_fetch_array($query)) {
     $lavel = $row['right_lavel'];
     $dist_id = $row['district'];
     $subdist_id = $row['subdistrict'];
-    $union_id = $row['union_loc'];
 }
 $query = mysql_query("SELECT name FROM district WHERE id='" . $dist_id . "'");
 if ($query) {
@@ -19,22 +18,17 @@ if ($query) {
     $subdistrict = $row['name'];
 }
 
-$query = mysql_query("SELECT name FROM `union` WHERE `id` ='" . $union_id . "'");
-if ($query) {
-    $row = mysql_fetch_array($query);
-    $union = $row['name'];
-}
 ?>
 <div class="row">
     <div class="col-md-12">
         <div class="center-align">
             <?php echo"<h2>" . $_SESSION['ecoyear'] . " অর্থবছরের উপজেলা পর্যায়ে </h2>" ?>
-            <h3>মাসভিত্তিক সারের চাহিদা নিরূপণ</h3>
+            <h3>মাসভিত্তিক সারের পরিমাণ <?php if($_SESSION['table'] == "sheet5") echo " (চাহিদা)"; else echo "(অনুমোদিত)";?></h3>
         </div>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
     </div>
     <div class="col-md-3">
         <?php echo '<h3> উপজেলাঃ ' . $_SESSION['subdistrict'] . "</h3>"; ?> 
@@ -42,7 +36,8 @@ if ($query) {
     <div class="col-md-3">
         <?php echo '<h3> জেলাঃ' . $_SESSION['district'] . "</h3>"; ?>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
+        <?php echo '<h3> এ ই জেডঃ' . $_SESSION['aez'] . "</h3>"; ?>
     </div>
 </div>
 <div class="row">
@@ -67,7 +62,7 @@ if ($query) {
             <?php
             $rc = 0;
 //            echo  $_SESSION['subdist_id']  ."  " .$_SESSION['ecoyear_id'] . "  " ;
-            $queary = mysql_query("SELECT * FROM `sheet5` WHERE `subdistrict` = '".$_SESSION['subdist_id']."' and `ecoyear` = '" . $_SESSION['ecoyear_id'] . "'");
+            $queary = mysql_query("SELECT * FROM `" . $_SESSION['table'] . "`WHERE `subdistrict` = '".$_SESSION['subdist_id']."' and `ecoyear` = '" . $_SESSION['ecoyear_id'] . "'");
 //            echo mysql_num_rows($queary);
             If (mysql_num_rows($queary) > 0) {
                 while ($row = mysql_fetch_array($queary)) {

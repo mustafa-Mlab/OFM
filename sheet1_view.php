@@ -14,11 +14,5 @@
     }
     ?>
     <?php require './report/sheet1_view.php'; ?>
-
-    <?php ?>
-    <?php ?>
-    <?php ?>
-    <?php ?>
-    <?php ?>
 </div>
 <?php require './footer.php'; ?>

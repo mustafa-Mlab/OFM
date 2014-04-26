@@ -32,6 +32,7 @@ if (isset($_SESSION['admin'])) {
                                 <ul class="links">
                                     <li><a href="#add_user" id="add_user">Add user</a></li>
                                     <li><a href="#check_user" id="check_user">Check user informations</a></li>
+                                    <li><a href="#update_user" id="update_user">Update User informations</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -54,9 +55,9 @@ if (isset($_SESSION['admin'])) {
                                     <li><a href="#add_union" id="add_union">Add Union</a></li>
                                     <li><a href="#add_block" id="add_block">Add Block</a></li>
                                     <li><a href="#update_district" id="update_district">Update District Information</a></li>
-                                    <li><a href="#update_subdistrict" id="update_subdistrict">update Subdistrict Information</a></li>
+                                    <li><a href="#update_subdistrict" id="update_subdistrict">Update Subdistrict Information</a></li>
                                     <li><a href="#update_union" id="update_union">Update Union Information</a></li>
-                                    <li><a href="#update_block" id="update_block">update Block Information</a></li>
+                                    <li><a href="#update_block" id="update_block">Update Block Information</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -77,6 +78,7 @@ if (isset($_SESSION['admin'])) {
                                     <li><a href="#add_ecoyear" id="add_ecoyear">Add Economical year</a></li>
                                     <li><a href="#add_notice" id="add_notice">Add Notice</a></li>
                                     <li><a href="#add_crop" id="add_crop">Add Crop</a></li>
+                                    <li><a href="#update_crop" id="update_crop">Update Crop</a></li>
                                     
                                 </ul>
                             </div>
