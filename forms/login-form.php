@@ -5,9 +5,9 @@
             <div class="col-md-12">
                 <?php
                 if (isset($_SESSION['error_msg'])) {
-                    Echo"<h3>";
+                    Echo"<h4 class='red'>";
                     echo $_SESSION['error_msg'];
-                    Echo"</h3>";
+                    Echo"</h4>";
                     $_SESSION['error_msg'] = '';
                 }
                 ?>

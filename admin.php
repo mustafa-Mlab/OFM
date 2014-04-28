@@ -11,7 +11,7 @@ if (isset($_SESSION['admin']))
         <div class="col-md-6 col-md-offset-2">
             <?php
             if (isset($_SESSION['error_msg'])) {
-                Echo"<h4>" . $_SESSION['error_msg'] . "</h4>";
+                Echo"<h4 class ='red'>" . $_SESSION['error_msg'] . "</h4>";
                 $_SESSION['error_msg'] = '';
             }
             ?>
@@ -37,7 +37,7 @@ if (isset($_SESSION['admin']))
                 </div>
                 <div class="form-group center-align">
                     <div class="col-sm-offset-4 col-sm-4">
-                        <button type="submit" class="btn btn-default" name="submit" id="submit">Sing in</button>
+                        <button type="submit" class="button btn btn-default" name="submit" id="submit">Sing in</button>
                     </div>
                 </div>
             </form>

@@ -41,7 +41,6 @@ if (isset($_SESSION['id'])) {
             $union = $row['name'];
         }
     }
-//    echo $id . "  " . $lavel . " " . $district . " " . $subdistrict . " " . $union . " " . $date;
 } else {
     $_SESSION['error_msg'] = "You Need to login first to use this application ";
     header("location:index.php");
@@ -51,6 +50,14 @@ if (isset($_SESSION['id'])) {
     <form class="form-horizontal" role="form" action="process/sheet3_view_loc_receive.php" method="post">
         <!--1st collum--> 
         <div class="col-md-8">
+            <?php
+            if (isset($_SESSION['error_msg'])) {
+                Echo"<h4 class='red'>";
+                echo $_SESSION['error_msg'];
+                Echo"</h4>";
+                $_SESSION['error_msg'] = '';
+            }
+            ?>
             <div class="row">
                 <div class="col-md-12">
                     <?php require '../forms/ecoyear_selector_view.php'; ?>

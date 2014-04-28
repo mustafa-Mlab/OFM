@@ -41,8 +41,11 @@ if (isset($_POST['submit'])) {
         $row = mysql_fetch_array($result);
         $_SESSION['block'] = $row['name'];
         $_SESSION['aez'] = $row['aez'];
-    } else
+    } else{
         $errflag++;
+        $_SESSION['error_msg'] = "ব্লক নির্বাচন করুন" ;
+        }
+    
 } else
     $errflag++;
 

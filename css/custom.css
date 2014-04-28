@@ -11,7 +11,9 @@
     bottom: 12px;
     cursor: pointer;
 }
-
+.red{
+    color:  red;
+}
 .input_table{
     position:relative;
 }

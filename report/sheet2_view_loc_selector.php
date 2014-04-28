@@ -49,6 +49,14 @@ if (isset($_SESSION['id'])) {
 <div class="row">
     <form class="form-horizontal" role="form" action="process/sheet2_view_loc_receive.php" method="post">
         <div class="col-md-8">
+            <?php
+            if (isset($_SESSION['error_msg'])) {
+                Echo"<h4 class='red'>";
+                echo $_SESSION['error_msg'];
+                Echo"</h4>";
+                $_SESSION['error_msg'] = '';
+            }
+            ?>
             <div class="row">
                 <div class="col-md-12">
                     <?php require '../forms/ecoyear_selector_view.php'; ?>

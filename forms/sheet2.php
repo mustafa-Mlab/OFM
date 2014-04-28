@@ -6,7 +6,7 @@ if (!isset($_SESSION['id']))
     <div class="col-md-12">
         <div class="center-align">
             <h2>ব্লক পর্যায়ে </h2>
-            <h3>ফসলভিত্তিক সারের চাহিদা নিরূপণ (হেক্টরে)"</h3>
+            <h3>ফসলভিত্তিক সারের চাহিদা নিরূপণ (হেক্টরে)</h3>
         </div>
     </div>
 </div>
@@ -74,31 +74,31 @@ if (!isset($_SESSION['id']))
                             <div class="form-group">
                                 <label for="uria" class="col-sm-4 control-label">ইউরিয়া </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="uria" name="uria" placeholder="ইউরিয়া">
+                                    <input type="text" required class="form-control" id="uria" name="uria" placeholder="ইউরিয়া">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="tsp" class="col-sm-4 control-label">টি এস পি </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="tsp" name="tsp" placeholder="টি এস পি">
+                                    <input type="text" required class="form-control" id="tsp" name="tsp" placeholder="টি এস পি">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="dmp" class="col-sm-4 control-label">ডি এম পি </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="dmp" name="dmp" placeholder="ডি এম পি">
+                                    <input type="text" required class="form-control" id="dmp" name="dmp" placeholder="ডি এম পি">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="mop" class="col-sm-4 control-label">এম ও পি </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="mop" name="mop" placeholder="এম ও পি ">
+                                    <input type="text" required class="form-control" id="mop" name="mop" placeholder="এম ও পি ">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="mpks" class="col-sm-4 control-label">এম পি কে এস </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="mpks" name="mpks" placeholder="এম পি কে এস">
+                                    <input type="text" required class="form-control" id="mpks" name="mpks" placeholder="এম পি কে এস">
                                 </div>
                             </div>
                         </div>
@@ -106,37 +106,35 @@ if (!isset($_SESSION['id']))
                             <div class="form-group">
                                 <label for="jipsam" class="col-sm-4 control-label">জিপসাম </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="jipsam" name="jipsam" placeholder="জিপসাম">
+                                    <input type="text" required class="form-control" id="jipsam" name="jipsam" placeholder="জিপসাম">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="zinc_salfet" class="col-sm-4 control-label">জিংক সালফেট </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="zinc_salfet" name="zinc_salfet" placeholder="জিংক সালফেট">
+                                    <input type="text" required class="form-control" id="zinc_salfet" name="zinc_salfet" placeholder="জিংক সালফেট">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="magnesium_salfet" class="col-sm-4 control-label">ম্যাগনেসিয়াম সালফেট </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="magnesium_salfet" name="magnesium_salfet" placeholder="ম্যাগনেসিয়াম সালফেট">
+                                    <input type="text" required class="form-control" id="magnesium_salfet" name="magnesium_salfet" placeholder="ম্যাগনেসিয়াম সালফেট">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="aluminum_salfet" class="col-sm-4 control-label">অ্যালুমিনিয়াম সালফেট </label>
                                 <div class="col-sm-8">
-                                    <input type="text"  class="form-control" id="aluminum_salfet" name="aluminum_salfet" placeholder="অ্যালুমিনিয়াম সালফেট">
+                                    <input type="text"  required class="form-control" id="aluminum_salfet" name="aluminum_salfet" placeholder="অ্যালুমিনিয়াম সালফেট">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="boron" class="col-sm-4 control-label">বোরন </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="boron" name="boron" placeholder="বোরন">
+                                    <input type="text" required class="form-control" id="boron" name="boron" placeholder="বোরন">
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>

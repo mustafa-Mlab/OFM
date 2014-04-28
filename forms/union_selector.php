@@ -5,7 +5,7 @@ include '../config.php';
     <label for="union" class="col-sm-4 control-label">ইউনিয়নঃ  </label>
     <div class="col-sm-8">
         <select class="form-control" name="union" id="union" >
-            <option selected="selected">বাছাই করুন </option>
+            <option selected="selected" value ="0">বাছাই করুন </option>
         </select>
     </div>
 </div>

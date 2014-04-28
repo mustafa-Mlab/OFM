@@ -5,7 +5,7 @@ include '../config.php';
     <label for="subdistrict" class="col-sm-4 control-label">উপজেলাঃ  </label>
     <div class="col-sm-8">
         <select class="form-control" name="subdistrict" id="subdistrict" >
-            <option selected="selected">বাছাই করুন </option>
+            <option selected="selected" value="0">বাছাই করুন </option>
         </select>
     </div>
 </div>

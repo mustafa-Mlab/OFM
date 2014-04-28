@@ -78,7 +78,7 @@ if (isset($_SESSION['id'])) {
                         <div class="col-sm-8">
                             <select class="form-control" name="block" id="block" >
                                 <?php
-                                echo '<option selected="selected" > বাছাই করুন </option>';
+                                echo '<option selected="selected" value="0" > বাছাই করুন </option>';
                                 $result = mysql_query("SELECT * FROM block WHERE union_id='" . $union_id . "'");
                                 if ($result) {
                                     while ($row = mysql_fetch_array($result)) {
@@ -87,6 +87,14 @@ if (isset($_SESSION['id'])) {
                                 }
                                 ?>
                             </select>
+                            <?php
+                            if (isset($_SESSION['error_msg'])) {
+                                Echo"<h4 class='red'>";
+                                echo $_SESSION['error_msg'];
+                                Echo"</h4>";
+                                $_SESSION['error_msg'] = '';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

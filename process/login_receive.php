@@ -4,55 +4,39 @@ session_start();
 include '../config.php';
 $_SESSION['error_msg'] = '';
 $errflag = 0;
-$found = 0;
-
 if (isset($_POST['login'])) {
-    echo'Submitted   ';
     if (isset($_POST['lavel']) && !empty($_POST['lavel'])) {
         $lavel = $_POST['lavel'];
     } else {
         $errflag++;
-        $err = $_SESSION['error_msg'];
-        $_SESSION['error_msg'] = "পর্যায় নির্দেশিত হয়নি ," . $err;
+        $_SESSION['error_msg'] = $_SESSION['error_msg'] . "পর্যায় নির্দেশিত হয়নি ,";
     }
-
     if (isset($_POST['username']) && !empty($_POST['username'])) {
         $username = $_POST['username'];
     } else {
         $errflag++;
-        $err = $_SESSION['error_msg'];
-        $_SESSION['error_msg'] = "ইউজার আইডি প্রবেশ করুন , " . $err;
+        $_SESSION['error_msg'] = $_SESSION['error_msg'] . "</br> ইউজার আইডি প্রবেশ করুন , ";
     }
     if (isset($_POST['pass']) && !empty($_POST['pass'])) {
         $pass = $_POST['pass'];
     } else {
         $errflag++;
-        $err = $_SESSION['error_msg'];
-        $_SESSION['error_msg'] = "পাসওয়ার্ড প্রবেশ করান ," . $err;
+        $_SESSION['error_msg'] = $_SESSION['error_msg'] . " </br> পাসওয়ার্ড প্রবেশ করুন ,";
+    }
+    if ($errflag == 0) {
+        $query = mysql_query("SELECT * FROM user WHERE username='" . $username . "' and pass = '" . $pass . "' and $lavel = '" . $lavel . "'");
+        If (mysql_num_rows($query) > 0) {
+            $row = mysql_fetch_array($query);
+            $_SESSION['id'] = $row['id'];
+            header("location:../home.php");
+            exit();
+        }
+         $_SESSION['error_msg'] = "ইউজার আইডি অথবা পাসওয়ার্ডটি ভুল আছে ,";
     }
 } else {
     $errflag = 1;
     $err = $_SESSION['error_msg'];
-    $_SESSION['error_msg'] = "Technical problem please contuct to admiin ," . $err;
+    $_SESSION['error_msg'] = "Technical problem please contuct to admiin ,";
 }
-
-if ($errflag == 0) {
-    echo $pass;
-    $query = mysql_query("SELECT * FROM user WHERE username='" . $username . "'");
-    while ($row = mysql_fetch_array($query)) {
-        if (strcmp($pass, $row['pass']) == 0) {
-            if ($lavel == $row['right_lavel']) {
-                $id = $row['id'];
-                $found++;
-            }
-        }
-    }
-    if ($found == 1) {
-        $_SESSION['id'] = $id;
-        header("location:../home.php");
-        exit();
-    }
-}
-echo 'failed   ' . $_SESSION['error_msg'];
 header("location:../index.php");
 ?>

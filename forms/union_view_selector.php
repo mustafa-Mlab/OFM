@@ -3,7 +3,7 @@
     <div class="col-sm-8">
         <select class="form-control" name="union" id="union" >
             <?php
-            Echo"<option selected='selected''>বাছাই করুন </option>";
+            Echo"<option selected='selected'' value='0'>বাছাই করুন </option>";
             Echo"<option  value='" . $union_id . "'>" . $union . " </option>";
             ?>
         </select>

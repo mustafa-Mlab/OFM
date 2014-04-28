@@ -5,7 +5,7 @@ include 'config.php';
     <label for="crop" class="col-sm-4 control-label">ফসলঃ  </label>
     <div class="col-sm-8">
         <select class="form-control" name="crop" id="crop" >
-            <option selected="selected">বাছাই করুন </option>
+            <option selected="selected" value="0">বাছাই করুন </option>
         </select>
     </div>
 </div>

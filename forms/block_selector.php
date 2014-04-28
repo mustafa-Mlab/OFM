@@ -5,7 +5,7 @@ include '../config.php';
     <label for="block" class="col-sm-4 control-label">ব্লকঃ  </label>
     <div class="col-sm-8">
         <select class="form-control" name="block" id="block" >
-            <option selected="selected">বাছাই করুন </option>
+            <option selected="selected" value ="0">বাছাই করুন </option>
         </select>
     </div>
 </div>

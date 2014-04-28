@@ -95,11 +95,9 @@
                 </div>
                 <a class="button" href="logout.php"> Logout </a>
             </div>
-
         </div>
         <div class="col-md-8" id="display">
             <div id="news"> <?php require './newsscroll.php'; ?>
-
             </div>
             <div class="user_view"></div>
         </div>
