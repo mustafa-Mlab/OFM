@@ -23,7 +23,7 @@
                     <?php
                     Echo" <option selected='selected' >বাছাই করুন</option>";
                     $updated = 0;
-                    $query = mysql_query("SELECT * FROM `sheet7` WHERE `district` = '" . $_SESSION['district'] . "' and `ecoyear` = '" . $_SESSION['ecoyear_id'] . "' and updated = '" . $updated . "'");
+                    $query = mysql_query("SELECT * FROM `sheet7` WHERE `district` = '" . $_SESSION['dist_id'] . "' and `ecoyear` = '" . $_SESSION['ecoyear_id'] . "' and updated = '" . $updated . "'");
                     If (mysql_num_rows($query) > 0) {
                         while ($row = mysql_fetch_array($query)) {
                             $fertilizer_id = $row['fertilizer'];
