@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
     $land = $_POST['land'];
     $district = $_POST['district'];
     $subdistrict = $_POST['subdistrict'];
-    $union = $_POST['union'];
+    $union = $_POST['union_id'];
     $block = $_POST['block'];
     $ecoyear_id = $_POST['ecoyear'];
 } else {

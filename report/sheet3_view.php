@@ -79,7 +79,7 @@ if ($query) {
             $magnesium_salfet = 0;
             $aluminum_salfet = 0;
             $boron = 0;
-            $query = mysql_query("SELECT * FROM `" . $_SESSION['table'] . "`WHERE union_id ='" . $_SESSION['union_id'] . "'and ecoyear = '" . $_SESSION['ecoyear_id'] . "'ORDER BY id");
+            $query = mysql_query("SELECT * FROM `" . $_SESSION['table'] . "`WHERE union_id ='" . $_SESSION['union_id'] . "'and ecoyear = '" . $_SESSION['ecoyear_id'] . "'ORDER BY id DESC");
             while ($row = mysql_fetch_array($query)) {
                 if (($rc == 0) || ($rc % 2 == 0))
                     Echo"<tr class='active'>";
