@@ -7,7 +7,7 @@ if (isset($_POST['update_district'])) {
     $name = $_POST['name'];
     $aez = $_POST['aez'];
     $found = 0;
-    $update = "UPDATE `ofm`.`district` SET `name` ='" . $name . "' , aez = '" . $aez . "' WHERE `district`.`id` ='" . $row_id . "'";
+    $update = "UPDATE `district` SET `name` ='" . $name . "' , aez = '" . $aez . "' WHERE `district`.`id` ='" . $row_id . "'";
     if (!mysql_query($update, $Link)) {
         die('Error: ' . mysql_error());
     }

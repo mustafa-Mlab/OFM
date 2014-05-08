@@ -30,13 +30,13 @@
             <div class="form-group">
                 <label for="username" class="col-sm-2 control-label">ইউজার আইডিঃ </label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="username">
+                    <input type="text" required class="form-control" id="username" name="username" placeholder="username">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword3" class="col-sm-2 control-label">পাসওয়ার্ডঃ </label>
                 <div class="col-sm-6">
-                    <input type="password" class="form-control" id="Pass" name="pass" placeholder="Password">
+                    <input type="password" required  class="form-control" id="Pass" name="pass" placeholder="Password">
                 </div>
             </div>
             <div class="row">

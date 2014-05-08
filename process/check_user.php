@@ -14,7 +14,7 @@
             </tr>
             <?php
             $rc = 0;
-            $query = mysql_query("SELECT * FROM `user`ORDER BY id");
+            $query = mysql_query("SELECT * FROM `user`ORDER BY id DESC");
             while ($row = mysql_fetch_array($query)) {
                 if (($rc == 0) || ($rc % 2 == 0))
                     Echo"<tr class='active'>";

@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
     $br_p = ($br_a * $h) / $br_r;
     date_default_timezone_set('Asia/Dhaka');
     $date = date('Y-m-d');
-    $sql = "INSERT INTO `ofm`.`district_allocation` (`ecoyear`, `submitting_date`, `district`, `uria_r`, `uria_a`, `tsp_r`, `tsp_a`, `dmp_r`, `dmp_a`, `mop_r`, `mop_a`, `mpks_r`, `mpks_a`, `jipsam_r`, `jipsam_a`, `zs_r`, `zs_a`, `ms_r`, `ms_a`, `as_r`, `as_a`, `br_r`, `br_a`) "
+    $sql = "INSERT INTO `district_allocation` (`ecoyear`, `submitting_date`, `district`, `uria_r`, `uria_a`, `tsp_r`, `tsp_a`, `dmp_r`, `dmp_a`, `mop_r`, `mop_a`, `mpks_r`, `mpks_a`, `jipsam_r`, `jipsam_a`, `zs_r`, `zs_a`, `ms_r`, `ms_a`, `as_r`, `as_a`, `br_r`, `br_a`) "
             . "                                      VALUES ('$ecoyear_id' , '$date' ,  '$dist_id' , '$uria_r' , '$uria_a' , '$tsp_r' , '$tsp_a' , '$dmp_r' , '$dmp_a ', '$mop_r' , '$mop_a' , '$mpks_r', '$mpks_a' , '$jipsam_r', '$jipsam_a' , '$zs_r', '$zs_a', '$ms_r', '$ms_a', '$as_r', '$as_a', '$br_r', '$br_a')";
     if (!mysql_query($sql, $Link)) {
         die('Error: ' . mysql_error());
@@ -83,7 +83,7 @@ if (isset($_POST['submit'])) {
         $april = round(( $row['april'] * $mp) / $h, 2);
         $may = round(( $row['may'] * $mp) / $h, 2);
         $june = round(( $row['june'] * $mp) / $h, 2);
-        $sql = "INSERT INTO `ofm`.`sheet7_alloted` ( `fertilizer`, `district`,`ecoyear`, `july` , `august`, `september`, `october`, `november`, `december`, `january`, `february`, `march`, `april`, `may`, `june`) "
+        $sql = "INSERT INTO `sheet7_alloted` ( `fertilizer`, `district`,`ecoyear`, `july` , `august`, `september`, `october`, `november`, `december`, `january`, `february`, `march`, `april`, `may`, `june`) "
                 . "                       VALUES ( '$fartilizer' , '$dist_id' ,'$ecoyear_id' , '$july', '$august' , '$september', '$october' , '$november', '$december' , '$january', '$february', '$march', '$april' , '$may' , '$june')";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
@@ -108,7 +108,7 @@ if (isset($_POST['submit'])) {
         $dmp = round(($row['dmp'] * $dmp_p) / $h, 2);
         $tsp = round(($row['tsp'] * $tsp_p) / $h, 2);
         $uria = round(($row['uria'] * $uria_p) / $h, 2);
-        $sql = "INSERT INTO `ofm`.`sheet6_alloted` ( `crop`, `farmers`, `land`, `district`, `ecoyear` , `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
+        $sql = "INSERT INTO `sheet6_alloted` ( `crop`, `farmers`, `land`, `district`, `ecoyear` , `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
                 . "                       VALUES ( '$crop' , '$farmers' , '$land' , '$dist_id' ,'$ecoyear_id' , '$boron', '$aluminum_salfet' , '$magnesium_salfet', '$zinc_salfet' , '$jipsam', '$mpks' , '$mop', '$dmp', '$tsp', '$uria'  )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
@@ -154,7 +154,7 @@ if (isset($_POST['submit'])) {
         $april = round(( $row['april'] * $mp) / $h, 2);
         $may = round(( $row['may'] * $mp) / $h, 2);
         $june = round(( $row['june'] * $mp) / $h, 2);
-        $sql = "INSERT INTO `ofm`.`sheet5_alloted` ( `subdistrict`,`fertilizar`, `district`, `ecoyear`, `july` , `august`, `september`, `october`, `november`, `december`, `january`, `february`, `march`, `april`, `may`, `june`) "
+        $sql = "INSERT INTO `sheet5_alloted` ( `subdistrict`,`fertilizar`, `district`, `ecoyear`, `july` , `august`, `september`, `october`, `november`, `december`, `january`, `february`, `march`, `april`, `may`, `june`) "
                 . "                       VALUES ( '$subdist_id' , '$fartilizer' , '$dist_id' ,'$ecoyear_id' , '$july', '$august' , '$september', '$october' , '$november', '$december' , '$january', '$february', '$march', '$april' , '$may' , '$june')";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
@@ -180,7 +180,7 @@ if (isset($_POST['submit'])) {
         $tsp = round(($row['tsp'] * $tsp_p) / $h, 2);
         $uria = round(($row['uria'] * $uria_p) / $h, 2);
         $crop = $row['crop'];
-        $sql = "INSERT INTO `ofm`.`sheet4_alloted` ( `crop`, `subdistrict`, `farmers`, `land`, `district`, `ecoyear` , `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
+        $sql = "INSERT INTO `sheet4_alloted` ( `crop`, `subdistrict`, `farmers`, `land`, `district`, `ecoyear` , `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
                 . "                       VALUES ( '$crop' , '$subdistrict', '$farmers' , '$land' , '$dist_id' ,'$ecoyear_id' , '$boron', '$aluminum_salfet' , '$magnesium_salfet', '$zinc_salfet' , '$jipsam', '$mpks' , '$mop', '$dmp', '$tsp', '$uria'  )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
@@ -207,7 +207,7 @@ if (isset($_POST['submit'])) {
         $tsp = round(($row['tsp'] * $tsp_p) / $h, 2);
         $uria = round(($row['uria'] * $uria_p) / $h, 2);
         $crop = $row['crop'];
-        $sql = "INSERT INTO `ofm`.`sheet3_alloted` ( `crop`, `subdistrict`, `union_id`, `farmers`, `land`, `district`, `ecoyear` , `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
+        $sql = "INSERT INTO `sheet3_alloted` ( `crop`, `subdistrict`, `union_id`, `farmers`, `land`, `district`, `ecoyear` , `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
                 . "                                 VALUES ( '$crop' , '$subdistrict', '$union_id', '$farmers' , '$land' , '$dist_id' ,'$ecoyear_id' , '$boron', '$aluminum_salfet' , '$magnesium_salfet', '$zinc_salfet' , '$jipsam', '$mpks' , '$mop', '$dmp', '$tsp', '$uria'  )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
@@ -235,7 +235,7 @@ if (isset($_POST['submit'])) {
         $tsp = round(($row['tsp'] * $tsp_p) / $h, 2);
         $uria = round(($row['uria'] * $uria_p) / $h, 2);
         $crop = $row['crop'];
-        $sql = "INSERT INTO `ofm`.`sheet2_alloted` ( `crop`, `subdistrict`, `union_id`, `block`, `farmers`, `land`, `district`, `ecoyear` , `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
+        $sql = "INSERT INTO `sheet2_alloted` ( `crop`, `subdistrict`, `union_id`, `block`, `farmers`, `land`, `district`, `ecoyear` , `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
                 . "                                 VALUES ( '$crop' , '$subdistrict', '$union_id', '$block', '$farmers' , '$land' , '$dist_id' ,'$ecoyear_id' , '$boron', '$aluminum_salfet' , '$magnesium_salfet', '$zinc_salfet' , '$jipsam', '$mpks' , '$mop', '$dmp', '$tsp', '$uria'  )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());

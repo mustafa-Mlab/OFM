@@ -18,7 +18,6 @@ include './config.php';
             <div class="header">
                 <div class="row">
                     <div class="col-md-4">
-                        <!--<div class="tn"> <h3>This Project is Under Development</h3> </div>-->
                         <img src="img/pic 01.jpg" alt="" class="img-responsive hidden-xs"/>
                     </div>
                     <div class="col-md-4">
@@ -26,7 +25,6 @@ include './config.php';
                         <!---->
                     </div>
                     <div class="col-md-4">
-                        <!--<div class="tn"> <h3>It is an Academic Project</h3> </div>-->
                         <img src="img/pic 03.jpg" alt="" class="img-responsive hidden-xs"/>
                     </div>
                 </div>

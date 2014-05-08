@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
 if ($errflag == 0) {
     date_default_timezone_set('Asia/Dhaka');
     $date = date('Y-m-d');
-    $sql = "INSERT INTO `ofm`.`sheet1` (`ecoyear`, `submitting_time`, `district`, `subdistrict`, `union_id`, `block`, `name`, `g_name`, `land_ammount`, `crop1`, `ammount1`, `crop2`, `ammount2`, `crop3`, `ammount3`) "
+    $sql = "INSERT INTO `sheet1` (`ecoyear`, `submitting_time`, `district`, `subdistrict`, `union_id`, `block`, `name`, `g_name`, `land_ammount`, `crop1`, `ammount1`, `crop2`, `ammount2`, `crop3`, `ammount3`) "
             . "                       VALUES ('$ecoyear_id' , '$date' ,       '$dist_id' , '$subdist_id' , '$union_id' , '$block_id' , '$name' , '$g_name ', '$land_ammount' , '$crop1' , '$amm1', '$crop2' , '$amm2', '$crop3' , '$amm3')";
     if (!mysql_query($sql, $Link)) {
         die('Error: ' . mysql_error());
@@ -93,13 +93,13 @@ if ($errflag == 0) {
             $farmers = $row['farmers'] + 1;
             $land = $row['land'] + $amm1;
         }
-        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '" . $updated . "' WHERE `sheet2`.`id` ='" . $id . "'";
+        $update = "UPDATE `sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '" . $updated . "' WHERE `sheet2`.`id` ='" . $id . "'";
         if (!mysql_query($update, $Link)) {
             die('Error: ' . mysql_error());
         }
         echo "1 record updated \n";
     } else {
-        $sql = "INSERT INTO `ofm`.`sheet2` ( `crop`, `farmers`, `land`, `aez`, `district`, `subdistrict`, `union_id`, `block`, `ecoyear`, `updated`) "
+        $sql = "INSERT INTO `sheet2` ( `crop`, `farmers`, `land`, `aez`, `district`, `subdistrict`, `union_id`, `block`, `ecoyear`, `updated`) "
                 . "                       VALUES ( '$crop1' , '$farmers' , '$amm1' , '$aez' , '$dist_id' , '$subdist_id' , '$union_id' , '$block_id' ,'$ecoyear_id','$updated'  )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
@@ -119,7 +119,7 @@ if ($errflag == 0) {
         }
         echo "1 record updated \n";
     } else {
-        $sql = "INSERT INTO `ofm`.`sheet2` ( `crop`, `farmers`, `land`, `aez`, `district`, `subdistrict`, `union_id`, `block`, `ecoyear` , `updated`) "
+        $sql = "INSERT INTO `sheet2` ( `crop`, `farmers`, `land`, `aez`, `district`, `subdistrict`, `union_id`, `block`, `ecoyear` , `updated`) "
                 . "                       VALUES ( '$crop2' , '$farmers' , '$amm2' , '$aez' , '$dist_id' , '$subdist_id' , '$union_id' , '$block_id'  ,'$ecoyear_id' ,'$updated'  )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
@@ -133,13 +133,13 @@ if ($errflag == 0) {
         $id = $row['id'];
         $farmers = $row['farmers'] + 1;
         $land = $row['land'] + $amm3;
-        $update = "UPDATE `ofm`.`sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '" . $updated . "' WHERE `sheet2`.`id` ='" . $id . "'";
+        $update = "UPDATE `sheet2` SET `farmers` ='" . $farmers . "' , land = '" . $land . "' , updated= '" . $updated . "' WHERE `sheet2`.`id` ='" . $id . "'";
         if (!mysql_query($update, $Link)) {
             die('Error: ' . mysql_error());
         }
         echo "1 record updated \n";
     } else {
-        $sql = "INSERT INTO `ofm`.`sheet2` ( `crop`, `farmers`, `land`, `aez`, `district`, `subdistrict`, `union_id`, `block`, `ecoyear`, `updated`) "
+        $sql = "INSERT INTO `sheet2` ( `crop`, `farmers`, `land`, `aez`, `district`, `subdistrict`, `union_id`, `block`, `ecoyear`, `updated`) "
                 . "                       VALUES ( '$crop3' , '$farmers' , '$amm3' , '$aez' , '$dist_id' , '$subdist_id' , '$union_id' , '$block_id'  ,'$ecoyear_id' ,'$updated'  )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());

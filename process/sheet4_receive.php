@@ -41,7 +41,7 @@ if ($errflag == 0) {
     date_default_timezone_set('Asia/Dhaka');
     $date = date('Y-m-d');
     $updated = 1;
-    $update = "UPDATE `ofm`.`sheet4` SET `submitting_date` ='" . $date . "' , updated= '" . $updated . "' WHERE `sheet4`.`id` ='" . $row_id . "'";
+    $update = "UPDATE `sheet4` SET `submitting_date` ='" . $date . "' , updated= '" . $updated . "' WHERE `sheet4`.`id` ='" . $row_id . "'";
 //    . "' , boron = '" . $boron . "' , alluminium_salfet= '" . $aluminum_salfet . "'  , magnesium_salfet= '" . $magnesium_salfet . "'  , zinc_salfet= '" . $zinc_salfet . "' , jipsam= '" . $jipsam . "' , mpks= '" . $mpks . "' , dmp= '" . $dmp . "' , tsp= '" . $tsp . "' , uria= '" . $uria
     if (!mysql_query($update, $Link)) {
         die('Error: ' . mysql_error());
@@ -68,13 +68,13 @@ if ($errflag == 0) {
         $dmp+= $row['dmp'];
         $tsp+= $row['tsp'];
         $uria+= $row['uria'];
-        $update = "UPDATE `ofm`.`sheet6` SET `farmers` ='" . $farmers . "' , land = '" . $land . "', boron = '" . $boron . "', alluminium_salfet = '" . $aluminum_salfet . "', magnesium_salfet = '" . $magnesium_salfet . "', zinc_salfet = '" . $zinc_salfet . "', jipsam = '" . $jipsam . "', mpks = '" . $mpks . "', mop = '" . $mop . "', dmp = '" . $dmp . "', tsp = '" . $tsp . "', uria = '" . $uria . "', updated= '" . $updated . "' WHERE `sheet6`.`id` ='" . $id . "'";
+        $update = "UPDATE `sheet6` SET `farmers` ='" . $farmers . "' , land = '" . $land . "', boron = '" . $boron . "', alluminium_salfet = '" . $aluminum_salfet . "', magnesium_salfet = '" . $magnesium_salfet . "', zinc_salfet = '" . $zinc_salfet . "', jipsam = '" . $jipsam . "', mpks = '" . $mpks . "', mop = '" . $mop . "', dmp = '" . $dmp . "', tsp = '" . $tsp . "', uria = '" . $uria . "', updated= '" . $updated . "' WHERE `sheet6`.`id` ='" . $id . "'";
         if (!mysql_query($update, $Link)) {
             die('Error: ' . mysql_error());
         }
         echo "1 record updated \n";
     } else {
-        $sql = "INSERT INTO `ofm`.`sheet6` ( `crop`, `farmers`, `land`, `district`, `ecoyear` , `updated`, `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
+        $sql = "INSERT INTO `sheet6` ( `crop`, `farmers`, `land`, `district`, `ecoyear` , `updated`, `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
                 . "                       VALUES ( '$crop_id' , '$farmers' , '$land' , '$district' ,'$ecoyear_id' ,'$updated' , '$boron', '$aluminum_salfet' , '$magnesium_salfet', '$zinc_salfet' , '$jipsam', '$mpks' , '$mop', '$dmp', '$tsp', '$uria'  )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());

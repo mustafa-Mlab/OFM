@@ -41,7 +41,7 @@ if ($errflag == 0) {
     date_default_timezone_set('Asia/Dhaka');
     $date = date('Y-m-d');
     $updated = 1;
-    $update = "UPDATE `ofm`.`sheet6` SET `submitting_date` ='" . $date . "' , updated= '" . $updated . "' WHERE `sheet6`.`id` ='" . $row_id . "'";
+    $update = "UPDATE `sheet6` SET `submitting_date` ='" . $date . "' , updated= '" . $updated . "' WHERE `sheet6`.`id` ='" . $row_id . "'";
 //    . "' , boron = '" . $boron . "' , alluminium_salfet= '" . $aluminum_salfet . "'  , magnesium_salfet= '" . $magnesium_salfet . "'  , zinc_salfet= '" . $zinc_salfet . "' , jipsam= '" . $jipsam . "' , mpks= '" . $mpks . "' , dmp= '" . $dmp . "' , tsp= '" . $tsp . "' , uria= '" . $uria
     if (!mysql_query($update, $Link)) {
         die('Error: ' . mysql_error());

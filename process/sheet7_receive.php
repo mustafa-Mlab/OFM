@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     $june = $_POST['june'];
     $updated = 1;
 
-    $update = "UPDATE `ofm`.`sheet7` SET `july` ='" . $july . "' , august = '" . $august . "', september = '" . $september . "', october = '" . $october . "', november = '" . $november . "', december = '" . $december . "', january = '" . $january . "', february = '" . $february . "', march = '" . $march . "', april = '" . $april . "', may = '" . $may . "', june = '" . $june . "', updated= '" . $updated . "' WHERE `sheet7`.`id` ='" . $id . "'";
+    $update = "UPDATE `sheet7` SET `july` ='" . $july . "' , august = '" . $august . "', september = '" . $september . "', october = '" . $october . "', november = '" . $november . "', december = '" . $december . "', january = '" . $january . "', february = '" . $february . "', march = '" . $march . "', april = '" . $april . "', may = '" . $may . "', june = '" . $june . "', updated= '" . $updated . "' WHERE `sheet7`.`id` ='" . $id . "'";
     if (!mysql_query($update, $Link)) {
         die('Error: ' . mysql_error());
     }

@@ -49,13 +49,13 @@ if (isset($_POST['submit'])) {
         $id += $row['id'];
 
 
-        $update = "UPDATE `ofm`.`sheet7` SET `july` ='" . $july . "' , august = '" . $august . "', september = '" . $september . "', october = '" . $october . "', november = '" . $november . "', december = '" . $december . "', january = '" . $january . "', february = '" . $february . "', march = '" . $march . "', april = '" . $april . "', may = '" . $may . "', june = '" . $june . "', updated= '" . $updated . "' WHERE `sheet7`.`id` ='" . $id . "'";
+        $update = "UPDATE `sheet7` SET `july` ='" . $july . "' , august = '" . $august . "', september = '" . $september . "', october = '" . $october . "', november = '" . $november . "', december = '" . $december . "', january = '" . $january . "', february = '" . $february . "', march = '" . $march . "', april = '" . $april . "', may = '" . $may . "', june = '" . $june . "', updated= '" . $updated . "' WHERE `sheet7`.`id` ='" . $id . "'";
         if (!mysql_query($update, $Link)) {
             die('Error: ' . mysql_error());
         }
         echo "1 record updated \n";
     } else {
-        $sql = "INSERT INTO `ofm`.`sheet7` ( `fertilizer`, `july`, `august`, `september`, `october`, `november`, `december`, `january`, `february`, `march`, `april`, `may`, `june`, `district`, `updated`, `ecoyear`) "
+        $sql = "INSERT INTO `sheet7` ( `fertilizer`, `july`, `august`, `september`, `october`, `november`, `december`, `january`, `february`, `march`, `april`, `may`, `june`, `district`, `updated`, `ecoyear`) "
                 . "                       VALUES ( '$fertilizer' , '$july' , '$august' , '$september' ,'$october' ,'$november' , '$december', '$january' , '$february', '$march' , '$april', '$may' , '$june', '$dist_id', '$updated', '$ecoyear_id' )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());

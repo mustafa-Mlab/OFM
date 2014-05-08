@@ -9,7 +9,6 @@ $subdistrict = -1;
 $union = -1;
 $block = -1;
 $area = -1;
-echo 'Start Process    -->  ';
 if (isset($_POST['add_user'])) {
     if (!empty($_POST['lavel_user'])) {
         $lavel = $_POST['lavel_user'];
@@ -28,7 +27,7 @@ if (isset($_POST['add_user'])) {
         $address = $_POST['address'];
     } else {
         $errflag++;
-        $_SESSION['error_msg'] = 'select address';
+        $_SESSION['error_msg'] = 'Enter address';
     }
 
     if (!empty($_POST['username'])) {
@@ -37,30 +36,13 @@ if (isset($_POST['add_user'])) {
         $errflag++;
         $_SESSION['error_msg'] = 'Enter Username';
     }
-    if (!empty($_POST['pass1'])) {
-        $pass = md5($_POST['pass1']);
-    } else {
-        $errflag++;
-        $_SESSION['error_msg'] = 'Enter Password';
-    }
-//if (!empty($_POST['con_pass'])) {//    $cpass = $_POST['con_pass']; } else {   $errflag++;  $_SESSION['err_msg'] = 'Enter Confirm Password'; }
+    $pass = "12345678";
+    $enpass = md5($pass);
     if (!empty($_POST['mobile_no'])) {
         $mob = $_POST['mobile_no'];
     } else {
         $errflag++;
         $_SESSION['error_msg'] = 'Enter Mobile Number';
-    }
-    if (!empty($_POST['sec_ques'])) {
-        $sq = $_POST['sec_ques'];
-    } else {
-        $errflag++;
-        $_SESSION['error_msg'] = 'Enter Secrate Question';
-    }
-    if (!empty($_POST['ans'])) {
-        $ans = $_POST['ans'];
-    } else {
-        $errflag++;
-        $_SESSION['error_msg'] = 'Enter ans';
     }
     if ((!empty($_POST['district'])) && isset($_POST['district']))
         $district = $_POST['district'];
@@ -68,24 +50,19 @@ if (isset($_POST['add_user'])) {
         $subdistrict = $_POST['subdistrict'];
     if ((!empty($_POST['union'])) && isset($_POST['union']))
         $union = $_POST['union'];
-//    if ((!empty($_POST['block'])) && isset($_POST['block']))
-//        $block = $_POST['block'];
-//    if ((!empty($_POST['area'])) && isset($_POST['area']))
-//        $area = $_POST['area'];
 }
 if ($errflag == 0) {
     $result = mysql_query("SELECT * FROM `user` WHERE mob ='" . $mob . "");
-    if ($result) {
-        $found++;
-    }
+    If (mysql_num_rows($result) > 0)
+        $found == 1;
     if ($found != 0) {
         $_SESSION['error_flag'] = "Mobile number already exist";
     } else {
         date_default_timezone_set('Asia/Dhaka');
         $date = date('Y-m-d');
 
-        $sql = "INSERT INTO `ofm`.`user` (`reg_date`, `mob`, `full_name`, `adress`, `username`, `pass`, `sec_ques`, `ans`, `right_lavel`, `district`, `subdistrict`, `union_loc`) "
-                . "                      VALUES ('$date' , '$mob' ,  '$fname' ,'$address' , '$uname' , '$pass' , '$sq' , '$ans' , '$lavel ', '$district' , '$subdistrict' , '$union' )";
+        $sql = "INSERT INTO `user` (`reg_date`, `mob`, `full_name`, `address`, `username`, `pass`, `right_lavel`, `district`, `subdistrict`, `union_loc`) "
+                . "                      VALUES ('$date' , '$mob' ,  '$fname' ,'$address' , '$uname' , '$enpass' , '$lavel ', '$district' , '$subdistrict' , '$union' )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
         }

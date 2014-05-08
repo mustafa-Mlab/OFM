@@ -26,7 +26,7 @@ if ($errflag == 0) {
     if ($query) {
         $_SESSION['error_msg'] = "date already created ";
     } else {
-        $sql = "INSERT INTO `ofm`.`ecoyear` (`ecoyear`) "
+        $sql = "INSERT INTO `ecoyear` (`ecoyear`) "
                 . "                      VALUES ('$year')";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
@@ -35,7 +35,7 @@ if ($errflag == 0) {
 
         $news = "নতুন অর্থবছর " . $year . "  যুক্ত করা হয়েছে, তথ্য জমাদানের সময় ";
         $status = 1;
-        $sql = "INSERT INTO `ofm`.`news` (`news`, `status`) "
+        $sql = "INSERT INTO `news` (`news`, `status`) "
                 . "                      VALUES ('$news' ,'$status )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());

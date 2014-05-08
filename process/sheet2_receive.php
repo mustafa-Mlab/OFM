@@ -83,7 +83,7 @@ if ($errflag == 0) {
     date_default_timezone_set('Asia/Dhaka');
     $date = date('Y-m-d');
     $updated = 1;
-    $update = "UPDATE `ofm`.`sheet2` SET `submitting_date` ='" . $date . "' , boron = '" . $boron . "' , alluminium_salfet= '" . $aluminum_salfet . "'  , magnesium_salfet= '" . $magnesium_salfet . "'  , zinc_salfet= '" . $zinc_salfet . "' , jipsam= '" . $jipsam . "' , mpks= '" . $mpks . "' , dmp= '" . $dmp . "' , mop= '" . $mop . "' , tsp= '" . $tsp . "' , uria= '" . $uria . "' , updated= '" . $updated . "' WHERE `sheet2`.`id` ='" . $row_id . "'";
+    $update = "UPDATE `sheet2` SET `submitting_date` ='" . $date . "' , boron = '" . $boron . "' , alluminium_salfet= '" . $aluminum_salfet . "'  , magnesium_salfet= '" . $magnesium_salfet . "'  , zinc_salfet= '" . $zinc_salfet . "' , jipsam= '" . $jipsam . "' , mpks= '" . $mpks . "' , dmp= '" . $dmp . "' , mop= '" . $mop . "' , tsp= '" . $tsp . "' , uria= '" . $uria . "' , updated= '" . $updated . "' WHERE `sheet2`.`id` ='" . $row_id . "'";
     if (!mysql_query($update, $Link)) {
         die('Error: ' . mysql_error());
     }
@@ -109,13 +109,13 @@ if ($errflag == 0) {
         $dmp+= $row['dmp'];
         $tsp+= $row['tsp'];
         $uria+= $row['uria'];
-        $update = "UPDATE `ofm`.`sheet3` SET `farmers` ='" . $farmers . "' , land = '" . $land . "', boron = '" . $boron . "', alluminium_salfet = '" . $aluminum_salfet . "', magnesium_salfet = '" . $magnesium_salfet . "', zinc_salfet = '" . $zinc_salfet . "', jipsam = '" . $jipsam . "', mpks = '" . $mpks . "', mop = '" . $mop . "', dmp = '" . $dmp . "', tsp = '" . $tsp . "', uria = '" . $uria . "', updated= '" . $updated . "' WHERE `sheet3`.`id` ='" . $id . "'";
+        $update = "UPDATE `sheet3` SET `farmers` ='" . $farmers . "' , land = '" . $land . "', boron = '" . $boron . "', alluminium_salfet = '" . $aluminum_salfet . "', magnesium_salfet = '" . $magnesium_salfet . "', zinc_salfet = '" . $zinc_salfet . "', jipsam = '" . $jipsam . "', mpks = '" . $mpks . "', mop = '" . $mop . "', dmp = '" . $dmp . "', tsp = '" . $tsp . "', uria = '" . $uria . "', updated= '" . $updated . "' WHERE `sheet3`.`id` ='" . $id . "'";
         if (!mysql_query($update, $Link)) {
             die('Error: ' . mysql_error());
         }
         echo "1 record updated \n";
     } else {
-        $sql = "INSERT INTO `ofm`.`sheet3` ( `crop`, `farmers`, `land`, `district`, `subdistrict`, `union_id`, `ecoyear` , `updated`, `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
+        $sql = "INSERT INTO `sheet3` ( `crop`, `farmers`, `land`, `district`, `subdistrict`, `union_id`, `ecoyear` , `updated`, `boron`, `alluminium_salfet`, `magnesium_salfet`, `zinc_salfet`, `jipsam`, `mpks`, `mop`, `dmp`, `tsp`, `uria`) "
                 . "                       VALUES ( '$crop_id' , '$farmers' , '$land' , '$district' , '$subdistrict' , '$union'  ,'$ecoyear_id' ,'$updated' , '$boron', '$aluminum_salfet' , '$magnesium_salfet', '$zinc_salfet' , '$jipsam', '$mpks' , '$mop', '$dmp', '$tsp', '$uria'  )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());

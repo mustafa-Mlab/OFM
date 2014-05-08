@@ -28,7 +28,7 @@ else {
 <?php
 
 if ($errflag == 0) {
-    $sql = "INSERT INTO `ofm`.`news` (`news`, `status`) "
+    $sql = "INSERT INTO `news` (`news`, `status`) "
             . "                      VALUES ('$news' ,'$status )";
     if (!mysql_query($sql, $Link)) {
         die('Error: ' . mysql_error());

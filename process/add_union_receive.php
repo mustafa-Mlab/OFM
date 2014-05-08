@@ -8,7 +8,7 @@ if (isset($_POST['add_union'])) {
     $aez = $_POST['aez'];
     $result = mysql_query("SELECT * FROM `union` WHERE subdist_id ='" . $subdistrict . "' and name = '" . $name . "'");
     If (mysql_num_rows($result) == 0) {
-        $sql = "INSERT INTO `ofm`.`union` (`name`, `subdist_id`, `aez`) VALUES ('$name' , '$subdistrict' , '$aez' )";
+        $sql = "INSERT INTO `union` (`name`, `subdist_id`, `aez`) VALUES ('$name' , '$subdistrict' , '$aez' )";
         if (!mysql_query($sql, $Link)) {
             die('Error: ' . mysql_error());
         }

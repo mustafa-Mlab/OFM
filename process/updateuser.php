@@ -5,7 +5,7 @@ session_start();
 if (isset($_POST['update_user'])) {
     $id = $_POST['user'];
     $enable = $_POST['status'];
-    $update = "UPDATE `ofm`.`user` SET `enabled` ='" . $enable . "'  WHERE `user`.`id` ='" . $id . "'";
+    $update = "UPDATE `user` SET `enabled` ='" . $enable . "'  WHERE `user`.`id` ='" . $id . "'";
     if (!mysql_query($update, $Link)) {
         die('Error: ' . mysql_error());
     }

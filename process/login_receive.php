@@ -23,6 +23,7 @@ if (isset($_POST['login'])) {
         $errflag++;
         $_SESSION['error_msg'] = $_SESSION['error_msg'] . " </br> পাসওয়ার্ড প্রবেশ করুন ,";
     }
+    $pass = md5($pass);
     if ($errflag == 0) {
         $query = mysql_query("SELECT * FROM user WHERE username='" . $username . "' and pass = '" . $pass . "' and `right_lavel` = '" . $lavel . "'");
         If (mysql_num_rows($query) > 0) {
