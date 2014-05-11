@@ -18,9 +18,15 @@ include '../config.php';
         </div>
     </div>
     <div class="form-group">
-        <label for="fname" class="col-sm-4 control-label">Full name </label>
+        <label for="uname" class="col-sm-4 control-label">Username </label>
         <div class="col-sm-8">
-            <input type="text" readonly class="form-control" id="fname" name="fname" placeholder="পূর্ণ নাম ">
+            <input type="text" required class="form-control" id="uname" name="uname" placeholder="ইউজার আইডি">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="fname" class="col-sm-4 control-label">Full Name</label>
+        <div class="col-sm-8">
+            <input type="text" readonly class="form-control" id="fname" name="fname" placeholder="পূর্ণ নাম">
         </div>
     </div>
     <div class="form-group">
@@ -107,10 +113,10 @@ include '../config.php';
                     cache: false,
                     success: function(html)
                     {
-                        //                        alert(html);
+//                        alert(html);
                         var res = html.split("_");
                         var fname = document.getElementById("fname");
-                        fname.value = res[0];
+                        fname.value = res[8];
                         var address = document.getElementById("address");
                         address.value = res[1];
                         var mob = document.getElementById("mob");
@@ -123,18 +129,18 @@ include '../config.php';
                         union.value = res[5];
                         var rd = document.getElementById("reg_date");
                         rd.value = res[6];
-//                        var lavel = document.getElementById("lavel");
-//                        lavel.value = res[7];
+                        var uname = document.getElementById("uname");
+                        uname.value = res[9];
                         if (res[7] < 2)
                             $('#union_form').removeClass('hidden');
                         else
                             $('#union_form').addClass('hidden');
-                        if (res[7] < 2)
+                        if (res[7] < 3)
                             $('#subdistrict_form').removeClass('hidden');
 
                         else
                             $('#subdistrict_form').addClass('hidden');
-                        if (res[7] < 2)
+                        if (res[7] < 4)
                             $('#district_form').removeClass('hidden');
                         else
                             $('#district_form').addClass('hidden');

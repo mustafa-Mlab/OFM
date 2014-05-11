@@ -17,23 +17,23 @@ session_start();
         </tr>
         <tr>
             <td class="col-md-2">ব্লক</td>
-            <td class="active"><input class="form-control" type="text" required id="uria" name="uria" placeholder="yyyy-mm-dd"/></td>
-            <td class="success"><input class="form-control" type="text" required id="all_uria" name="all_uria" placeholder="yyyy-mm-dd" /></td>
+            <td class="active"><input class="form-control" type="text" required id="block_st" name="block_st" placeholder="yyyy-mm-dd"/></td>
+            <td class="success"><input class="form-control" type="text" required id="block_en" name="block_en" placeholder="yyyy-mm-dd" /></td>
         </tr>
         <tr>
             <td>ইউনিয়ন</td>
-            <td class="active"><input class="form-control" type="text" required id="tsp" name="tsp" placeholder="yyyy-mm-dd" /></td>
-            <td class="success"><input class="form-control" type="text" required id="all_tsp" name="all_tsp" placeholder="yyyy-mm-dd" /></td>
+            <td class="active"><input class="form-control" type="text" required id="union_st" name="union_st" placeholder="yyyy-mm-dd" /></td>
+            <td class="success"><input class="form-control" type="text" required id="union_en" name="union_en" placeholder="yyyy-mm-dd" /></td>
         </tr>
         <tr>
             <td>উপজেলা</td>
-            <<td class="active"><input class="form-control" type="text" required id="dmp" name="dmp" placeholder="yyyy-mm-dd" /></td>
-            <td class="success"><input class="form-control" type="text" required id="all_dmp" name="all_dmp" placeholder="yyyy-mm-dd"/></td>
+            <<td class="active"><input class="form-control" type="text" required id="suubdist_st" name="subdist_st" placeholder="yyyy-mm-dd" /></td>
+            <td class="success"><input class="form-control" type="text" required id="subdist_en" name="subdist_en" placeholder="yyyy-mm-dd"/></td>
         </tr>
         <tr>
             <td>জেলা</td>
-            <td class="active"><input class="form-control" type="text" required id="mop" name="mop" placeholder="yyyy-mm-dd" /></td>
-            <td class="success"><input class="form-control" type="text" required id="all_mop" name="all_mop" placeholder="yyyy-mm-dd"/></td>
+            <td class="active"><input class="form-control" type="text" required id="dist_st" name="dist_st" placeholder="yyyy-mm-dd" /></td>
+            <td class="success"><input class="form-control" type="text" required id="dist_en" name="dist_en" placeholder="yyyy-mm-dd"/></td>
         </tr>
     </table>
     <div class="form-group">

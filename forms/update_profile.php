@@ -32,7 +32,7 @@ $row = mysql_fetch_array($sql);
     <div class="form-group">
         <label for="username" class="col-sm-4 control-label">ইউজার আইডিঃ </label>
         <div class="col-sm-8">
-            <input type="text" required class="form-control" id="username" name="username" <?php echo"value= '" . $row['username'] . "'"; ?>  >
+            <input type="text" readonly class="form-control" id="username" name="username" <?php echo"value= '" . $row['username'] . "'"; ?>  >
         </div>
     </div>
     <div class="form-group">

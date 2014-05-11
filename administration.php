@@ -76,7 +76,7 @@ if (isset($_SESSION['admin'])) {
                             <div class="list-group">
                                 <ul class="links">
                                     <li><a href="#add_ecoyear" id="add_ecoyear">Add Economical year</a></li>
-                                    <li><a href="#add_notice" id="add_notice">Add Notice</a></li>
+                                    <!--<li><a href="#add_notice" id="add_notice">Add Notice</a></li>-->
                                     <li><a href="#add_crop" id="add_crop">Add Crop</a></li>
                                     <li><a href="#update_crop" id="update_crop">Update Crop</a></li>
 

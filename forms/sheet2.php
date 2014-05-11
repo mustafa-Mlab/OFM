@@ -84,7 +84,7 @@ if (!isset($_SESSION['id']))
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="dmp" class="col-sm-4 control-label">ডি এম পি </label>
+                                <label for="dmp" class="col-sm-4 control-label">ডি এ পি </label>
                                 <div class="col-sm-8">
                                     <input type="text" required class="form-control" id="dmp" name="dmp" placeholder="ডি এম পি">
                                 </div>
@@ -96,7 +96,7 @@ if (!isset($_SESSION['id']))
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="mpks" class="col-sm-4 control-label">এম পি কে এস </label>
+                                <label for="mpks" class="col-sm-4 control-label">এন পি কে এস </label>
                                 <div class="col-sm-8">
                                     <input type="text" required class="form-control" id="mpks" name="mpks" placeholder="এম পি কে এস">
                                 </div>
@@ -122,7 +122,7 @@ if (!isset($_SESSION['id']))
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="aluminum_salfet" class="col-sm-4 control-label">অ্যালুমিনিয়াম সালফেট </label>
+                                <label for="aluminum_salfet" class="col-sm-4 control-label">অ্যামোনিয়াম সালফেট </label>
                                 <div class="col-sm-8">
                                     <input type="text"  required class="form-control" id="aluminum_salfet" name="aluminum_salfet" placeholder="অ্যালুমিনিয়াম সালফেট">
                                 </div>

@@ -188,7 +188,7 @@ if (isset($_POST['submit'])) {
         echo "1 record added  to sheet4_alloted\n";
     }
 
-//    Here code to insert updated value into sheet3_alloted
+//    Here code to insert updated value into sheet3_alloted *********************************
     $sql = "SELECT * FROM `sheet3` WHERE district = '" . $dist_id . "' and ecoyear = '" . $ecoyear_id . "'";
     $result = mysql_query($sql);
     while ($row = mysql_fetch_array($result)) {
